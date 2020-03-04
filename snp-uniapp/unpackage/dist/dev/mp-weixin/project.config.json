@@ -45,8 +45,22 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/test/test/test",
-					"pathName": "pages/test/test/test",
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/component/card",
+					"pathName": "pages/component/card",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/basics/button",
+					"pathName": "pages/basics/button",
 					"scene": null
 				}
 			]

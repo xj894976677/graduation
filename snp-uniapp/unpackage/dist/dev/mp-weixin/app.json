@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/test/test/test",
     "pages/index/index",
+    "pages/index/message",
+    "pages/index/mine",
+    "pages/index/write",
     "pages/basics/layout",
     "pages/basics/background",
     "pages/basics/text",
@@ -26,7 +28,9 @@
     "pages/plugin/indexes",
     "pages/plugin/animation",
     "pages/plugin/drawer",
-    "pages/plugin/verticalnav"
+    "pages/plugin/verticalnav",
+    "pages/test/test/test",
+    "pages/login/login"
   ],
   "subPackages": [],
   "window": {
@@ -34,6 +38,37 @@
     "navigationBarTitleText": "ColorUi for UniApp",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7a7a7a",
+    "selectedColor": "#ff9700",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-fill.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/write",
+        "iconPath": "static/tabbar/brush.png",
+        "selectedIconPath": "static/tabbar/brush_fill.png",
+        "text": "发表"
+      },
+      {
+        "pagePath": "pages/index/message",
+        "iconPath": "static/tabbar/mail.png",
+        "selectedIconPath": "static/tabbar/mail_fill.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/index/mine",
+        "iconPath": "static/tabbar/account.png",
+        "selectedIconPath": "static/tabbar/account-fill.png",
+        "text": "我的"
+      }
+    ]
   },
   "usingComponents": {
     "basics": "/pages/basics/home",

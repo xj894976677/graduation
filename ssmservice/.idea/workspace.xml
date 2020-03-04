@@ -2,10 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcc34577-ab86-4a6d-9aad-676a784992fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/index/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/basics/loading.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/basics/loading.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/basics/shadow.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/basics/shadow.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/component/bar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/component/bar.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/colorui/components/cu-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/colorui/components/cu-custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/colorui/components/cu-custom.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/colorui/components/cu-custom.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/avatar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/avatar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/design.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/design.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/home.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/home.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/loading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/progress.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/progress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/shadow.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/shadow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/text.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/home.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/home.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/steps.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/steps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/swiper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/timeline.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/animation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/drawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/home.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/home.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/indexes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/indexes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/verticalnav.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/verticalnav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/test/test/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/test/test/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/project.config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssmservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ssmservice.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -190,7 +234,7 @@
     <option name="jreName" value="1.8" />
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="318" />
     <option name="width" value="1302" />
     <option name="height" value="1552" />
@@ -310,7 +354,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1583224234904" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1583311245484" />
     <property name="last_opened_file_path" value="E:/project/ssm-bbms" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -359,7 +403,8 @@
     <option name="totallyTimeSpent" value="8216000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1293" height="783" extended-state="6" />
+    <frame x="-6" y="-6" width="1293" height="783" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
