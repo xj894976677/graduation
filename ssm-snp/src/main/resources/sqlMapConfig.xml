@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--别名配置   对model包下的所有起一个别名，默认是它的类名（不分大小写）-->
+    <typeAliases>
+        <package name="com.graduation.model"/>
+    </typeAliases>
+</configuration>

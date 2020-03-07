@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.graduation.mapper_api.SysAccessLogMapper">
+
+
+    <!--查看日志列表-->
+    <select id="querySysLogList" parameterType="map" resultType="hashMap">
+        select DATE_FORMAT(t.accessDate,'%Y-%m-%d %H:%i:%s') accessDate,
+        t.requestType,
+        t.accessInterface,
+        t.interfaceParams,
+        t.accessSource,
+        t.accessIp,
+        t.executeTime
+        FROM tbsyslog t
+        where t.accessDate&gt;=#{beginTime} and t.accessDate&lt;=#{endTime}
+        order by t.accessDate DESC
+    </select>
+
+    <!--保存日志-->
+    <insert id="saveSysLog" parameterType="map">
+        insert into tbsyslog (
+        logId,
+        accessDate,
+        requestType,
+        accessInterface,
+        interfaceParams,
+        accessSource,
+        accessIp,
+        executeTime
+        ) values (
+        #{logId},
+        #{accessDate},
+        #{requestType},
+        #{accessInterface},
+        #{interfaceParams},
+        #{accessSource},
+        #{accessIp},
+        #{executeTime}
+        )
+    </insert>
+</mapper>

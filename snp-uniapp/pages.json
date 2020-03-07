@@ -120,6 +120,10 @@
             "path" : "pages/login/login",
             "style" : {}
         }
+        ,{
+            "path" : "pages/login/register",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
