@@ -1,6 +1,6 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
-/* 0 */,
-/* 1 */
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
+
+/***/ 1:
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!
   \************************************************************/
@@ -737,7 +737,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1533,7 +1533,129 @@ var uni$1 = uni;var _default =
 uni$1;exports.default = _default;
 
 /***/ }),
-/* 2 */
+
+/***/ 14:
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode, /* vue-cli only */
+  components, // fixed by xxxxxx auto components
+  renderjs // fixed by xxxxxx renderjs
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // fixed by xxxxxx auto components
+  if (components) {
+    options.components = Object.assign(components, options.components || {})
+  }
+  // fixed by xxxxxx renderjs
+  if (renderjs) {
+    (renderjs.beforeCreate || (renderjs.beforeCreate = [])).unshift(function() {
+      this[renderjs.__module] = this
+    });
+    (options.mixins || (options.mixins = [])).push(renderjs)
+  }
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
   \******************************************************************************************/
@@ -7065,7 +7187,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7086,14 +7208,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7169,7 +7291,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7563,7 +7685,1238 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 3 */
+
+/***/ 229:
+/*!***********************************************!*\
+  !*** E:/graduation/snp-uniapp/common/util.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {function formatTime(time) {
+  if (typeof time !== 'number' || time < 0) {
+    return time;
+  }
+
+  var hour = parseInt(time / 3600);
+  time = time % 3600;
+  var minute = parseInt(time / 60);
+  time = time % 60;
+  var second = time;
+
+  return [hour, minute, second].map(function (n) {
+    n = n.toString();
+    return n[1] ? n : '0' + n;
+  }).join(':');
+}
+
+function formatLocation(longitude, latitude) {
+  if (typeof longitude === 'string' && typeof latitude === 'string') {
+    longitude = parseFloat(longitude);
+    latitude = parseFloat(latitude);
+  }
+
+  longitude = longitude.toFixed(2);
+  latitude = latitude.toFixed(2);
+
+  return {
+    longitude: longitude.toString().split('.'),
+    latitude: latitude.toString().split('.') };
+
+}
+
+function formatMoney(value, decimals) {
+  var digitsRE = /(\d{3})(?=\d)/g; //定义对比
+  value = parseFloat(value); //把字符串转换成数字
+  if (!isFinite(value) || !value && value !== 0) {//如果它不是有限位数或者
+    return '';
+  }
+  //currency = currency != null ? currency : '$';//如果第二位参数为空，那么就在最前面换成$符号
+  decimals = decimals != null ? decimals : 2; //如果第3位参数为空，那么就保留2位小数。5221.84
+  var stringified = Math.abs(value).toFixed(decimals); //先求绝对值,然后在保留2位小数
+  var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified; //验证合法性
+  var i = _int.length % 3; //进行分割，需要几个逗号
+  var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : ''; //
+  var _float = decimals ? stringified.slice(-1 - decimals) : '';
+  var sign = value < 0 ? '-' : '';
+  return sign + head + _int.slice(i).replace(digitsRE, '$1,') + _float;
+}
+
+function getClientIp() {
+  // 同步方式获取数据
+  try {
+    var _ip = uni.getStorageSync('cip');
+    if (value) {
+      console.log("const value = uni.getStorageSync('cip') 同步获取 = " + value);
+      return _ip;
+    }
+  } catch (e) {};
+  // 调用搜狐API获取外网IP
+  var ip = "127.0.0.1";
+  uni.request({
+    url: 'http://pv.sohu.com/cityjson?ie=utf-8',
+    success: function success(res) {
+      console.log(res);
+      var resData = res.data.substring(19, res.data.length - 1);
+      console.log(resData);
+      var returnCitySN = JSON.parse(resData);
+      var clientIp = returnCitySN['cip'];
+      console.log(clientIp);
+      ip = clientIp;
+    } });
+
+  //同步数据缓存
+  try {
+    uni.setStorageSync('cip', ip);
+  } catch (e) {};
+  return ip;
+}
+
+var dateUtils = {
+  UNITS: {
+    '年': 31557600000,
+    '月': 2629800000,
+    '天': 86400000,
+    '小时': 3600000,
+    '分钟': 60000,
+    '秒': 1000 },
+
+  humanize: function humanize(milliseconds) {
+    var humanize = '';
+    for (var key in this.UNITS) {
+      if (milliseconds >= this.UNITS[key]) {
+        humanize = Math.floor(milliseconds / this.UNITS[key]) + key + '前';
+        break;
+      }
+    }
+    return humanize || '刚刚';
+  },
+  format: function format(dateStr) {
+    var date = this.parse(dateStr);
+    var diff = Date.now() - date.getTime();
+    if (diff < this.UNITS['天']) {
+      return this.humanize(diff);
+    }
+    var _format = function _format(number) {
+      return number < 10 ? '0' + number : number;
+    };
+    return date.getFullYear() + '/' + _format(date.getMonth() + 1) + '/' + _format(date.getDay()) + '-' +
+    _format(date.getHours()) + ':' + _format(date.getMinutes());
+  },
+  parse: function parse(str) {//将"yyyy-mm-dd HH:MM:ss"格式的字符串，转化为一个Date对象
+    var a = str.split(/[^0-9]/);
+    return new Date(a[0], a[1] - 1, a[2], a[3], a[4], a[5]);
+  } };
+
+
+module.exports = {
+  formatTime: formatTime,
+  formatLocation: formatLocation,
+  formatMoney: formatMoney,
+  getClientIp: getClientIp,
+  dateUtils: dateUtils };
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 230:
+/*!*******************************************************!*\
+  !*** E:/graduation/snp-uniapp/common/graceChecker.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+ /**
+              数据验证（表单验证）
+              来自 grace.hcoder.net 
+              作者 hcoder 深海
+              */
+module.exports = {
+  error: '',
+  check: function check(data, rule) {
+    for (var i = 0; i < rule.length; i++) {
+      if (!rule[i].checkType) {return true;}
+      if (!rule[i].name) {return true;}
+      if (!rule[i].errorMsg) {return true;}
+      if (!data[rule[i].name]) {this.error = rule[i].errorMsg;return false;}
+      switch (rule[i].checkType) {
+        case 'string':
+          var reg = new RegExp('^.{' + rule[i].checkRule + '}$');
+          if (!reg.test(data[rule[i].name])) {this.error = rule[i].errorMsg;return false;}
+          break;
+        case 'int':
+          var reg = new RegExp('^(-[1-9]|[1-9])[0-9]{' + rule[i].checkRule + '}$');
+          if (!reg.test(data[rule[i].name])) {this.error = rule[i].errorMsg;return false;}
+          break;
+          break;
+        case 'between':
+          if (!this.isNumber(data[rule[i].name])) {
+            this.error = rule[i].errorMsg;
+            return false;
+          }
+          var minMax = rule[i].checkRule.split(',');
+          minMax[0] = Number(minMax[0]);
+          minMax[1] = Number(minMax[1]);
+          if (data[rule[i].name] > minMax[1] || data[rule[i].name] < minMax[0]) {
+            this.error = rule[i].errorMsg;
+            return false;
+          }
+          break;
+        case 'betweenD':
+          var reg = /^-?[1-9][0-9]?$/;
+          if (!reg.test(data[rule[i].name])) {this.error = rule[i].errorMsg;return false;}
+          var minMax = rule[i].checkRule.split(',');
+          minMax[0] = Number(minMax[0]);
+          minMax[1] = Number(minMax[1]);
+          if (data[rule[i].name] > minMax[1] || data[rule[i].name] < minMax[0]) {
+            this.error = rule[i].errorMsg;
+            return false;
+          }
+          break;
+        case 'betweenF':
+          var reg = /^-?[0-9][0-9]?.+[0-9]+$/;
+          if (!reg.test(data[rule[i].name])) {this.error = rule[i].errorMsg;return false;}
+          var minMax = rule[i].checkRule.split(',');
+          minMax[0] = Number(minMax[0]);
+          minMax[1] = Number(minMax[1]);
+          if (data[rule[i].name] > minMax[1] || data[rule[i].name] < minMax[0]) {
+            this.error = rule[i].errorMsg;
+            return false;
+          }
+          break;
+        case 'same':
+          if (data[rule[i].name] != rule[i].checkRule) {this.error = rule[i].errorMsg;return false;}
+          break;
+        case 'notsame':
+          if (data[rule[i].name] == rule[i].checkRule) {this.error = rule[i].errorMsg;return false;}
+          break;
+        case 'email':
+          var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+          if (!reg.test(data[rule[i].name])) {this.error = rule[i].errorMsg;return false;}
+          break;
+        case 'phoneno':
+          var reg = /^1[0-9]{10,10}$/;
+          if (!reg.test(data[rule[i].name])) {this.error = rule[i].errorMsg;return false;}
+          break;
+        case 'zipcode':
+          var reg = /^[0-9]{6}$/;
+          if (!reg.test(data[rule[i].name])) {this.error = rule[i].errorMsg;return false;}
+          break;
+        case 'reg':
+          var reg = new RegExp(rule[i].checkRule);
+          if (!reg.test(data[rule[i].name])) {this.error = rule[i].errorMsg;return false;}
+          break;
+        case 'in':
+          if (rule[i].checkRule.indexOf(data[rule[i].name]) == -1) {
+            this.error = rule[i].errorMsg;return false;
+          }
+          break;
+        case 'notnull':
+          if (data[rule[i].name] == null || data[rule[i].name].length < 1) {this.error = rule[i].errorMsg;return false;}
+          break;}
+
+    }
+    return true;
+  },
+  isNumber: function isNumber(checkVal) {
+    var reg = /^-?[1-9][0-9]?.?[0-9]*$/;
+    return reg.test(checkVal);
+  } };
+
+/***/ }),
+
+/***/ 231:
+/*!**********************************************!*\
+  !*** E:/graduation/snp-uniapp/common/md5.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process, global) {var __WEBPACK_AMD_DEFINE_RESULT__; /**
+               * [js-md5]{@link https://github.com/emn178/js-md5}
+               *
+               * @namespace md5
+               * @version 0.7.3
+               * @author Chen, Yi-Cyuan [emn178@gmail.com]
+               * @copyright Chen, Yi-Cyuan 2014-2017
+               * @license MIT
+               */
+(function () {
+  'use strict';
+
+  var ERROR = 'input is invalid type';
+  var WINDOW = typeof window === 'object';
+  var root = WINDOW ? window : {};
+  if (root.JS_MD5_NO_WINDOW) {
+    WINDOW = false;
+  }
+  var WEB_WORKER = !WINDOW && typeof self === 'object';
+  var NODE_JS = !root.JS_MD5_NO_NODE_JS && typeof process === 'object' && process.versions && process.versions.node;
+  if (NODE_JS) {
+    root = global;
+  } else if (WEB_WORKER) {
+    root = self;
+  }
+  var COMMON_JS = !root.JS_MD5_NO_COMMON_JS && typeof module === 'object' && module.exports;
+  var AMD =  true && __webpack_require__(/*! !webpack amd options */ 234);
+  var ARRAY_BUFFER = !root.JS_MD5_NO_ARRAY_BUFFER && typeof ArrayBuffer !== 'undefined';
+  var HEX_CHARS = '0123456789abcdef'.split('');
+  var EXTRA = [128, 32768, 8388608, -2147483648];
+  var SHIFT = [0, 8, 16, 24];
+  var OUTPUT_TYPES = ['hex', 'array', 'digest', 'buffer', 'arrayBuffer', 'base64'];
+  var BASE64_ENCODE_CHAR = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'.split('');
+
+  var blocks = [],buffer8;
+  if (ARRAY_BUFFER) {
+    var buffer = new ArrayBuffer(68);
+    buffer8 = new Uint8Array(buffer);
+    blocks = new Uint32Array(buffer);
+  }
+
+  if (root.JS_MD5_NO_NODE_JS || !Array.isArray) {
+    Array.isArray = function (obj) {
+      return Object.prototype.toString.call(obj) === '[object Array]';
+    };
+  }
+
+  if (ARRAY_BUFFER && (root.JS_MD5_NO_ARRAY_BUFFER_IS_VIEW || !ArrayBuffer.isView)) {
+    ArrayBuffer.isView = function (obj) {
+      return typeof obj === 'object' && obj.buffer && obj.buffer.constructor === ArrayBuffer;
+    };
+  }
+
+  /**
+     * @method hex
+     * @memberof md5
+     * @description Output hash as hex string
+     * @param {String|Array|Uint8Array|ArrayBuffer} message message to hash
+     * @returns {String} Hex string
+     * @example
+     * md5.hex('The quick brown fox jumps over the lazy dog');
+     * // equal to
+     * md5('The quick brown fox jumps over the lazy dog');
+     */
+  /**
+         * @method digest
+         * @memberof md5
+         * @description Output hash as bytes array
+         * @param {String|Array|Uint8Array|ArrayBuffer} message message to hash
+         * @returns {Array} Bytes array
+         * @example
+         * md5.digest('The quick brown fox jumps over the lazy dog');
+         */
+  /**
+             * @method array
+             * @memberof md5
+             * @description Output hash as bytes array
+             * @param {String|Array|Uint8Array|ArrayBuffer} message message to hash
+             * @returns {Array} Bytes array
+             * @example
+             * md5.array('The quick brown fox jumps over the lazy dog');
+             */
+  /**
+                 * @method arrayBuffer
+                 * @memberof md5
+                 * @description Output hash as ArrayBuffer
+                 * @param {String|Array|Uint8Array|ArrayBuffer} message message to hash
+                 * @returns {ArrayBuffer} ArrayBuffer
+                 * @example
+                 * md5.arrayBuffer('The quick brown fox jumps over the lazy dog');
+                 */
+  /**
+                     * @method buffer
+                     * @deprecated This maybe confuse with Buffer in node.js. Please use arrayBuffer instead.
+                     * @memberof md5
+                     * @description Output hash as ArrayBuffer
+                     * @param {String|Array|Uint8Array|ArrayBuffer} message message to hash
+                     * @returns {ArrayBuffer} ArrayBuffer
+                     * @example
+                     * md5.buffer('The quick brown fox jumps over the lazy dog');
+                     */
+  /**
+                         * @method base64
+                         * @memberof md5
+                         * @description Output hash as base64 string
+                         * @param {String|Array|Uint8Array|ArrayBuffer} message message to hash
+                         * @returns {String} base64 string
+                         * @example
+                         * md5.base64('The quick brown fox jumps over the lazy dog');
+                         */
+  var createOutputMethod = function createOutputMethod(outputType) {
+    return function (message) {
+      return new Md5(true).update(message)[outputType]();
+    };
+  };
+
+  /**
+      * @method create
+      * @memberof md5
+      * @description Create Md5 object
+      * @returns {Md5} Md5 object.
+      * @example
+      * var hash = md5.create();
+      */
+  /**
+          * @method update
+          * @memberof md5
+          * @description Create and update Md5 object
+          * @param {String|Array|Uint8Array|ArrayBuffer} message message to hash
+          * @returns {Md5} Md5 object.
+          * @example
+          * var hash = md5.update('The quick brown fox jumps over the lazy dog');
+          * // equal to
+          * var hash = md5.create();
+          * hash.update('The quick brown fox jumps over the lazy dog');
+          */
+  var createMethod = function createMethod() {
+    var method = createOutputMethod('hex');
+    if (NODE_JS) {
+      method = nodeWrap(method);
+    }
+    method.create = function () {
+      return new Md5();
+    };
+    method.update = function (message) {
+      return method.create().update(message);
+    };
+    for (var i = 0; i < OUTPUT_TYPES.length; ++i) {
+      var type = OUTPUT_TYPES[i];
+      method[type] = createOutputMethod(type);
+    }
+    return method;
+  };
+
+  var nodeWrap = function nodeWrap(method) {
+    var crypto = eval("require('crypto')");
+    var Buffer = eval("require('buffer').Buffer");
+    var nodeMethod = function nodeMethod(message) {
+      if (typeof message === 'string') {
+        return crypto.createHash('md5').update(message, 'utf8').digest('hex');
+      } else {
+        if (message === null || message === undefined) {
+          throw ERROR;
+        } else if (message.constructor === ArrayBuffer) {
+          message = new Uint8Array(message);
+        }
+      }
+      if (Array.isArray(message) || ArrayBuffer.isView(message) ||
+      message.constructor === Buffer) {
+        return crypto.createHash('md5').update(new Buffer(message)).digest('hex');
+      } else {
+        return method(message);
+      }
+    };
+    return nodeMethod;
+  };
+
+
+
+  /**
+      * Md5 class
+      * @class Md5
+      * @description This is internal class.
+      * @see {@link md5.create}
+      */
+  function Md5(sharedMemory) {
+    if (sharedMemory) {
+      blocks[0] = blocks[16] = blocks[1] = blocks[2] = blocks[3] =
+      blocks[4] = blocks[5] = blocks[6] = blocks[7] =
+      blocks[8] = blocks[9] = blocks[10] = blocks[11] =
+      blocks[12] = blocks[13] = blocks[14] = blocks[15] = 0;
+      this.blocks = blocks;
+      this.buffer8 = buffer8;
+    } else {
+      if (ARRAY_BUFFER) {
+        var buffer = new ArrayBuffer(68);
+        this.buffer8 = new Uint8Array(buffer);
+        this.blocks = new Uint32Array(buffer);
+      } else {
+        this.blocks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      }
+    }
+    this.h0 = this.h1 = this.h2 = this.h3 = this.start = this.bytes = this.hBytes = 0;
+    this.finalized = this.hashed = false;
+    this.first = true;
+  }
+
+  /**
+     * @method update
+     * @memberof Md5
+     * @instance
+     * @description Update hash
+     * @param {String|Array|Uint8Array|ArrayBuffer} message message to hash
+     * @returns {Md5} Md5 object.
+     * @see {@link md5.update}
+     */
+  Md5.prototype.update = function (message) {
+    if (this.finalized) {
+      return;
+    }
+
+    var notString,type = typeof message;
+    if (type !== 'string') {
+      if (type === 'object') {
+        if (message === null) {
+          throw ERROR;
+        } else if (ARRAY_BUFFER && message.constructor === ArrayBuffer) {
+          message = new Uint8Array(message);
+        } else if (!Array.isArray(message)) {
+          if (!ARRAY_BUFFER || !ArrayBuffer.isView(message)) {
+            throw ERROR;
+          }
+        }
+      } else {
+        throw ERROR;
+      }
+      notString = true;
+    }
+    var code,index = 0,i,length = message.length,blocks = this.blocks;
+    var buffer8 = this.buffer8;
+
+    while (index < length) {
+      if (this.hashed) {
+        this.hashed = false;
+        blocks[0] = blocks[16];
+        blocks[16] = blocks[1] = blocks[2] = blocks[3] =
+        blocks[4] = blocks[5] = blocks[6] = blocks[7] =
+        blocks[8] = blocks[9] = blocks[10] = blocks[11] =
+        blocks[12] = blocks[13] = blocks[14] = blocks[15] = 0;
+      }
+
+      if (notString) {
+        if (ARRAY_BUFFER) {
+          for (i = this.start; index < length && i < 64; ++index) {
+            buffer8[i++] = message[index];
+          }
+        } else {
+          for (i = this.start; index < length && i < 64; ++index) {
+            blocks[i >> 2] |= message[index] << SHIFT[i++ & 3];
+          }
+        }
+      } else {
+        if (ARRAY_BUFFER) {
+          for (i = this.start; index < length && i < 64; ++index) {
+            code = message.charCodeAt(index);
+            if (code < 0x80) {
+              buffer8[i++] = code;
+            } else if (code < 0x800) {
+              buffer8[i++] = 0xc0 | code >> 6;
+              buffer8[i++] = 0x80 | code & 0x3f;
+            } else if (code < 0xd800 || code >= 0xe000) {
+              buffer8[i++] = 0xe0 | code >> 12;
+              buffer8[i++] = 0x80 | code >> 6 & 0x3f;
+              buffer8[i++] = 0x80 | code & 0x3f;
+            } else {
+              code = 0x10000 + ((code & 0x3ff) << 10 | message.charCodeAt(++index) & 0x3ff);
+              buffer8[i++] = 0xf0 | code >> 18;
+              buffer8[i++] = 0x80 | code >> 12 & 0x3f;
+              buffer8[i++] = 0x80 | code >> 6 & 0x3f;
+              buffer8[i++] = 0x80 | code & 0x3f;
+            }
+          }
+        } else {
+          for (i = this.start; index < length && i < 64; ++index) {
+            code = message.charCodeAt(index);
+            if (code < 0x80) {
+              blocks[i >> 2] |= code << SHIFT[i++ & 3];
+            } else if (code < 0x800) {
+              blocks[i >> 2] |= (0xc0 | code >> 6) << SHIFT[i++ & 3];
+              blocks[i >> 2] |= (0x80 | code & 0x3f) << SHIFT[i++ & 3];
+            } else if (code < 0xd800 || code >= 0xe000) {
+              blocks[i >> 2] |= (0xe0 | code >> 12) << SHIFT[i++ & 3];
+              blocks[i >> 2] |= (0x80 | code >> 6 & 0x3f) << SHIFT[i++ & 3];
+              blocks[i >> 2] |= (0x80 | code & 0x3f) << SHIFT[i++ & 3];
+            } else {
+              code = 0x10000 + ((code & 0x3ff) << 10 | message.charCodeAt(++index) & 0x3ff);
+              blocks[i >> 2] |= (0xf0 | code >> 18) << SHIFT[i++ & 3];
+              blocks[i >> 2] |= (0x80 | code >> 12 & 0x3f) << SHIFT[i++ & 3];
+              blocks[i >> 2] |= (0x80 | code >> 6 & 0x3f) << SHIFT[i++ & 3];
+              blocks[i >> 2] |= (0x80 | code & 0x3f) << SHIFT[i++ & 3];
+            }
+          }
+        }
+      }
+      this.lastByteIndex = i;
+      this.bytes += i - this.start;
+      if (i >= 64) {
+        this.start = i - 64;
+        this.hash();
+        this.hashed = true;
+      } else {
+        this.start = i;
+      }
+    }
+    if (this.bytes > 4294967295) {
+      this.hBytes += this.bytes / 4294967296 << 0;
+      this.bytes = this.bytes % 4294967296;
+    }
+    return this;
+  };
+
+  Md5.prototype.finalize = function () {
+    if (this.finalized) {
+      return;
+    }
+    this.finalized = true;
+    var blocks = this.blocks,i = this.lastByteIndex;
+    blocks[i >> 2] |= EXTRA[i & 3];
+    if (i >= 56) {
+      if (!this.hashed) {
+        this.hash();
+      }
+      blocks[0] = blocks[16];
+      blocks[16] = blocks[1] = blocks[2] = blocks[3] =
+      blocks[4] = blocks[5] = blocks[6] = blocks[7] =
+      blocks[8] = blocks[9] = blocks[10] = blocks[11] =
+      blocks[12] = blocks[13] = blocks[14] = blocks[15] = 0;
+    }
+    blocks[14] = this.bytes << 3;
+    blocks[15] = this.hBytes << 3 | this.bytes >>> 29;
+    this.hash();
+  };
+
+  Md5.prototype.hash = function () {
+    var a,b,c,d,bc,da,blocks = this.blocks;
+
+    if (this.first) {
+      a = blocks[0] - 680876937;
+      a = (a << 7 | a >>> 25) - 271733879 << 0;
+      d = (-1732584194 ^ a & 2004318071) + blocks[1] - 117830708;
+      d = (d << 12 | d >>> 20) + a << 0;
+      c = (-271733879 ^ d & (a ^ -271733879)) + blocks[2] - 1126478375;
+      c = (c << 17 | c >>> 15) + d << 0;
+      b = (a ^ c & (d ^ a)) + blocks[3] - 1316259209;
+      b = (b << 22 | b >>> 10) + c << 0;
+    } else {
+      a = this.h0;
+      b = this.h1;
+      c = this.h2;
+      d = this.h3;
+      a += (d ^ b & (c ^ d)) + blocks[0] - 680876936;
+      a = (a << 7 | a >>> 25) + b << 0;
+      d += (c ^ a & (b ^ c)) + blocks[1] - 389564586;
+      d = (d << 12 | d >>> 20) + a << 0;
+      c += (b ^ d & (a ^ b)) + blocks[2] + 606105819;
+      c = (c << 17 | c >>> 15) + d << 0;
+      b += (a ^ c & (d ^ a)) + blocks[3] - 1044525330;
+      b = (b << 22 | b >>> 10) + c << 0;
+    }
+
+    a += (d ^ b & (c ^ d)) + blocks[4] - 176418897;
+    a = (a << 7 | a >>> 25) + b << 0;
+    d += (c ^ a & (b ^ c)) + blocks[5] + 1200080426;
+    d = (d << 12 | d >>> 20) + a << 0;
+    c += (b ^ d & (a ^ b)) + blocks[6] - 1473231341;
+    c = (c << 17 | c >>> 15) + d << 0;
+    b += (a ^ c & (d ^ a)) + blocks[7] - 45705983;
+    b = (b << 22 | b >>> 10) + c << 0;
+    a += (d ^ b & (c ^ d)) + blocks[8] + 1770035416;
+    a = (a << 7 | a >>> 25) + b << 0;
+    d += (c ^ a & (b ^ c)) + blocks[9] - 1958414417;
+    d = (d << 12 | d >>> 20) + a << 0;
+    c += (b ^ d & (a ^ b)) + blocks[10] - 42063;
+    c = (c << 17 | c >>> 15) + d << 0;
+    b += (a ^ c & (d ^ a)) + blocks[11] - 1990404162;
+    b = (b << 22 | b >>> 10) + c << 0;
+    a += (d ^ b & (c ^ d)) + blocks[12] + 1804603682;
+    a = (a << 7 | a >>> 25) + b << 0;
+    d += (c ^ a & (b ^ c)) + blocks[13] - 40341101;
+    d = (d << 12 | d >>> 20) + a << 0;
+    c += (b ^ d & (a ^ b)) + blocks[14] - 1502002290;
+    c = (c << 17 | c >>> 15) + d << 0;
+    b += (a ^ c & (d ^ a)) + blocks[15] + 1236535329;
+    b = (b << 22 | b >>> 10) + c << 0;
+    a += (c ^ d & (b ^ c)) + blocks[1] - 165796510;
+    a = (a << 5 | a >>> 27) + b << 0;
+    d += (b ^ c & (a ^ b)) + blocks[6] - 1069501632;
+    d = (d << 9 | d >>> 23) + a << 0;
+    c += (a ^ b & (d ^ a)) + blocks[11] + 643717713;
+    c = (c << 14 | c >>> 18) + d << 0;
+    b += (d ^ a & (c ^ d)) + blocks[0] - 373897302;
+    b = (b << 20 | b >>> 12) + c << 0;
+    a += (c ^ d & (b ^ c)) + blocks[5] - 701558691;
+    a = (a << 5 | a >>> 27) + b << 0;
+    d += (b ^ c & (a ^ b)) + blocks[10] + 38016083;
+    d = (d << 9 | d >>> 23) + a << 0;
+    c += (a ^ b & (d ^ a)) + blocks[15] - 660478335;
+    c = (c << 14 | c >>> 18) + d << 0;
+    b += (d ^ a & (c ^ d)) + blocks[4] - 405537848;
+    b = (b << 20 | b >>> 12) + c << 0;
+    a += (c ^ d & (b ^ c)) + blocks[9] + 568446438;
+    a = (a << 5 | a >>> 27) + b << 0;
+    d += (b ^ c & (a ^ b)) + blocks[14] - 1019803690;
+    d = (d << 9 | d >>> 23) + a << 0;
+    c += (a ^ b & (d ^ a)) + blocks[3] - 187363961;
+    c = (c << 14 | c >>> 18) + d << 0;
+    b += (d ^ a & (c ^ d)) + blocks[8] + 1163531501;
+    b = (b << 20 | b >>> 12) + c << 0;
+    a += (c ^ d & (b ^ c)) + blocks[13] - 1444681467;
+    a = (a << 5 | a >>> 27) + b << 0;
+    d += (b ^ c & (a ^ b)) + blocks[2] - 51403784;
+    d = (d << 9 | d >>> 23) + a << 0;
+    c += (a ^ b & (d ^ a)) + blocks[7] + 1735328473;
+    c = (c << 14 | c >>> 18) + d << 0;
+    b += (d ^ a & (c ^ d)) + blocks[12] - 1926607734;
+    b = (b << 20 | b >>> 12) + c << 0;
+    bc = b ^ c;
+    a += (bc ^ d) + blocks[5] - 378558;
+    a = (a << 4 | a >>> 28) + b << 0;
+    d += (bc ^ a) + blocks[8] - 2022574463;
+    d = (d << 11 | d >>> 21) + a << 0;
+    da = d ^ a;
+    c += (da ^ b) + blocks[11] + 1839030562;
+    c = (c << 16 | c >>> 16) + d << 0;
+    b += (da ^ c) + blocks[14] - 35309556;
+    b = (b << 23 | b >>> 9) + c << 0;
+    bc = b ^ c;
+    a += (bc ^ d) + blocks[1] - 1530992060;
+    a = (a << 4 | a >>> 28) + b << 0;
+    d += (bc ^ a) + blocks[4] + 1272893353;
+    d = (d << 11 | d >>> 21) + a << 0;
+    da = d ^ a;
+    c += (da ^ b) + blocks[7] - 155497632;
+    c = (c << 16 | c >>> 16) + d << 0;
+    b += (da ^ c) + blocks[10] - 1094730640;
+    b = (b << 23 | b >>> 9) + c << 0;
+    bc = b ^ c;
+    a += (bc ^ d) + blocks[13] + 681279174;
+    a = (a << 4 | a >>> 28) + b << 0;
+    d += (bc ^ a) + blocks[0] - 358537222;
+    d = (d << 11 | d >>> 21) + a << 0;
+    da = d ^ a;
+    c += (da ^ b) + blocks[3] - 722521979;
+    c = (c << 16 | c >>> 16) + d << 0;
+    b += (da ^ c) + blocks[6] + 76029189;
+    b = (b << 23 | b >>> 9) + c << 0;
+    bc = b ^ c;
+    a += (bc ^ d) + blocks[9] - 640364487;
+    a = (a << 4 | a >>> 28) + b << 0;
+    d += (bc ^ a) + blocks[12] - 421815835;
+    d = (d << 11 | d >>> 21) + a << 0;
+    da = d ^ a;
+    c += (da ^ b) + blocks[15] + 530742520;
+    c = (c << 16 | c >>> 16) + d << 0;
+    b += (da ^ c) + blocks[2] - 995338651;
+    b = (b << 23 | b >>> 9) + c << 0;
+    a += (c ^ (b | ~d)) + blocks[0] - 198630844;
+    a = (a << 6 | a >>> 26) + b << 0;
+    d += (b ^ (a | ~c)) + blocks[7] + 1126891415;
+    d = (d << 10 | d >>> 22) + a << 0;
+    c += (a ^ (d | ~b)) + blocks[14] - 1416354905;
+    c = (c << 15 | c >>> 17) + d << 0;
+    b += (d ^ (c | ~a)) + blocks[5] - 57434055;
+    b = (b << 21 | b >>> 11) + c << 0;
+    a += (c ^ (b | ~d)) + blocks[12] + 1700485571;
+    a = (a << 6 | a >>> 26) + b << 0;
+    d += (b ^ (a | ~c)) + blocks[3] - 1894986606;
+    d = (d << 10 | d >>> 22) + a << 0;
+    c += (a ^ (d | ~b)) + blocks[10] - 1051523;
+    c = (c << 15 | c >>> 17) + d << 0;
+    b += (d ^ (c | ~a)) + blocks[1] - 2054922799;
+    b = (b << 21 | b >>> 11) + c << 0;
+    a += (c ^ (b | ~d)) + blocks[8] + 1873313359;
+    a = (a << 6 | a >>> 26) + b << 0;
+    d += (b ^ (a | ~c)) + blocks[15] - 30611744;
+    d = (d << 10 | d >>> 22) + a << 0;
+    c += (a ^ (d | ~b)) + blocks[6] - 1560198380;
+    c = (c << 15 | c >>> 17) + d << 0;
+    b += (d ^ (c | ~a)) + blocks[13] + 1309151649;
+    b = (b << 21 | b >>> 11) + c << 0;
+    a += (c ^ (b | ~d)) + blocks[4] - 145523070;
+    a = (a << 6 | a >>> 26) + b << 0;
+    d += (b ^ (a | ~c)) + blocks[11] - 1120210379;
+    d = (d << 10 | d >>> 22) + a << 0;
+    c += (a ^ (d | ~b)) + blocks[2] + 718787259;
+    c = (c << 15 | c >>> 17) + d << 0;
+    b += (d ^ (c | ~a)) + blocks[9] - 343485551;
+    b = (b << 21 | b >>> 11) + c << 0;
+
+    if (this.first) {
+      this.h0 = a + 1732584193 << 0;
+      this.h1 = b - 271733879 << 0;
+      this.h2 = c - 1732584194 << 0;
+      this.h3 = d + 271733878 << 0;
+      this.first = false;
+    } else {
+      this.h0 = this.h0 + a << 0;
+      this.h1 = this.h1 + b << 0;
+      this.h2 = this.h2 + c << 0;
+      this.h3 = this.h3 + d << 0;
+    }
+  };
+
+  /**
+      * @method hex
+      * @memberof Md5
+      * @instance
+      * @description Output hash as hex string
+      * @returns {String} Hex string
+      * @see {@link md5.hex}
+      * @example
+      * hash.hex();
+      */
+  Md5.prototype.hex = function () {
+    this.finalize();
+
+    var h0 = this.h0,h1 = this.h1,h2 = this.h2,h3 = this.h3;
+
+    return HEX_CHARS[h0 >> 4 & 0x0F] + HEX_CHARS[h0 & 0x0F] +
+    HEX_CHARS[h0 >> 12 & 0x0F] + HEX_CHARS[h0 >> 8 & 0x0F] +
+    HEX_CHARS[h0 >> 20 & 0x0F] + HEX_CHARS[h0 >> 16 & 0x0F] +
+    HEX_CHARS[h0 >> 28 & 0x0F] + HEX_CHARS[h0 >> 24 & 0x0F] +
+    HEX_CHARS[h1 >> 4 & 0x0F] + HEX_CHARS[h1 & 0x0F] +
+    HEX_CHARS[h1 >> 12 & 0x0F] + HEX_CHARS[h1 >> 8 & 0x0F] +
+    HEX_CHARS[h1 >> 20 & 0x0F] + HEX_CHARS[h1 >> 16 & 0x0F] +
+    HEX_CHARS[h1 >> 28 & 0x0F] + HEX_CHARS[h1 >> 24 & 0x0F] +
+    HEX_CHARS[h2 >> 4 & 0x0F] + HEX_CHARS[h2 & 0x0F] +
+    HEX_CHARS[h2 >> 12 & 0x0F] + HEX_CHARS[h2 >> 8 & 0x0F] +
+    HEX_CHARS[h2 >> 20 & 0x0F] + HEX_CHARS[h2 >> 16 & 0x0F] +
+    HEX_CHARS[h2 >> 28 & 0x0F] + HEX_CHARS[h2 >> 24 & 0x0F] +
+    HEX_CHARS[h3 >> 4 & 0x0F] + HEX_CHARS[h3 & 0x0F] +
+    HEX_CHARS[h3 >> 12 & 0x0F] + HEX_CHARS[h3 >> 8 & 0x0F] +
+    HEX_CHARS[h3 >> 20 & 0x0F] + HEX_CHARS[h3 >> 16 & 0x0F] +
+    HEX_CHARS[h3 >> 28 & 0x0F] + HEX_CHARS[h3 >> 24 & 0x0F];
+  };
+
+  /**
+      * @method toString
+      * @memberof Md5
+      * @instance
+      * @description Output hash as hex string
+      * @returns {String} Hex string
+      * @see {@link md5.hex}
+      * @example
+      * hash.toString();
+      */
+  Md5.prototype.toString = Md5.prototype.hex;
+
+  /**
+                                               * @method digest
+                                               * @memberof Md5
+                                               * @instance
+                                               * @description Output hash as bytes array
+                                               * @returns {Array} Bytes array
+                                               * @see {@link md5.digest}
+                                               * @example
+                                               * hash.digest();
+                                               */
+  Md5.prototype.digest = function () {
+    this.finalize();
+
+    var h0 = this.h0,h1 = this.h1,h2 = this.h2,h3 = this.h3;
+    return [
+    h0 & 0xFF, h0 >> 8 & 0xFF, h0 >> 16 & 0xFF, h0 >> 24 & 0xFF,
+    h1 & 0xFF, h1 >> 8 & 0xFF, h1 >> 16 & 0xFF, h1 >> 24 & 0xFF,
+    h2 & 0xFF, h2 >> 8 & 0xFF, h2 >> 16 & 0xFF, h2 >> 24 & 0xFF,
+    h3 & 0xFF, h3 >> 8 & 0xFF, h3 >> 16 & 0xFF, h3 >> 24 & 0xFF];
+
+  };
+
+  /**
+      * @method array
+      * @memberof Md5
+      * @instance
+      * @description Output hash as bytes array
+      * @returns {Array} Bytes array
+      * @see {@link md5.array}
+      * @example
+      * hash.array();
+      */
+  Md5.prototype.array = Md5.prototype.digest;
+
+  /**
+                                               * @method arrayBuffer
+                                               * @memberof Md5
+                                               * @instance
+                                               * @description Output hash as ArrayBuffer
+                                               * @returns {ArrayBuffer} ArrayBuffer
+                                               * @see {@link md5.arrayBuffer}
+                                               * @example
+                                               * hash.arrayBuffer();
+                                               */
+  Md5.prototype.arrayBuffer = function () {
+    this.finalize();
+
+    var buffer = new ArrayBuffer(16);
+    var blocks = new Uint32Array(buffer);
+    blocks[0] = this.h0;
+    blocks[1] = this.h1;
+    blocks[2] = this.h2;
+    blocks[3] = this.h3;
+    return buffer;
+  };
+
+  /**
+      * @method buffer
+      * @deprecated This maybe confuse with Buffer in node.js. Please use arrayBuffer instead.
+      * @memberof Md5
+      * @instance
+      * @description Output hash as ArrayBuffer
+      * @returns {ArrayBuffer} ArrayBuffer
+      * @see {@link md5.buffer}
+      * @example
+      * hash.buffer();
+      */
+  Md5.prototype.buffer = Md5.prototype.arrayBuffer;
+
+  /**
+                                                     * @method base64
+                                                     * @memberof Md5
+                                                     * @instance
+                                                     * @description Output hash as base64 string
+                                                     * @returns {String} base64 string
+                                                     * @see {@link md5.base64}
+                                                     * @example
+                                                     * hash.base64();
+                                                     */
+  Md5.prototype.base64 = function () {
+    var v1,v2,v3,base64Str = '',bytes = this.array();
+    for (var i = 0; i < 15;) {
+      v1 = bytes[i++];
+      v2 = bytes[i++];
+      v3 = bytes[i++];
+      base64Str += BASE64_ENCODE_CHAR[v1 >>> 2] +
+      BASE64_ENCODE_CHAR[(v1 << 4 | v2 >>> 4) & 63] +
+      BASE64_ENCODE_CHAR[(v2 << 2 | v3 >>> 6) & 63] +
+      BASE64_ENCODE_CHAR[v3 & 63];
+    }
+    v1 = bytes[i];
+    base64Str += BASE64_ENCODE_CHAR[v1 >>> 2] +
+    BASE64_ENCODE_CHAR[v1 << 4 & 63] +
+    '==';
+    return base64Str;
+  };
+
+  var exports = createMethod();
+
+  if (COMMON_JS) {
+    module.exports = exports;
+  } else {
+    /**
+           * @method md5
+           * @description Md5 hash function, export to global in browsers.
+           * @param {String|Array|Uint8Array|ArrayBuffer} message message to hash
+           * @returns {String} md5 hashes
+           * @example
+           * md5(''); // d41d8cd98f00b204e9800998ecf8427e
+           * md5('The quick brown fox jumps over the lazy dog'); // 9e107d9d372bb6826bd81d3542a419d6
+           * md5('The quick brown fox jumps over the lazy dog.'); // e4d909c290d0fb1ca068ffaddf22cbd0
+           *
+           * // It also supports UTF-8 encoding
+           * md5('中文'); // a7bac2239fcdcb3a067903d8077c4a07
+           *
+           * // It also supports byte `Array`, `Uint8Array`, `ArrayBuffer`
+           * md5([]); // d41d8cd98f00b204e9800998ecf8427e
+           * md5(new Uint8Array([])); // d41d8cd98f00b204e9800998ecf8427e
+           */
+    root.md5 = exports;
+    if (AMD) {
+      !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+        return exports;
+      }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    }
+  }
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/node-libs-browser/mock/process.js */ 232), __webpack_require__(/*! (webpack)/buildin/global.js */ 3)))
+
+/***/ }),
+
+/***/ 232:
+/*!********************************************************!*\
+  !*** ./node_modules/node-libs-browser/mock/process.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports.nextTick = function nextTick(fn) {
+	setTimeout(fn, 0);
+};
+
+exports.platform = exports.arch = 
+exports.execPath = exports.title = 'browser';
+exports.pid = 1;
+exports.browser = true;
+exports.env = {};
+exports.argv = [];
+
+exports.binding = function (name) {
+	throw new Error('No such module. (Possibly not yet loaded)')
+};
+
+(function () {
+    var cwd = '/';
+    var path;
+    exports.cwd = function () { return cwd };
+    exports.chdir = function (dir) {
+        if (!path) path = __webpack_require__(/*! path */ 233);
+        cwd = path.resolve(dir, cwd);
+    };
+})();
+
+exports.exit = exports.kill = 
+exports.umask = exports.dlopen = 
+exports.uptime = exports.memoryUsage = 
+exports.uvCounters = function() {};
+exports.features = {};
+
+
+/***/ }),
+
+/***/ 233:
+/*!***********************************************!*\
+  !*** ./node_modules/path-browserify/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// resolves . and .. elements in a path array with directory names there
+// must be no slashes, empty elements, or device names (c:\) in the array
+// (so also no leading and trailing slashes - it does not distinguish
+// relative and absolute paths)
+function normalizeArray(parts, allowAboveRoot) {
+  // if the path tries to go above the root, `up` ends up > 0
+  var up = 0;
+  for (var i = parts.length - 1; i >= 0; i--) {
+    var last = parts[i];
+    if (last === '.') {
+      parts.splice(i, 1);
+    } else if (last === '..') {
+      parts.splice(i, 1);
+      up++;
+    } else if (up) {
+      parts.splice(i, 1);
+      up--;
+    }
+  }
+
+  // if the path is allowed to go above the root, restore leading ..s
+  if (allowAboveRoot) {
+    for (; up--; up) {
+      parts.unshift('..');
+    }
+  }
+
+  return parts;
+}
+
+// Split a filename into [root, dir, basename, ext], unix version
+// 'root' is just a slash, or nothing.
+var splitPathRe =
+    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
+var splitPath = function(filename) {
+  return splitPathRe.exec(filename).slice(1);
+};
+
+// path.resolve([from ...], to)
+// posix version
+exports.resolve = function() {
+  var resolvedPath = '',
+      resolvedAbsolute = false;
+
+  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+    var path = (i >= 0) ? arguments[i] : process.cwd();
+
+    // Skip empty and invalid entries
+    if (typeof path !== 'string') {
+      throw new TypeError('Arguments to path.resolve must be strings');
+    } else if (!path) {
+      continue;
+    }
+
+    resolvedPath = path + '/' + resolvedPath;
+    resolvedAbsolute = path.charAt(0) === '/';
+  }
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).join('/');
+
+  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+  var isAbsolute = exports.isAbsolute(path),
+      trailingSlash = substr(path, -1) === '/';
+
+  // Normalize the path
+  path = normalizeArray(filter(path.split('/'), function(p) {
+    return !!p;
+  }), !isAbsolute).join('/');
+
+  if (!path && !isAbsolute) {
+    path = '.';
+  }
+  if (path && trailingSlash) {
+    path += '/';
+  }
+
+  return (isAbsolute ? '/' : '') + path;
+};
+
+// posix version
+exports.isAbsolute = function(path) {
+  return path.charAt(0) === '/';
+};
+
+// posix version
+exports.join = function() {
+  var paths = Array.prototype.slice.call(arguments, 0);
+  return exports.normalize(filter(paths, function(p, index) {
+    if (typeof p !== 'string') {
+      throw new TypeError('Arguments to path.join must be strings');
+    }
+    return p;
+  }).join('/'));
+};
+
+
+// path.relative(from, to)
+// posix version
+exports.relative = function(from, to) {
+  from = exports.resolve(from).substr(1);
+  to = exports.resolve(to).substr(1);
+
+  function trim(arr) {
+    var start = 0;
+    for (; start < arr.length; start++) {
+      if (arr[start] !== '') break;
+    }
+
+    var end = arr.length - 1;
+    for (; end >= 0; end--) {
+      if (arr[end] !== '') break;
+    }
+
+    if (start > end) return [];
+    return arr.slice(start, end - start + 1);
+  }
+
+  var fromParts = trim(from.split('/'));
+  var toParts = trim(to.split('/'));
+
+  var length = Math.min(fromParts.length, toParts.length);
+  var samePartsLength = length;
+  for (var i = 0; i < length; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      samePartsLength = i;
+      break;
+    }
+  }
+
+  var outputParts = [];
+  for (var i = samePartsLength; i < fromParts.length; i++) {
+    outputParts.push('..');
+  }
+
+  outputParts = outputParts.concat(toParts.slice(samePartsLength));
+
+  return outputParts.join('/');
+};
+
+exports.sep = '/';
+exports.delimiter = ':';
+
+exports.dirname = function(path) {
+  var result = splitPath(path),
+      root = result[0],
+      dir = result[1];
+
+  if (!root && !dir) {
+    // No dirname whatsoever
+    return '.';
+  }
+
+  if (dir) {
+    // It has a dirname, strip trailing slash
+    dir = dir.substr(0, dir.length - 1);
+  }
+
+  return root + dir;
+};
+
+
+exports.basename = function(path, ext) {
+  var f = splitPath(path)[2];
+  // TODO: make this comparison case-insensitive on windows?
+  if (ext && f.substr(-1 * ext.length) === ext) {
+    f = f.substr(0, f.length - ext.length);
+  }
+  return f;
+};
+
+
+exports.extname = function(path) {
+  return splitPath(path)[3];
+};
+
+function filter (xs, f) {
+    if (xs.filter) return xs.filter(f);
+    var res = [];
+    for (var i = 0; i < xs.length; i++) {
+        if (f(xs[i], i, xs)) res.push(xs[i]);
+    }
+    return res;
+}
+
+// String.prototype.substr - negative index don't work in IE8
+var substr = 'ab'.substr(-1) === 'b'
+    ? function (str, start, len) { return str.substr(start, len) }
+    : function (str, start, len) {
+        if (start < 0) start = str.length + start;
+        return str.substr(start, len);
+    }
+;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 232)))
+
+/***/ }),
+
+/***/ 234:
+/*!****************************************!*\
+  !*** (webpack)/buildin/amd-options.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+
+/* WEBPACK VAR INJECTION */}.call(this, {}))
+
+/***/ }),
+
+/***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
   \***********************************/
@@ -7593,7 +8946,8 @@ module.exports = g;
 
 
 /***/ }),
-/* 4 */
+
+/***/ 4:
 /*!*******************************************!*\
   !*** E:/graduation/snp-uniapp/pages.json ***!
   \*******************************************/
@@ -7604,7 +8958,8 @@ module.exports = g;
 
 
 /***/ }),
-/* 5 */
+
+/***/ 5:
 /*!*******************************************************!*\
   !*** ./node_modules/@dcloudio/uni-stat/dist/index.js ***!
   \*******************************************************/
@@ -8490,7 +9845,8 @@ main();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 6 */
+
+/***/ 6:
 /*!******************************************************!*\
   !*** ./node_modules/@dcloudio/uni-stat/package.json ***!
   \******************************************************/
@@ -8500,7 +9856,8 @@ main();
 module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2.0.0-alpha-25120200103005","_inBundle":false,"_integrity":"sha512-nYoIrRV2e5o/vzr6foSdWi3Rl2p0GuO+LPY3JctyY6uTKgPnuH99d7aL/QQdJ1SacQjBWO+QGK1qankN7oyrWw==","_location":"/@dcloudio/uni-stat","_phantomChildren":{},"_requested":{"type":"tag","registry":true,"raw":"@dcloudio/uni-stat@alpha","name":"@dcloudio/uni-stat","escapedName":"@dcloudio%2funi-stat","scope":"@dcloudio","rawSpec":"alpha","saveSpec":null,"fetchSpec":"alpha"},"_requiredBy":["#USER","/","/@dcloudio/vue-cli-plugin-uni"],"_resolved":"https://registry.npmjs.org/@dcloudio/uni-stat/-/uni-stat-2.0.0-alpha-25120200103005.tgz","_shasum":"a77a63481f36474f3e86686868051219d1bb12df","_spec":"@dcloudio/uni-stat@alpha","_where":"/Users/guoshengqiang/Documents/dcloud-plugins/alpha/uniapp-cli","author":"","bugs":{"url":"https://github.com/dcloudio/uni-app/issues"},"bundleDependencies":false,"deprecated":false,"description":"","devDependencies":{"@babel/core":"^7.5.5","@babel/preset-env":"^7.5.5","eslint":"^6.1.0","rollup":"^1.19.3","rollup-plugin-babel":"^4.3.3","rollup-plugin-clear":"^2.0.7","rollup-plugin-commonjs":"^10.0.2","rollup-plugin-copy":"^3.1.0","rollup-plugin-eslint":"^7.0.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-replace":"^2.2.0","rollup-plugin-uglify":"^6.0.2"},"files":["dist","package.json","LICENSE"],"gitHead":"6be187a3dfe15f95dd6146d9fec08e1f81100987","homepage":"https://github.com/dcloudio/uni-app#readme","license":"Apache-2.0","main":"dist/index.js","name":"@dcloudio/uni-stat","repository":{"type":"git","url":"git+https://github.com/dcloudio/uni-app.git","directory":"packages/uni-stat"},"scripts":{"build":"NODE_ENV=production rollup -c rollup.config.js","dev":"NODE_ENV=development rollup -w -c rollup.config.js"},"version":"2.0.0-alpha-25120200103005"};
 
 /***/ }),
-/* 7 */
+
+/***/ 7:
 /*!************************************************************!*\
   !*** E:/graduation/snp-uniapp/pages.json?{"type":"style"} ***!
   \************************************************************/
@@ -8508,10 +9865,11 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/message": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/mine": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/write": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/layout": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/background": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/text": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/icon": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/button": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/design": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/tag": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/avatar": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/progress": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/shadow": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/basics/loading": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/component/bar": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/component/nav": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/component/list": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/component/card": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/component/form": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/component/timeline": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/component/chat": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/component/swiper": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/component/modal": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/component/steps": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/plugin/indexes": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/plugin/animation": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/plugin/drawer": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/plugin/verticalnav": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/test/test/test": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/login": { "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarBackgroundColor": "#0081ff", "navigationBarTitleText": "ColorUi for UniApp", "navigationStyle": "custom", "navigationBarTextStyle": "white" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": {}, "pages/index/message": {}, "pages/index/mine": {}, "pages/index/write": {}, "pages/basics/layout": {}, "pages/basics/background": {}, "pages/basics/text": {}, "pages/basics/icon": {}, "pages/basics/button": {}, "pages/basics/design": {}, "pages/basics/tag": {}, "pages/basics/avatar": {}, "pages/basics/progress": {}, "pages/basics/shadow": {}, "pages/basics/loading": {}, "pages/component/bar": {}, "pages/component/nav": {}, "pages/component/list": {}, "pages/component/card": {}, "pages/component/form": {}, "pages/component/timeline": {}, "pages/component/chat": {}, "pages/component/swiper": {}, "pages/component/modal": {}, "pages/component/steps": {}, "pages/plugin/indexes": {}, "pages/plugin/animation": {}, "pages/plugin/drawer": {}, "pages/plugin/verticalnav": {}, "pages/test/test/test": {}, "pages/login/login": {}, "pages/login/register": {}, "pages/personal/information": {} }, "globalStyle": { "navigationBarBackgroundColor": "#0081ff", "navigationBarTitleText": "ColorUi for UniApp", "navigationStyle": "custom", "navigationBarTextStyle": "white" } };exports.default = _default;
 
 /***/ }),
-/* 8 */
+
+/***/ 8:
 /*!***********************************************************!*\
   !*** E:/graduation/snp-uniapp/pages.json?{"type":"stat"} ***!
   \***********************************************************/
@@ -8521,131 +9879,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "__UNI__0AA3F88" };exports.default = _default;
 
-/***/ }),
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
-/*!**********************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \**********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode, /* vue-cli only */
-  components, // fixed by xxxxxx auto components
-  renderjs // fixed by xxxxxx renderjs
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // fixed by xxxxxx auto components
-  if (components) {
-    options.components = Object.assign(components, options.components || {})
-  }
-  // fixed by xxxxxx renderjs
-  if (renderjs) {
-    (renderjs.beforeCreate || (renderjs.beforeCreate = [])).unshift(function() {
-      this[renderjs.__module] = this
-    });
-    (options.mixins || (options.mixins = [])).push(renderjs)
-  }
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
 /***/ })
-]]);
+
+}]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

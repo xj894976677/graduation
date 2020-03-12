@@ -1,69 +1,39 @@
 {
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"es6": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.9.2",
-	"appid": "touristappid",
-	"projectname": "snp-uniapp",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"current": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": 0,
-					"name": "表单",
-					"pathName": "pages/component/form",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "pages/login/login",
-					"pathName": "pages/login/login",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/component/card",
-					"pathName": "pages/component/card",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/basics/button",
-					"pathName": "pages/basics/button",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.9.2",
+  "appid": "touristappid",
+  "projectname": "snp-uniapp",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 0,
+      "list": [
+        {
+          "name": "表单",
+          "query": "",
+          "id": 0,
+          "pathName": "pages/component/form"
+        }
+      ]
+    }
+  }
 }

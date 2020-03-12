@@ -30,7 +30,9 @@
     "pages/plugin/drawer",
     "pages/plugin/verticalnav",
     "pages/test/test/test",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/login/register",
+    "pages/personal/information"
   ],
   "subPackages": [],
   "window": {
@@ -41,7 +43,7 @@
   },
   "tabBar": {
     "color": "#7a7a7a",
-    "selectedColor": "#ff9700",
+    "selectedColor": "#0081ff",
     "backgroundColor": "#ffffff",
     "list": [
       {

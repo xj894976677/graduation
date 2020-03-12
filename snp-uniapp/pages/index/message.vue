@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-orange">
+		<cu-custom bgColor="bg-gradual-blue">
 			<block slot="content">消息</block>
 		</cu-custom>
 	</view>

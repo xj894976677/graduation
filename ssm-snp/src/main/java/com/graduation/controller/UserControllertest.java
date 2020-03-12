@@ -20,6 +20,7 @@ import java.util.Map;
  * @Description:cn.xueden.controller
  * @version:1.0
  */
+@RequestMapping(value = "/test")
 @RestController
 public class UserControllertest {
 

@@ -9,5 +9,23 @@
         select userId from userlogin where userId = #{userId} and password = #{password}
     </select>
 
+    <select id="queryUser" parameterType="map" resultType="Integer">
+        select count(1) from userlogin where userId = #{userId}
+    </select>
 
+    <insert id="addUser" parameterType="map">
+        insert into userlogin(
+        userId,
+        password) values (
+        #{userId},
+        #{password})
+    </insert>
+
+    <insert id="addInformation" parameterType="map">
+        insert into userinformation(userId) values (#{userId})
+    </insert>
+
+    <select id="userInformation" parameterType="map" resultType="com.graduation.model.UserInformation">
+        select * from userinformation where userId = #{userId}
+    </select>
 </mapper>

@@ -124,6 +124,10 @@
             "path" : "pages/login/register",
             "style" : {}
         }
+        ,{
+            "path" : "pages/personal/information",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
@@ -148,7 +152,7 @@
 	},
 	"tabBar": {
 	    "color": "#7a7a7a",
-	    "selectedColor": "#ff9700",
+	    "selectedColor": "#0081ff",
 	    "backgroundColor": "#ffffff",
 	    "list": [{
 	        "pagePath": "pages/index/index",
