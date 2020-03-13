@@ -128,6 +128,30 @@
             "path" : "pages/personal/information",
             "style" : {}
         }
+        ,{
+            "path" : "pages/personal/changemail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/personal/newmail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/login/forget_password",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/login/mail_login",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/login/verification_mail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/login/reset_password",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

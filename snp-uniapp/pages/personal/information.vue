@@ -43,14 +43,10 @@
 			</view>
 			<view class="cu-form-group">
 				<view class="title">邮箱</view>
-				<input placeholder="请输入邮箱" name="input" v-model="mail"></input>
-				<button class='cu-btn bg-blue' v-show="captchaFlag" @tap="getCaptcha">{{captchaName}}</button>
-				<button class='cu-btn bg-grey' disabled v-show="!captchaFlag">{{captchaTime}}秒后重新获取</button>
+				<input placeholder="请设置邮箱" name="input" v-model="mail" disabled="true"></input>
+				<button class='cu-btn bg-blue' @tap="changemail">{{captchaName}}</button>
 			</view>
-			<view class="cu-form-group"  v-show="captchaShow">
-				<view class="title">验证码</view>
-				<input placeholder="请输入验证码" type="number" name="captcha" maxlength="6" v-model="captcha"></input>
-			</view>
+
 			
 			
 			<view class="padding flex flex-direction margin-top">
@@ -75,10 +71,7 @@
 				sex: ['男', '女'],
 				index: -1,
 				captcha: '',
-				captchaFlag: true,
-				captchaShow: false,
-				captchaName: "获取验证码",
-				captchaTime: 60,
+				captchaName: "修改邮箱",
 			};
 		},
 		onLoad(e) {
@@ -95,6 +88,9 @@
 			if(uni.getStorageSync('sex') == '女'){
 				_this.index = 1
 			}
+			if(_this.mail == ''){
+				_this.captchaName = "绑定邮箱"
+			}
 		},
 		methods: {
 			sexChange(e) {
@@ -103,32 +99,11 @@
 			DateChange(e) {
 				this.date = e.detail.value
 			},
-			// 获取验证码
-			getCaptcha() {
-				let _this = this;
-				console.log(_this.mail)
-				console.log(_this.birthday)
-				console.log(_this.index)
-				
-				if (_this.mail != uni.getStorageSync('mail')) {
-					if (_this.captchaFlag) {
-						_this.captchaFlag = false;
-						_this.captchaShow = true;
-						var interval = setInterval(() => {--_this.captchaTime;}, 1000)
-						setTimeout(() => {
-							clearInterval(interval)
-							_this.captchaFlag = true
-							_this.captchaTime = 60
-						}, 60000)
-					}
-				} else {
-					uni.showToast({
-						title: "邮箱并未改变，无法发送验证码",
-						icon: "none"
-					});
-					return;
-				}
-				
+			// 跳转到修改邮箱页面
+			changemail() {
+				uni.navigateTo({
+				    url: './changemail?mail='+this.mail
+				});
 			},
 			change() {
 				let _this = this;

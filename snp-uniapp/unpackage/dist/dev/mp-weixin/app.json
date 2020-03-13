@@ -32,7 +32,13 @@
     "pages/test/test/test",
     "pages/login/login",
     "pages/login/register",
-    "pages/personal/information"
+    "pages/personal/information",
+    "pages/personal/changemail",
+    "pages/personal/newmail",
+    "pages/login/forget_password",
+    "pages/login/mail_login",
+    "pages/login/verification_mail",
+    "pages/login/reset_password"
   ],
   "subPackages": [],
   "window": {

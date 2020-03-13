@@ -14,6 +14,7 @@ public class MailUtil {
     private static final String MAIL_TRANSPORT_PROTOCOL ="mail.transport.protocol";//邮件的传输协议
     private static final String MAIL_TRANSPORT_PROTOCOL_VALUE ="smtp";//使用smtp协议
     private static final String MAIL_HOST ="mail.host";//发送邮件的主机
+//    private static final String MAIL_HOST_VALUE ="smtp.qq.com"; //发送邮件的服务器地址
     private static final String MAIL_HOST_VALUE ="smtp.163.com"; //发送邮件的服务器地址
     private static final String MAIL_DEBUG ="mail.debug"; //调试模式
     private static final String MAIL_SMTP_AUTH ="mail.smtp.auth";//邮件smtp作者确认
@@ -21,14 +22,17 @@ public class MailUtil {
     private static final String SEND_ENCODING_LAYOUT ="text/html;charset=utf-8";//发送邮件的编码格式
 
     //邮件编辑信息(仅需写上自己的)
+//    private static final String MAIL_FROM ="894976677@qq.com";//邮件发送人
     private static final String MAIL_FROM ="xj894976677@163.com";//邮件发送人
+
+    //    private static final String MAIL_FROM_PASSWORD ="orbztxdzfklcbeeg";//qq邮件发送人授权码
     private static final String MAIL_FROM_PASSWORD ="xj123456";//邮件发送人授权码
-    private static final String MAIL_SUBJECT_REGISTER ="xxxx【注册链接】";//邮件主题(注册链接)
-    private static final String MAIL_SUBJECT_VERIFY_CODE ="xxxx【邮箱验证码】";//邮件主题(邮箱验证码)
-    private static final String MAIL_ORGANIZATION ="猴子论";//邮件组织
-    private static final String MAIL_WEBSITE ="https://www.xxxx.com/";//组织主页
-    private static final String MAIL_ORGANIZATION_LOGO ="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583575446715&di=6d65edf4d72abe1525a85a74dd06f4a8&imgtype=0&src=http%3A%2F%2Fstatics.techuangyi.com%2Fuploadfile%2F2016%2F07%2F05%2Fe970018668c12c5e670edfb4276adbd3.jpg";//网站logo
-    private static final String MAIL_ORGANIZATION_QRCODE ="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583575446715&di=6d65edf4d72abe1525a85a74dd06f4a8&imgtype=0&src=http%3A%2F%2Fstatics.techuangyi.com%2Fuploadfile%2F2016%2F07%2F05%2Fe970018668c12c5e670edfb4276adbd3.jpg";//网站二维码图片
+    private static final String MAIL_SUBJECT_REGISTER ="亚当【注册链接】";//邮件主题(注册链接)
+    private static final String MAIL_SUBJECT_VERIFY_CODE ="亚当【邮箱验证码】";//邮件主题(邮箱验证码)
+    private static final String MAIL_ORGANIZATION ="亚当";//邮件组织
+    private static final String MAIL_WEBSITE ="http://xiangjun.online/";//组织主页
+    private static final String MAIL_ORGANIZATION_LOGO ="https://thumbs.dreamstime.com/b/%E6%9C%89%E7%A5%9E%E7%9A%84%E5%86%A0%E7%9A%84%E4%B8%8A%E5%B8%9D%E5%92%8C%E4%BA%9A%E5%BD%93%E6%96%AF%E6%89%8B-72528101.jpg";//网站logo
+    private static final String MAIL_ORGANIZATION_QRCODE ="http://a1.qpic.cn/psc?/V10D7PiQ3DpDAI/x72OnJVLZMT7f*Wauau6UEuGykqNvrJNnBdiM2M0m1Jyatxt*VghxZEFCLp7MDzvaDpOSElHMryp4buREodaZQ!!/b&ek=1&kp=1&pt=0&bo=AAP6AgAD.gIRGS4!&tl=3&vuin=894976677&tm=1584104400&sce=60-2-2&rf=viewer_4";//网站二维码图片
 
 
     public static void main(String[] args) throws Exception{
@@ -49,13 +53,13 @@ public class MailUtil {
                         MAIL_ORGANIZATION_QRCODE),
                 MAIL_FROM_PASSWORD);
     }
-    public static void sendEmail(String from) throws Exception {
+    public static void sendEmail(String from, String code) throws Exception {
         sendEmail(MAIL_FROM,
                 from,
                 MAIL_SUBJECT_VERIFY_CODE,
                 prettyLayout(MAIL_ORGANIZATION,MAIL_WEBSITE,
                         MAIL_ORGANIZATION_LOGO,
-                        prettyQrCodeLayout("2分钟","580123"),
+                        prettyQrCodeLayout("2分钟",code),
                         MAIL_ORGANIZATION_QRCODE),
                 MAIL_FROM_PASSWORD);
     }
@@ -171,7 +175,7 @@ public class MailUtil {
      * @return
      */
     private static String prettyLayout(String websiteName,String principal,String principalImage,String business,String...qrCode){
-        return mailHead(websiteName,principal,principalImage,"","")+
+        return mailHead(websiteName,principal,principalImage,"200px","100px")+
                 business +
                 mailFoot(websiteName,principal,qrCode);
 
@@ -194,7 +198,7 @@ public class MailUtil {
                 "padding-bottom: 20px;\">\n" +
                 "                    <div style=\"font-size: 18px;\n" +
                 "color:\n" +
-                "#03c5ff;\">扫描关注"+websiteName+"公众号</div>\n" +
+                "#03c5ff;\">扫描二维码联系"+websiteName+"人员</div>\n" +
                 "                </td>\n" +
                 "            </tr>\n" ;
     }
@@ -206,14 +210,14 @@ public class MailUtil {
      * @return
      */
     private static String prettyQrCodeLayout(String validity,String verifyCode){
-        return "<div>邮箱验证码的有效期为:"+validity+"邮箱验证码如下:</div>\n" +
+        return "<div>邮箱验证码如下, \n" + "邮箱验证码的有效期为:"+validity+ "</div>" +
                 "                </td>\n" +
                 "            </tr>\n" +
                 "            <tr>\n" +
                 "                <td colspan=\"2\" style=\"font-size:\n" +
                 "12px; line-height: 20px; padding-top: 14px;\n" +
                 "padding-bottom: 25px; color: #909090;\">\n" +
-                "                    <div>"+verifyCode+"</div>\n" +
+                "                    <div style='font-weight:bold;font-size:30px;'>"+verifyCode+"</div>\n" +
                 "                </td>\n" +
                 "            </tr>\n";
     }

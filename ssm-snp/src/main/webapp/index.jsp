@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>图书借阅管理系统</title>
+    <title>亚当</title>
 </head>
 <body>
-<h2>基于Vue+ElementUI+SSM图书借阅管理系统</h2>
+<h2>后台启动成功，前台可以进行接口测试</h2>
 </body>
 </html>
 

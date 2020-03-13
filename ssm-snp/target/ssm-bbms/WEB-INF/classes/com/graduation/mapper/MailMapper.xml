@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.graduation.mapper_api.MailMapper">
+
+    <!--根据条件查询邮箱是否存在-->
+    <select id="mailExistence" parameterType="map" resultType="Integer">
+        select count(1) from mailcode where mail = #{mail}
+    </select>
+    <!--新增邮箱-->
+    <insert id="addNewMail" parameterType="map">
+        insert into mailcode(
+        mail) values (
+        #{mail})
+    </insert>
+    <!--更新验证码及过期时间-->
+    <update id="updateCode" parameterType="map">
+        update mailcode
+        set
+        code = #{code},
+        expirationDate = #{expirationDate}
+        where mail = #{mail}
+    </update>
+    <!--根据邮箱查询信息-->
+    <select id="selectMailCode" parameterType="map" resultType="com.graduation.model.MailCode">
+        select * from mailcode where mail = #{mail}
+    </select>
+</mapper>

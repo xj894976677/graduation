@@ -166,6 +166,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
 var _util = _interopRequireDefault(__webpack_require__(/*! @/common/util.js */ 229));
 var _graceChecker = _interopRequireDefault(__webpack_require__(/*! @/common/graceChecker.js */ 230));
 var _md = _interopRequireDefault(__webpack_require__(/*! @/common/md5.js */ 231));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
@@ -200,10 +209,17 @@ var _md = _interopRequireDefault(__webpack_require__(/*! @/common/md5.js */ 231)
 //
 //
 //
-var _default = { data: function data() {return { userId: "", password: "" };}, methods: { login: function login() {var _this = this;var registerRule = [{ name: 'userId', checkType: 'notnull', checkRule: '', errorMsg: '请输入账号' }, { name: 'password', checkType: 'notnull', errorMsg: '请输入登录密码' }, { name: 'password', checkType: 'string', checkRule: '6,32', errorMsg: '密码最为 6-32 个字符' }];var checkRes = _graceChecker.default.check(_this, registerRule);if (checkRes) {uni.request({ url: 'http://localhost:8181/login', //仅为示例，并非真实接口地址。
-          data: {
-            userId: this.userId,
-            password: (0, _md.default)(this.password) },
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = { data: function data() {return { modalName: null, userId: "", password: "" };}, methods: { showModal: function showModal(e) {this.modalName = e.currentTarget.dataset.target;}, hideModal: function hideModal(e) {this.modalName = null;}, login: function login() {var _this = this;var registerRule = [{ name: 'userId', checkType: 'notnull', checkRule: '', errorMsg: '请输入账号' }, { name: 'password', checkType: 'notnull', errorMsg: '请输入登录密码' }, { name: 'password', checkType: 'string', checkRule: '6,32', errorMsg: '密码最为 6-32 个字符' }];var checkRes = _graceChecker.default.check(_this, registerRule);if (checkRes) {uni.request({ url: 'http://localhost:8181/login', //仅为示例，并非真实接口地址。
+          data: { userId: this.userId, password: (0, _md.default)(this.password) },
 
           header: {
             'custom-header': 'login' //自定义请求头信息
@@ -242,7 +258,16 @@ var _default = { data: function data() {return { userId: "", password: "" };}, m
         url: './register' });
 
     },
-    forget: function forget() {
+    forgetPassword: function forgetPassword() {
+      console.log("forgetPassword");
+      uni.navigateTo({
+        url: './forget_password' });
+
+    },
+    mailLogin: function mailLogin() {
+      console.log("mailLogin");
+      uni.navigateTo({
+        url: './mail_login' });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

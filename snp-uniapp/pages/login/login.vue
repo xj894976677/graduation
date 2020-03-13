@@ -22,8 +22,17 @@
 				<button class="cu-btn bg-blue lg round" @tap="login">登录</button>
 			</view>
 			<view style="display: flex; justify-content: space-between;">
-				<view style="color: #888888; font-size: 30upx; margin-left: 40upx; margin-top: 16upx;" @tap="forget">忘记密码</view>
+				<view style="color: #888888; font-size: 30upx; margin-left: 40upx; margin-top: 16upx;" data-target="bottomModal" @tap="showModal">忘记密码</view>
 				<view style="color: #888888; font-size: 30upx; margin-right: 40upx; margin-top: 16upx;" @tap="register">注册账户</view>
+			</view>
+		</view>
+
+		<view class="cu-modal bottom-modal" :class="modalName=='bottomModal'?'show':''" @tap="hideModal">
+			<view class="cu-dialog">
+				<view class="padding-xl bg-gradual-blue">
+					<button class="modelbutton bg-gradual-blue" @tap="forgetPassword">重置密码</button>
+					<button class="modelbutton bg-gradual-blue" @tap="mailLogin" style="margin-top: 20upx;">邮箱验证码登录</button>
+				</view>
 			</view>
 		</view>
 
@@ -37,11 +46,18 @@
 	export default {
 		data() {
 			return {
+				modalName: null,
 				userId: "",
 				password: ""
 			}
 		},
 		methods: {
+			showModal(e) {
+				this.modalName = e.currentTarget.dataset.target
+			},
+			hideModal(e) {
+				this.modalName = null
+			},
 			login(){
 				let _this = this
 				var registerRule = [{
@@ -107,8 +123,17 @@
 				    url: './register'
 				});
 			},
-			forget(){
-				
+			forgetPassword(){
+				console.log("forgetPassword")
+				uni.navigateTo({
+				    url: './forget_password'
+				});
+			},
+			mailLogin(){
+				console.log("mailLogin")
+				uni.navigateTo({
+				    url: './mail_login'
+				});
 			}
 		}
 	}
@@ -133,4 +158,8 @@ page{
 		justify-content: center;
 		
 	}
+.modelbutton{
+	color: #ffffff;
+	font-size: 50upx;
+}
 </style>

@@ -34,9 +34,17 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public void addInformation(Map<String, Object> map) {
+        userMapper.addInformation(map);
+    }
+
+    @Override
 //    通过id查询用户信息
     public UserInformation userInformation(Map<String, Object> map) {
         UserInformation userInformation = userMapper.userInformation(map);
+        if (userInformation == null){
+            return null;
+        }
         if (userInformation.getUserName() == null){
             userInformation.setUserName("");
         }
@@ -64,5 +72,30 @@ public class UserServiceImpl implements IUserService {
             userInformation.setMail("");
         }
         return userInformation;
+    }
+
+    @Override
+    public void updateMail(Map<String, Object> map) {
+        userMapper.updateMail(map);
+    }
+
+    @Override
+    public Integer queryMail(Map<String, Object> map) {
+        return userMapper.queryMail(map);
+    }
+
+    @Override
+    public String userIdfromMail(Map<String, Object> map) {
+        return userMapper.userIdfromMail(map);
+    }
+
+    @Override
+    public String mailfromUserId(Map<String, Object> map) {
+        return userMapper.mailfromUserId(map);
+    }
+
+    @Override
+    public void updatePassword(Map<String, Object> map) {
+        userMapper.updatePassword(map);
     }
 }

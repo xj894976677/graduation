@@ -193,10 +193,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
 var _util = _interopRequireDefault(__webpack_require__(/*! @/common/util.js */ 229));
 var _graceChecker = _interopRequireDefault(__webpack_require__(/*! @/common/graceChecker.js */ 230));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
@@ -257,30 +253,9 @@ var _graceChecker = _interopRequireDefault(__webpack_require__(/*! @/common/grac
 //
 //
 //
-//
-//
-//
-//
-var _default = { data: function data() {return { userName: '', mail: '', birthday: '1990-01-01', telephone: '', synopsis: '', sex: ['男', '女'], index: -1, captcha: '', captchaFlag: true, captchaShow: false, captchaName: "获取验证码", captchaTime: 60 };}, onLoad: function onLoad(e) {console.log("加载信息界面");var _this = this;_this.userName = uni.getStorageSync('userName');_this.mail = uni.getStorageSync('mail');_this.birthday = uni.getStorageSync('birthday');_this.telephone = uni.getStorageSync('telephone');_this.synopsis = uni.getStorageSync('synopsis');if (uni.getStorageSync('sex') == '男') {_this.index = 0;}if (uni.getStorageSync('sex') == '女') {_this.index = 1;}}, methods: { sexChange: function sexChange(e) {this.index = e.detail.value;}, DateChange: function DateChange(e) {this.date = e.detail.value;}, // 获取验证码
-    getCaptcha: function getCaptcha() {var _this = this;console.log(_this.mail);console.log(_this.birthday);console.log(_this.index);if (_this.mail != uni.getStorageSync('mail')) {if (_this.captchaFlag) {_this.captchaFlag = false;_this.captchaShow = true;var interval = setInterval(function () {--_this.captchaTime;}, 1000);setTimeout(function () {clearInterval(interval);_this.captchaFlag = true;_this.captchaTime = 60;}, 60000);}} else {uni.showToast({ title: "邮箱并未改变，无法发送验证码", icon: "none" });return;}
-
-    },
-    change: function change() {
-      var _this = this;
-      // 注册信息校验
-      var captchaRule = [
-      {
-        name: 'captcha',
-        checkType: 'notnull',
-        errorMsg: '请输入验证码' },
-
-      {
-        name: 'captcha',
-        checkType: 'string',
-        checkRule: '6',
-        errorMsg: '验证码为 6 个数字' }];
-
-
+var _default = { data: function data() {return { userName: '', mail: '', birthday: '1990-01-01', telephone: '', synopsis: '', sex: ['男', '女'], index: -1, captcha: '', captchaName: "修改邮箱" };}, onLoad: function onLoad(e) {console.log("加载信息界面");var _this = this;_this.userName = uni.getStorageSync('userName');_this.mail = uni.getStorageSync('mail');_this.birthday = uni.getStorageSync('birthday');_this.telephone = uni.getStorageSync('telephone');_this.synopsis = uni.getStorageSync('synopsis');if (uni.getStorageSync('sex') == '男') {_this.index = 0;}if (uni.getStorageSync('sex') == '女') {_this.index = 1;}if (_this.mail == '') {_this.captchaName = "绑定邮箱";}}, methods: { sexChange: function sexChange(e) {this.index = e.detail.value;}, DateChange: function DateChange(e) {this.date = e.detail.value;}, // 跳转到修改邮箱页面
+    changemail: function changemail() {uni.navigateTo({ url: './changemail?mail=' + this.mail });}, change: function change() {var _this = this; // 注册信息校验
+      var captchaRule = [{ name: 'captcha', checkType: 'notnull', errorMsg: '请输入验证码' }, { name: 'captcha', checkType: 'string', checkRule: '6', errorMsg: '验证码为 6 个数字' }];
       var teletphoneRule = [
       {
         name: 'phone',

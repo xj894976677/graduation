@@ -29,4 +29,8 @@ page{
 		-webkit-justify-content: center;
 		        justify-content: center;
 }
+.modelbutton{
+	color: #ffffff;
+	font-size: 50rpx;
+}
 
