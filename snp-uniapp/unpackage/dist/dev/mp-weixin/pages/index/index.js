@@ -165,40 +165,15 @@ var _default =
       // error
     }
     console.log(this.userIds);
-    uni.request({
-      url: 'http://localhost:8181/userInformation', //仅为示例，并非真实接口地址。
-      data: {
-        userId: this.userIds },
-
-      header: {
-        'custom-header': 'userInformation' //自定义请求头信息
-      },
-      method: "POST",
-      dataType: "json",
-      success: function success(res) {
-        console.log(res.data);
-        if (res.data.info.code == '0') {
-          uni.setStorageSync('userName', res.data.data.userName);
-          uni.setStorageSync('mail', res.data.data.mail);
-          uni.setStorageSync('telephone', res.data.data.telephone);
-          uni.setStorageSync('sex', res.data.data.sex);
-          uni.setStorageSync('birthday', res.data.data.birthday);
-          uni.setStorageSync('synopsis', res.data.data.synopsis);
-          console.log("获取用户信息成功");
-        } else {
-          console.log("获取用户信息失败");
-        }
-      },
-      fail: function fail() {
-        console.log("请求失败");
-      } });
 
   },
   methods: {
     suserid: function suserid() {
-      uni.navigateTo({
-        url: '/pages/personal/information' });
-
+      try {
+        uni.clearStorageSync();
+      } catch (e) {
+        // error
+      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -71,7 +71,7 @@
 				var checkRes = graceChecker.check(_this, registerRule);
 				if (checkRes) {
 					uni.request({
-					    url: 'http://localhost:8181/register', //仅为示例，并非真实接口地址。
+					    url: this.Server_IP + 'register', //仅为示例，并非真实接口地址。
 					    data: {
 					        userId: this.userId,
 							password: md5(this.password)

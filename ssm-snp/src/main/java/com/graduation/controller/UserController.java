@@ -1,11 +1,10 @@
 package com.graduation.controller;
 
 import com.graduation.common.AssembleResponseMsg;
-import com.graduation.model.ResponseBody;
+import com.graduation.http_model.ResponseBody;
 import com.graduation.model.UserInformation;
-import com.graduation.service_api.IMailService;
+import com.graduation.service_api.IUserFieldService;
 import com.graduation.service_api.IUserService;
-import com.graduation.service_impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +17,8 @@ import java.util.Map;
 public class UserController {
     @Autowired
     private IUserService userService;
-
+    @Autowired
+    private IUserFieldService userFieldService;
 
     @RequestMapping(value = "/login",produces = "application/json;charset=utf-8")
     public ResponseBody login(@RequestBody Map<String,Object> map){
@@ -38,7 +38,12 @@ public class UserController {
         Integer number = userService.queryUser(map);
         if (number == 0){
             try{
+//                增加注册登录
                 userService.addUser(map);
+//                创建用户信息
+                userService.addInformation(map);
+//                创建用户爱好
+                userFieldService.addField(map);
                 return new AssembleResponseMsg().success(all);
             }catch (Exception exception){
                 return new AssembleResponseMsg().failure(200,"error","注册失败,服务器错误");
@@ -112,5 +117,17 @@ public class UserController {
         }else {
             return new AssembleResponseMsg().failure(200, "error", "此用户未绑定邮箱，无法进行此操作");
         }
+    }
+//    更改用户信息接口
+    @RequestMapping(value = "/changeInformation",produces = "application/json;charset=utf-8")
+    public ResponseBody changeInformation(@RequestBody Map<String,Object> map) {
+        Map<String, String> all = new HashMap<>();
+        try {
+            userService.updateInformation(map);
+            userFieldService.updateField(map);
+        }catch (Exception e){
+            return new AssembleResponseMsg().failure(200, "error", "更新失败");
+        }
+        return new AssembleResponseMsg().success(all);
     }
 }

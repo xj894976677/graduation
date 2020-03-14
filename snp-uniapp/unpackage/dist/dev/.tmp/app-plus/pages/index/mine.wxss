@@ -1,0 +1,21 @@
+
+page {
+	background-color: #f9fafb;
+}
+.vip-card {
+	margin-top: 10rpx;
+	margin-bottom: 10rpx;
+}
+.margin-left-bg {
+	margin-left: 50rpx;
+}
+.margin-top-sm {
+	margin-top: 20rpx;
+}
+.margin-top {
+	margin-top: 40rpx;
+}
+.margin-right {
+	margin-right: 4rpx;
+}
+

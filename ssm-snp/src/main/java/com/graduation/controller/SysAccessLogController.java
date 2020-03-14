@@ -1,7 +1,7 @@
 package com.graduation.controller;
 
 import com.graduation.common.AssembleResponseMsg;
-import com.graduation.model.ResponseBody;
+import com.graduation.http_model.ResponseBody;
 import com.graduation.service_api.ISysAccessLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

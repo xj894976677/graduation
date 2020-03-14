@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.graduation.mapper_api.UserFieldMapper">
+
+    <!--根据条件查询用户爱好类型-->
+    <select id="queryField" parameterType="map" resultType="com.graduation.model.UserField">
+        select * from userfield where userId = #{userId}
+    </select>
+
+    <!--新增用户爱好-->
+    <insert id="addField" parameterType="map">
+        insert into userfield(
+        userId,
+        funny,
+        anime,
+        news,
+        fashion,
+        motion,
+        science) values (
+        #{userId},
+        0,
+        0,
+        0,
+        0,
+        0,
+        0)
+    </insert>
+
+
+    <!--修改用户爱好-->
+    <update id="updateField" parameterType="com.graduation.model.UserField">
+        update userfield
+        set
+        funny = #{funny},
+        anime = #{anime},
+        news = #{news},
+        fashion = #{fashion},
+        motion = #{motion},
+        science = #{science}
+        where userId = #{userId}
+    </update>
+</mapper>

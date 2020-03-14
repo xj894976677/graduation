@@ -1,0 +1,2 @@
+setCssToHead(["wx-button .",[1],"cu-tag { position: absolute; top: ",[0,8],"; right: ",[0,8],"; }\n",],undefined,{path:"./pages/component/modal.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/component/modal.wxml') } }));

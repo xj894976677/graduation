@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"box { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; height: 100px; }\n",],undefined,{path:"./pages/basics/design.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/basics/design.wxml') } }));

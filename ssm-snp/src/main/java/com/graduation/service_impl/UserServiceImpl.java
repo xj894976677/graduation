@@ -1,5 +1,6 @@
 package com.graduation.service_impl;
 
+import com.graduation.common.DateUtil;
 import com.graduation.mapper_api.UserMapper;
 import com.graduation.model.UserInformation;
 import com.graduation.service_api.IUserService;
@@ -71,6 +72,7 @@ public class UserServiceImpl implements IUserService {
         if (userInformation.getMail() == null){
             userInformation.setMail("");
         }
+
         return userInformation;
     }
 
@@ -97,5 +99,18 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void updatePassword(Map<String, Object> map) {
         userMapper.updatePassword(map);
+    }
+
+    @Override
+    public void updateInformation(Map<String,Object> map) {
+        UserInformation userInformation = new UserInformation();
+        userInformation.setUserName((String) map.get("userName"));
+        userInformation.setTelephone((String) map.get("telephone"));
+        userInformation.setSynopsis((String) map.get("synopsis"));
+        userInformation.setSex((String) map.get("sex"));
+        userInformation.setUserId((String) map.get("userId"));
+        java.sql.Date date = DateUtil.getSqlStamp((String) map.get("birthday"),"yyyy-MM-dd");
+        userInformation.setBirthday(date);
+        userMapper.updateInformation(userInformation);
     }
 }

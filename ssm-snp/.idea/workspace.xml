@@ -7,53 +7,147 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec2e3a64-d865-4b32-8c68-f660c7938b7c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/MailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/MailMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/MailMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/model/MailCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IMailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/MailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserFieldController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserFieldMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserFieldMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/model/UserField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserFieldService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserFieldServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/index/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/login/forget_password.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/login/forget_password.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/login/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/login/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/login/mail_login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/login/mail_login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/login/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/login/register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/login/reset_password.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/login/reset_password.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/login/verification_mail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/login/verification_mail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/personal/changemail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/personal/changemail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/personal/information.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/personal/information.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/personal/newmail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/personal/newmail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/Verification_mail.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/Verification_mail.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/forget_password.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/forget_password.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/login.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/login.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/mail_login.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/mail_login.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/register.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/register.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/reset_password.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/reset_password.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/personal/changemail.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/personal/changemail.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/personal/information.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/personal/information.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/personal/newmail.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/personal/newmail.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/forget_password.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/forget_password.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/login.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/login.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/login.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/login.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/mail_login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/mail_login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/mail_login.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/mail_login.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/reset_password.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/reset_password.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/verification_mail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/verification_mail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/verification_mail.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/verification_mail.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/changemail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/changemail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/changemail.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/changemail.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/information.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/information.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/information.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/information.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/newmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/newmail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/newmail.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/newmail.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/project.config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/common/AssembleResponseMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/common/AssembleResponseMsg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/common/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/common/DateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/common/MailUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/common/MailUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/MailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/MailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/SysAccessLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/SysAccessLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/TestOne.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserControllertest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/Usertest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/BookMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMappertest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMappertest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/BookMapper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMappertest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMappertest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/model/BookSub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/model/InfoMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/http_model/InfoMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/model/ResponseBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/http_model/ResponseBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/model/User1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/model/UserInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/model/UserInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IBookService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/BookServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServicetestImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServicetestImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/common/AssembleResponseMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/common/AssembleResponseMsg.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/common/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/common/DateUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/common/MailUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/common/MailUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/common/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/common/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/controller/BookController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/controller/MailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/controller/MailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/controller/SysAccessLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/controller/SysAccessLogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/controller/TestOne.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/controller/UserControllertest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/controller/Usertest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper/BookMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper/UserMapper1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper/UserMappertest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/mapper/UserMappertest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper_api/BookMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper_api/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/mapper_api/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper_api/UserMapper1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper_api/UserMappertest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/mapper_api/UserMappertest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/model/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/model/BookSub.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/model/InfoMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/model/ResponseBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/model/User1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_api/IBookService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_api/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/service_api/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_api/IUserService1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_impl/BookServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/service_impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_impl/UserServiceImpl1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_impl/UserServicetestImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/service_impl/UserServicetestImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/common/AssembleResponseMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/common/AssembleResponseMsg.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/common/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/common/DateUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/common/MailUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/common/MailUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/common/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/common/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/BookController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/MailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/MailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/SysAccessLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/SysAccessLogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/TestOne.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/UserControllertest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/Usertest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper/BookMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper/UserMapper1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper/UserMappertest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper/UserMappertest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper_api/BookMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper_api/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper_api/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper_api/UserMapper1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper_api/UserMappertest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper_api/UserMappertest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/model/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/model/BookSub.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/model/InfoMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/model/ResponseBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/model/User1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_api/IBookService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_api/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_api/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_api/IUserService1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_impl/BookServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_impl/UserServiceImpl1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_impl/UserServicetestImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_impl/UserServicetestImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,10 +163,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="221">
+              <caret line="107" column="40" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#961#962#0" expanded="true" />
+                <element signature="e#1007#1008#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServicetestImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/DateUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="73" column="35" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,19 +198,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/MailMapper.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="270">
+              <caret line="10" column="77" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,10 +210,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/MailController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserFieldController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-48">
-              <caret line="86" column="54" lean-forward="true" selection-start-line="86" selection-start-column="54" selection-end-line="86" selection-end-column="54" />
+            <state relative-caret-position="432">
+              <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,69 +222,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/MailUtil.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserFieldServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="28" column="65" lean-forward="true" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
+            <state relative-caret-position="116">
+              <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#565#566#0" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
+                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#731#732#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserControllertest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/UserField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="104" column="31" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
+            <state relative-caret-position="140">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#961#962#0" expanded="true" />
-                <element signature="e#986#987#0" expanded="true" />
-                <element signature="e#2321#2322#0" expanded="true" />
-                <element signature="e#2346#2347#0" expanded="true" />
-                <element signature="e#2434#2435#0" expanded="true" />
-                <element signature="e#2461#2462#0" expanded="true" />
-                <element signature="e#2557#2558#0" expanded="true" />
-                <element signature="e#2584#2585#0" expanded="true" />
-                <element signature="e#2685#2686#0" expanded="true" />
-                <element signature="e#2718#2719#0" expanded="true" />
-                <element signature="e#2811#2812#0" expanded="true" />
-                <element signature="e#2843#2844#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,8 +252,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1377">
-              <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="54" selection-end-column="32" />
+            <state relative-caret-position="244">
+              <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="125" selection-start-line="125" selection-end-line="125" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-aop/5.1.12.RELEASE/spring-aop-5.1.12.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
             </state>
           </provider>
         </entry>
@@ -215,18 +303,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/model/Book.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/model/BookSub.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/mapper/BookMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/mapper/BookMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/service/IBookService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/service/impl/BookServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/controller/BookController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/common/IDUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/common/StringUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/mapper/SysAccessLogMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/service/ISysAccessLogService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/service/impl/SysAccessLogServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xueden/controller/SysAccessLogController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xueden/mapper/SysAccessLogMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/xueden/controller/UserController.java" />
@@ -239,33 +315,45 @@
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/aspect/SysAccessLogAspect.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/model/User1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper1.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/model/UserLogin.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserServicetest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/Usertest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/common/AssembleResponseMsg.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserControllertest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/model/UserInformation.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/common/DateUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/model/MailCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/MailMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/MailMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IMailService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/MailServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/MailController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/common/MailUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/MailController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/model/UserInformation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/Usertest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/http_model/InfoMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/http_model/ResponseBody.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMappertest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServicetestImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserFieldService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMappertest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserFieldMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserFieldMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserFieldService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserFieldController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/common/DateUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/model/UserField.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserFieldServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -304,9 +392,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-60" />
+    <option name="y" value="152" />
     <option name="width" value="2586" />
     <option name="height" value="1566" />
   </component>
@@ -406,6 +494,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="graduation" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssm-snp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssm-snp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation" type="462c0819:PsiDirectoryNode" />
               <item name="service_api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -436,8 +534,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584123020970" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584194778415" />
+    <property name="last_opened_file_path" value="F:/project/ifp-bm-core" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -703,12 +801,12 @@
       <workItem from="1583220833459" duration="9649000" />
       <workItem from="1583565880097" duration="819000" />
       <workItem from="1583986561978" duration="13211000" />
-      <workItem from="1584090512359" duration="23918000" />
+      <workItem from="1584090512359" duration="38944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139758000" />
+    <option name="totallyTimeSpent" value="154784000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -723,7 +821,7 @@
     <frame x="-6" y="-6" width="1293" height="783" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25668016" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25668016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -732,9 +830,9 @@
       <window_info id="Image Layers" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32924962" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29447854" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.37883437" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32822084" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.1702454" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.40797547" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924962" />
@@ -744,7 +842,7 @@
       <window_info anchor="bottom" id="Spring" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3297546" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3297546" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.36963192" />
       <window_info anchor="bottom" id="Application Servers" order="14" weight="0.32896176" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -765,24 +863,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserControllertest.java</url>
-          <line>74</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/Usertest.java</url>
-          <line>20</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl1.java</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java</url>
           <line>26</line>
           <properties />
@@ -790,25 +870,25 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java</url>
-          <line>53</line>
+          <line>54</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java</url>
-          <line>47</line>
+          <line>48</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java</url>
-          <line>43</line>
+          <line>44</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java</url>
-          <line>84</line>
+          <line>89</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
@@ -826,172 +906,62 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java</url>
-          <line>97</line>
+          <line>102</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java</url>
-          <line>108</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserFieldServiceImpl.java</url>
+          <line>29</line>
           <properties />
-          <option name="timeStamp" value="32" />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java</url>
+          <line>125</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserFieldServiceImpl.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserFieldServiceImpl.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>Integer i = (Integer) map.get(&quot;anime&quot;);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>String string = (String) map.get(&quot;anime&quot;);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Integer.valueOf(&quot;1&quot;);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Integer.valueOf((String) map.get(&quot;anime&quot;));</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/SysAccessLogMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/User1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/SysAccessLogMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/SysAccessLogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/BookController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2475">
-          <caret line="32" column="70" lean-forward="true" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/springMVC.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sqlMapConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-core/5.1.12.RELEASE/spring-core-5.1.12.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2403">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-aop/5.1.12.RELEASE/spring-aop-5.1.12.RELEASE.jar!/org/springframework/aop/interceptor/ExposeInvocationInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-aop/5.1.12.RELEASE/spring-aop-5.1.12.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12528">
-          <caret line="512" selection-start-line="512" selection-end-line="512" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserServicetest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/text/SimpleDateFormat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -999,53 +969,6 @@
           <folding>
             <element signature="e#23443#23444#0" expanded="true" />
             <element signature="e#23515#23516#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/UserInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/Usertest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/TestOne.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMappertest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="56" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMappertest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1061,53 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-675">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/UserLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="8" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/MailCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="60" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/DateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="58" column="23" lean-forward="true" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1133,16 +1009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-761">
           <caret line="178" selection-start-line="178" selection-end-line="178" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IMailService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1174,13 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-aop/5.1.12.RELEASE/spring-aop-5.1.12.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/5.1.12.RELEASE/spring-web-5.1.12.RELEASE.jar!/org/springframework/web/bind/annotation/RequestBody.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1205,9 +1064,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/MailUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="28" column="65" lean-forward="true" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/BookMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-386">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/User1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserServicetest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/Usertest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/TestOne.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/BookController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="32" column="60" lean-forward="true" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserControllertest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
+        <state relative-caret-position="-60">
           <caret line="104" column="31" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1215,10 +1149,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="108">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/UserLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" selection-start-line="6" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/http_model/InfoMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/http_model/ResponseBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/SysAccessLogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="63" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/SysAccessLogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/SysAccessLogServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-683">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/ISysAccessLogService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/MailCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/MailMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="18" column="23" lean-forward="true" selection-end-line="28" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/MailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMappertest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserFieldMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMappertest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/UserInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IMailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserFieldMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1227,50 +1291,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="363">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#2321#2322#0" expanded="true" />
-            <element signature="e#2346#2347#0" expanded="true" />
-            <element signature="e#2434#2435#0" expanded="true" />
-            <element signature="e#2461#2462#0" expanded="true" />
-            <element signature="e#2557#2558#0" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2685#2686#0" expanded="true" />
-            <element signature="e#2718#2719#0" expanded="true" />
-            <element signature="e#2811#2812#0" expanded="true" />
-            <element signature="e#2843#2844#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="378">
+          <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/MailController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserFieldService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
-          <caret line="86" column="54" lean-forward="true" selection-start-line="86" selection-start-column="54" selection-end-line="86" selection-end-column="54" />
+        <state relative-caret-position="270">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserFieldController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="73" column="35" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="77" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1279,24 +1351,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="54" selection-end-column="32" />
+        <state relative-caret-position="244">
+          <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/MailMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/UserField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/MailUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="28" column="65" lean-forward="true" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
+        <state relative-caret-position="140">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="107" column="40" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#961#962#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServicetestImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-aop/5.1.12.RELEASE/spring-aop-5.1.12.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserFieldServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
           </folding>
         </state>
       </provider>

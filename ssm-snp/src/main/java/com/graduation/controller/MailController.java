@@ -4,7 +4,7 @@ import com.graduation.common.AssembleResponseMsg;
 import com.graduation.common.DateUtil;
 import com.graduation.common.MailUtil;
 import com.graduation.model.MailCode;
-import com.graduation.model.ResponseBody;
+import com.graduation.http_model.ResponseBody;
 import com.graduation.service_api.IMailService;
 import com.graduation.service_api.IUserService;
 import org.apache.commons.lang3.RandomStringUtils;

@@ -14,7 +14,7 @@
 			</view>
 			<view class="cu-form-group">
 				<view class="title">验证码</view>
-				<input placeholder="请输入邮箱中的验证码" type="number" name="captcha" maxlength="6" v-model="code"></input>
+				<input placeholder="请输入邮箱中的验证码" name="captcha" maxlength="6" v-model="code"></input>
 			</view>
 			
 			
@@ -78,12 +78,12 @@
 				}
 				
 				uni.request({
-					url: 'http://localhost:8181/queryMail', //仅为示例，并非真实接口地址。
+					url: this.Server_IP + 'queryMail', //仅为示例，并非真实接口地址。
 					data: {
 						mail: this.mail
 					},
 					header: {
-						'custom-header': 'mailcode' //自定义请求头信息
+						'custom-header': 'queryMail' //自定义请求头信息
 					},
 					method:"POST",
 					dataType:"json",
@@ -105,7 +105,7 @@
 							console.log(this.mail)
 							// 更新数据库中的验证码
 							uni.request({
-								url: 'http://localhost:8181/mailcode', //仅为示例，并非真实接口地址。
+								url: this.Server_IP + 'mailcode', //仅为示例，并非真实接口地址。
 								data: {
 									mail: this.mail
 								},
@@ -120,7 +120,10 @@
 										
 										console.log(res.data.data.userId)
 										console.log("成功")
-										
+										uni.showToast({
+											icon: 'none',
+											title: "验证码发送成功，此邮件可能被归类到垃圾箱中，请注意"
+										});
 									}else{
 										uni.showToast({
 											icon: 'none',
@@ -167,7 +170,7 @@
 				}
 				
 				uni.request({
-					url: 'http://localhost:8181/checkNewMailCode', //仅为示例，并非真实接口地址。
+					url: this.Server_IP + 'checkNewMailCode', //仅为示例，并非真实接口地址。
 					data: {
 						mail: this.mail,
 						code: this.code,

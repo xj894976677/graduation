@@ -78,10 +78,11 @@
 						errorMsg: '密码最为 6-32 个字符'
 					}
 				];
+				
 				var checkRes = graceChecker.check(_this, registerRule);
 				if (checkRes) {
 					uni.request({
-						url: 'http://localhost:8181/login', //仅为示例，并非真实接口地址。
+						url: this.Server_IP + 'login', //仅为示例，并非真实接口地址。
 						data: {
 							userId: this.userId,
 							password: md5(this.password)
@@ -89,6 +90,7 @@
 						header: {
 							'custom-header': 'login' //自定义请求头信息
 						},
+						sslVerify: false,
 						method:"POST",
 						dataType:"json",
 						success: (res) => {
@@ -98,6 +100,63 @@
 								uni.setStorageSync('isLogin', true);
 								console.log(res.data.data.userId)
 								console.log("成功")
+								uni.request({
+									url: this.Server_IP + 'userInformation', //仅为示例，并非真实接口地址。
+									data: {
+										userId: this.userId
+									},
+									header: {
+										'custom-header': 'userInformation' //自定义请求头信息
+									},
+									method:"POST",
+									dataType:"json",
+									success: (res) => {
+
+										console.log(res.data);
+										if(res.data.info.code == '0'){
+											uni.setStorageSync('userName', res.data.data.userName);
+											uni.setStorageSync('mail', res.data.data.mail);
+											uni.setStorageSync('telephone', res.data.data.telephone);
+											uni.setStorageSync('sex', res.data.data.sex);
+											uni.setStorageSync('birthday', res.data.data.birthday);
+											uni.setStorageSync('synopsis', res.data.data.synopsis);
+											console.log("获取用户信息成功")
+										}else{
+											console.log("获取用户信息失败")
+										}
+									},
+									fail() {
+										console.log("登录信息请求失败")
+									}
+								});
+								
+								uni.request({
+									url: this.Server_IP + 'queryField', //仅为示例，并非真实接口地址。
+									data: {
+										userId: this.userId
+									},
+									header: {
+										'custom-header': 'queryField' //自定义请求头信息
+									},
+									method:"POST",
+									dataType:"json",
+									success: (res) => {
+										console.log(res.data);
+										if(res.data.info.code == '0'){
+											uni.setStorageSync('field', JSON.parse(res.data.data.field));
+											// console.log(res.data.data.field)
+											// var field = JSON.parse(res.data.data.field)
+											// console.log(field.userId);
+											// console.log(field)
+											console.log("获取用户喜好成功")
+										}else{
+											console.log("获取用户喜好失败")
+										}
+									},
+									fail() {
+										console.log("登录信息请求失败")
+									}
+								});
 								uni.switchTab({
 									url: '/pages/index/index'
 								});

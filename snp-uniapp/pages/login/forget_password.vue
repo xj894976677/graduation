@@ -49,12 +49,12 @@
 					return;
 				}
 				uni.request({
-					url: 'http://localhost:8181/mailfromUserId', //仅为示例，并非真实接口地址。
+					url: this.Server_IP + 'mailfromUserId', //仅为示例，并非真实接口地址。
 					data: {
 						userId: this.userId
 					},
 					header: {
-						'custom-header': 'mailcode' //自定义请求头信息
+						'custom-header': 'mailfromUserId' //自定义请求头信息
 					},
 					method:"POST",
 					dataType:"json",

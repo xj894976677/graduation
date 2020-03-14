@@ -1,7 +1,5 @@
 package com.graduation.mapper_api;
 
-import com.graduation.model.User;
-
 import java.util.List;
 import java.util.Map;
 
@@ -13,10 +11,6 @@ import java.util.Map;
  * @version:1.0
  */
 public interface UserMappertest {
-
-
-    //查询用户列表
-    List<User> queryUserList(Map<String,Object> map);
 
 
     //查询用户

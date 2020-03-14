@@ -5,20 +5,6 @@
 <mapper namespace="com.graduation.mapper_api.UserMappertest">
 
 
-    <!--查询用户列表-->
-    <select id="queryUserList" parameterType="map" resultType="user">
-        select * from tbuser
-        <where>
-            <if test="userName!=null and userName!=''">
-            userName like CONCAT('%',#{userName},'%')
-            </if>
-
-            <if test="sex!=null and sex!=''">
-                and sex = #{sex}
-            </if>
-
-        </where>
-    </select>
 
     <!--根据条件查询用户是否存在-->
     <select id="queryUser" parameterType="map" resultType="int">

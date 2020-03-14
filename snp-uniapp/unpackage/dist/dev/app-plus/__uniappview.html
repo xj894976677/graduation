@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+                CSS.supports('top: constant(a)'))
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            input[type="search"]::-webkit-search-cancel-button {
+                display: none;
+            }
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"snp-uniapp","entryPagePath":"pages/index/index.html","page":{"pages/index/index.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/index/message.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/index/mine.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/index/write.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/layout.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/background.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/text.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/icon.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/button.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/design.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/tag.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/avatar.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/progress.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/shadow.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/basics/loading.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/component/bar.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/component/nav.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/component/list.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/component/card.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/component/form.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/component/timeline.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/component/chat.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/component/swiper.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/component/modal.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/component/steps.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/plugin/indexes.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/plugin/animation.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/plugin/drawer.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/plugin/verticalnav.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/test/test/test.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/login/login.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/login/register.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/personal/information.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/personal/changemail.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/personal/newmail.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/login/forget_password.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/login/mail_login.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/login/verification_mail.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}},"pages/login/reset_password.html":{"window":{"usingComponents":{"cu-custom":"/colorui/components/cu-custom"}}}},"global":{"window":{"navigationBarBackgroundColor":"#0081ff","navigationBarTitleText":"ColorUi for UniApp","navigationStyle":"custom","navigationBarTextStyle":"white"}},"tabBar":{"color":"#7a7a7a","selectedColor":"#0081ff","backgroundColor":"#ffffff","borderStyle":"black","list":[{"pagePath":"pages/index/index.html","iconPath":"static/tabbar/home.png","selectedIconPath":"static/tabbar/home-fill.png","text":"首页"},{"pagePath":"pages/index/write.html","iconPath":"static/tabbar/brush.png","selectedIconPath":"static/tabbar/brush_fill.png","text":"发表"},{"pagePath":"pages/index/message.html","iconPath":"static/tabbar/mail.png","selectedIconPath":"static/tabbar/mail_fill.png","text":"消息"},{"pagePath":"pages/index/mine.html","iconPath":"static/tabbar/account.png","selectedIconPath":"static/tabbar/account-fill.png","text":"我的"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/index/index","pages/index/message","pages/index/mine","pages/index/write","pages/basics/layout","pages/basics/background","pages/basics/text","pages/basics/icon","pages/basics/button","pages/basics/design","pages/basics/tag","pages/basics/avatar","pages/basics/progress","pages/basics/shadow","pages/basics/loading","pages/component/bar","pages/component/nav","pages/component/list","pages/component/card","pages/component/form","pages/component/timeline","pages/component/chat","pages/component/swiper","pages/component/modal","pages/component/steps","pages/plugin/indexes","pages/plugin/animation","pages/plugin/drawer","pages/plugin/verticalnav","pages/test/test/test","pages/login/login","pages/login/register","pages/personal/information","pages/personal/changemail","pages/personal/newmail","pages/login/forget_password","pages/login/mail_login","pages/login/verification_mail","pages/login/reset_password"],"nvueCompiler":"uni-app","renderer":"auto","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"compilerVersion":"2.5.1","usingComponents":{"basics":"/pages/basics/home","components":"/pages/component/home","plugin":"/pages/plugin/home","cu-custom":"/colorui/components/cu-custom"}}
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                var wxss = page.replace('.html', '.wxss')
+                if (
+                    typeof __wxAppCode__ !== 'undefined' &&
+                    __wxAppCode__.hasOwnProperty(wxss)
+                ) {
+                    var setCssToHead = __wxAppCode__[wxss]
+                    typeof setCssToHead === 'function' && setCssToHead()
+                    document.dispatchEvent(new CustomEvent("generateFuncReady", {
+                        detail: {
+                            generateFunc: $gwx(page.replace('.html', '.wxml'))
+                        }
+                    }));
+                } else {
+                    plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+                }
+            };
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+
+</html>

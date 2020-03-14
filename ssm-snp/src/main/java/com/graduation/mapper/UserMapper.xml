@@ -47,11 +47,22 @@
     <select id="mailfromUserId" parameterType="map" resultType="String">
         select mail from userinformation where userId = #{userId}
     </select>
-    <!--增加用户密码信息-->
+    <!--更新用户密码信息-->
     <update id="updatePassword" parameterType="map">
         update userlogin
         set
         password = #{password}
+        where userId = #{userId}
+    </update>
+    <!--更新用户个人信息-->
+    <update id="updateInformation" parameterType="com.graduation.model.UserInformation">
+        update userinformation
+        set
+        userName = #{userName},
+        telephone = #{telephone},
+        sex = #{sex},
+        birthday = #{birthday},
+        synopsis = #{synopsis}
         where userId = #{userId}
     </update>
 </mapper>

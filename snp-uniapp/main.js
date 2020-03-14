@@ -22,7 +22,6 @@ const app = new Vue({
 })
 app.$mount()
 
- 
-
+Vue.prototype.Server_IP = 'http://192.168.43.80:8181/';
 
 

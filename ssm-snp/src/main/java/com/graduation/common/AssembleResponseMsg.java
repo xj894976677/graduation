@@ -1,7 +1,7 @@
 package com.graduation.common;
 
-import com.graduation.model.InfoMsg;
-import com.graduation.model.ResponseBody;
+import com.graduation.http_model.InfoMsg;
+import com.graduation.http_model.ResponseBody;
 
 
 /**

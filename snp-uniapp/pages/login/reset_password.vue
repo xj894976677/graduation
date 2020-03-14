@@ -72,7 +72,7 @@
 					return;
 				}
 				uni.request({
-				    url: 'http://localhost:8181/resetPassword', //仅为示例，并非真实接口地址。
+				    url: this.Server_IP + 'resetPassword', //仅为示例，并非真实接口地址。
 				    data: {
 				        code: this.code,
 						mail: this.mail,

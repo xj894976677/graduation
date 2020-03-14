@@ -1,7 +1,6 @@
 package com.graduation.service_impl;
 
 import com.graduation.mapper_api.UserMappertest;
-import com.graduation.model.User;
 import com.graduation.service_api.IUserServicetest;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -39,14 +38,9 @@ public class UserServicetestImpl implements IUserServicetest {
         //每页几条记录
         int pageSize = Integer.parseInt(map.get("pageSize").toString());
 
-        PageHelper.startPage(pageNum,pageSize);
-        List<User> userList = userMappertest.queryUserList(map);
-        PageInfo pageInfo = new PageInfo(userList);
 
-        long total = pageInfo.getTotal();
         Map<String,Object> resultMap=new HashMap<>();
-        resultMap.put("total",total);
-        resultMap.put("rows",userList);
+
 
      return resultMap;
     }

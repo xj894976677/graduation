@@ -13,11 +13,12 @@
 				<view class="title">简介</view>
 				<input placeholder="请输入您的介绍" name="input" v-model="synopsis"></input>
 			</view>
+			
 			<view class="cu-form-group">
 				<view class="title">性别</view>
-				<picker @change="sexChange" :value="index" :range="sex">
+				<picker @change="sexChange" :value="sexIndex" :range="sex">
 					<view class="picker">
-						{{index>-1?sex[index]:'选择性别'}}
+						{{sexIndex>-1?sex[sexIndex]:'选择性别'}}
 					</view>
 				</picker>
 			</view>
@@ -42,6 +43,26 @@
 				</view>
 			</view>
 			<view class="cu-form-group">
+				<view class="title">爱好</view>
+				<input placeholder="请选择您的爱好类型" name="input" v-model="fieldStr" disabled="true"></input>
+				<button class='cu-btn bg-blue' @tap="showModal" data-target="RadioModal">修改爱好</button>
+			</view>
+			<view class="cu-modal" :class="modalName=='RadioModal'?'show':''" @tap="hideModal">
+				<view class="cu-dialog" @tap.stop="">
+					<view class="cu-bar" style="display: flex; justify-content: center;">
+						<view style="font-size: 40upx; color: #666666;">点击灰色位置返回</view>
+					</view>
+					<view class="grid col-3 padding-sm">
+						<view v-for="(item,sexIndex) in checkbox" class="padding-xs" :key="sexIndex">
+							<button class="cu-btn orange lg block" :class="item.checked==1?'bg-orange':'line-orange'" @tap="ChooseCheckbox"
+							 :data-value="item.value"> {{item.name}}
+							</button>
+						</view>
+					</view>
+				</view>
+			</view>
+			
+			<view class="cu-form-group">
 				<view class="title">邮箱</view>
 				<input placeholder="请设置邮箱" name="input" v-model="mail" disabled="true"></input>
 				<button class='cu-btn bg-blue' @tap="changemail">{{captchaName}}</button>
@@ -63,18 +84,53 @@
 	export default {
 		data() {
 			return {
+				modalName: null,
 				userName: '',
+				fieldStr: '',
 				mail: '',
 				birthday: '1990-01-01',
 				telephone: '',
 				synopsis: '',
-				sex: ['男', '女'],
-				index: -1,
+				sex: ['女', '男'],
+				sexIndex: -1,
 				captcha: '',
 				captchaName: "修改邮箱",
+				field: '',
+				fieldbox: '',
+				checkbox: [{
+					value: 0,
+					name: '娱乐',
+					alias: 'funny',
+					checked: 0,
+				}, {
+					value: 1,
+					name: '动漫',
+					alias: 'anime',
+					checked: 0,
+				}, {
+					value: 2,
+					name: '新闻',
+					alias: 'news',
+					checked: 0,
+				}, {
+					value: 3,
+					name: '时尚',
+					alias: 'fashion',
+					checked: 0,
+				}, {
+					value: 4,
+					name: '运动',
+					alias: 'motion',
+					checked: 0,
+				}, {
+					value: 5,
+					name: '科技',
+					alias: 'science',
+					checked: 0,
+				}]
 			};
 		},
-		onLoad(e) {
+		onShow(e) {
 			console.log("加载信息界面")
 			let _this = this;
 			_this.userName = uni.getStorageSync('userName')
@@ -82,22 +138,106 @@
 			_this.birthday = uni.getStorageSync('birthday')
 			_this.telephone = uni.getStorageSync('telephone')
 			_this.synopsis = uni.getStorageSync('synopsis')
-			if(uni.getStorageSync('sex') == '男'){
-				_this.index = 0
+			_this.field = uni.getStorageSync('field')
+			_this.sexIndex = uni.getStorageSync('sex')
+			if(_this.field.funny == 1){
+				_this.checkbox[0].checked = 1
+				_this.fieldStr = "娱乐"
 			}
-			if(uni.getStorageSync('sex') == '女'){
-				_this.index = 1
+			if(_this.field.anime == 1){
+				_this.checkbox[1].checked = 1
+				if(_this.fieldStr == ''){
+					_this.fieldStr = "动漫"
+				}else{
+					_this.fieldStr += ",动漫"
+				}
 			}
+			if(_this.field.news == 1){
+				_this.checkbox[2].checked = 1
+				if(_this.fieldStr == ''){
+					_this.fieldStr = "新闻"
+				}else{
+					_this.fieldStr += ",新闻"
+				}
+			}
+			if(_this.field.fashion == 1){
+				_this.checkbox[3].checked = 1
+				if(_this.fieldStr == ''){
+					_this.fieldStr = "时尚"
+				}else{
+					_this.fieldStr += ",时尚"
+				}
+			}
+			if(_this.field.motion == 1){
+				_this.checkbox[4].checked = 1
+				if(_this.fieldStr == ''){
+					_this.fieldStr = "运动"
+				}else{
+					_this.fieldStr += ",运动"
+				}
+			}
+			if(_this.field.science == 1){
+				_this.checkbox[5].checked = 1
+				if(_this.fieldStr == ''){
+					_this.fieldStr = "科技"
+				}else{
+					_this.fieldStr += ",科技"
+				}
+			}
+			if(_this.fieldStr.length > 9){
+				var result = _this.fieldStr.substr(0,8)
+				result += "  ..."
+				_this.fieldStr = result
+			}
+			console.log(_this.fieldStr)
+			_this.fieldbox = checkbox
+			
 			if(_this.mail == ''){
 				_this.captchaName = "绑定邮箱"
 			}
 		},
 		methods: {
+			ChooseCheckbox(e) {
+				let temp = '';
+				let items = this.checkbox;
+				let values = e.currentTarget.dataset.value;
+				for (let i = 0, lenI = items.length; i < lenI; ++i) {
+					if (items[i].value == values) {
+						if(items[i].checked == 1){
+							items[i].checked = 0
+						}else{
+							items[i].checked = 1
+						}
+						break
+					}
+				}
+				for (let i = 0, lenI = items.length; i < lenI; ++i) {
+					if(items[i].checked == 1){
+						if(temp == ''){
+							temp = items[i].name;
+						}else{
+							temp += ','+items[i].name;
+						}
+					}
+				}
+				if(temp.length > 9){
+					var result = temp.substr(0,8)
+					result += "  ..."
+					temp = result
+				}
+				this.fieldStr = temp
+			},
+			showModal(e) {
+				this.modalName = e.currentTarget.dataset.target
+			},
+			hideModal(e) {
+				this.modalName = null
+			},
 			sexChange(e) {
-				this.index = e.detail.value
+				this.sexIndex = e.detail.value
 			},
 			DateChange(e) {
-				this.date = e.detail.value
+				this.birthday = e.detail.value
 			},
 			// 跳转到修改邮箱页面
 			changemail() {
@@ -108,42 +248,87 @@
 			change() {
 				let _this = this;
 				// 注册信息校验
-				var captchaRule = [
+				var informationRule = [
 					{
-						name: 'captcha',
-						checkType: 'notnull',
-						errorMsg: '请输入验证码'
+						name: 'userName',
+						checkType: 'string',
+						checkRule: '0,16',
+						errorMsg: '昵称过长'
 					},
 					{
-						name: 'captcha',
+						name: 'synopsis',
 						checkType: 'string',
-						checkRule: '6',
-						errorMsg: '验证码为 6 个数字'
-					}
-				];
-				var teletphoneRule = [
+						checkRule: '0,254',
+						errorMsg: '简介过长'
+					},
 					{
-						name: 'phone',
+						name: 'telephone',
 						checkType: 'phoneno',
 						checkRule: '',
 						errorMsg: '手机号格式不正确'
 					}
 				];
-				
 				//进行表单检查
-				var checkRes = graceChecker.check(_this, loginRule);
-				if (checkRes) {
-					uni.showToast({
-						title: "验证通过!",
-						icon: "none"
-					});
-				} else {
+				var checkRes = graceChecker.check(_this, informationRule);
+				if (!checkRes) {
 					uni.showToast({
 						title: graceChecker.error,
 						icon: "none"
 					});
 					return;
 				}
+				console.log(this.birthday)
+				uni.request({
+				    url: this.Server_IP + 'changeInformation', //仅为示例，并非真实接口地址。
+				    data: {
+				        userId: uni.getStorageSync('userId'),
+						funny: this.checkbox[0].checked,
+						anime: this.checkbox[1].checked,
+						news: this.checkbox[2].checked,
+						fashion: this.checkbox[3].checked,
+						motion: this.checkbox[4].checked,
+						science: this.checkbox[5].checked,
+						userName: this.userName,
+						telephone: this.telephone,
+						birthday: this.birthday,
+						synopsis: this.synopsis,
+						sex: this.sexIndex,
+				    },
+				    header: {
+				        'custom-header': 'changeInformation' //自定义请求头信息
+				    },
+					method:"POST",
+					dataType:"json",
+				    success: (res) => {
+				        console.log(res.data);
+						if(res.data.info.code == '0'){
+							uni.setStorageSync('userId', res.data.data.userId);
+							console.log("成功")
+							let temp = this.field
+							let items = this.checkbox
+							for (let i = 0, lenI = items.length; i < lenI; ++i) {
+								temp[items[i].alias] = items[i].checked
+							}
+							
+							uni.setStorageSync('field', temp);
+							uni.setStorageSync('userName', this.userName);
+							uni.setStorageSync('telephone', this.telephone);
+							uni.setStorageSync('sex', this.sex);
+							uni.setStorageSync('birthday', this.birthday);
+							uni.setStorageSync('synopsis', this.synopsis);
+							uni.showToast({
+								icon: 'none',
+								title: "信息修改成功"
+							});
+						}else{
+							console.log(res.data.info.message);
+							uni.showToast({
+								icon: 'none',
+								title: res.data.info.message
+							});
+						}
+				    },
+				});
 
 			}
 		}
