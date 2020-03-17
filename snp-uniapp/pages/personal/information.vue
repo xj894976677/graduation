@@ -84,6 +84,7 @@
 	export default {
 		data() {
 			return {
+				userId: '',
 				modalName: null,
 				userName: '',
 				fieldStr: '',
@@ -133,6 +134,8 @@
 		onShow(e) {
 			console.log("加载信息界面")
 			let _this = this;
+			_this.userId = uni.getStorageSync('userId')
+			console.log(_this.userId)
 			_this.userName = uni.getStorageSync('userName')
 			_this.mail = uni.getStorageSync('mail')
 			_this.birthday = uni.getStorageSync('birthday')
@@ -281,7 +284,7 @@
 				uni.request({
 				    url: this.Server_IP + 'changeInformation', //仅为示例，并非真实接口地址。
 				    data: {
-				        userId: uni.getStorageSync('userId'),
+				        userId: this.userId,
 						funny: this.checkbox[0].checked,
 						anime: this.checkbox[1].checked,
 						news: this.checkbox[2].checked,

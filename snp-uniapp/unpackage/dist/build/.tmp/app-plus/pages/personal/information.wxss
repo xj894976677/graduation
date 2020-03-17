@@ -1,0 +1,35 @@
+
+page{
+	background-color: #FFFFFF;
+	height: 80%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.container{
+		/* 定义flex容器 */
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+         /*设置容器内部容器的排列方向*/	
+		height: 100%;
+		width: 100%;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		        justify-content: center;
+}
+.cu-form-group .title {
+		min-width: calc(4em + 15px);
+}
+

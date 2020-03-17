@@ -104,13 +104,13 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void updateInformation(Map<String,Object> map) {
         UserInformation userInformation = new UserInformation();
-        userInformation.setUserName((String) map.get("userName"));
+        userInformation.setUserName("项钧");
         userInformation.setTelephone((String) map.get("telephone"));
-        userInformation.setSynopsis((String) map.get("synopsis"));
+        userInformation.setSynopsis("项钧");
         userInformation.setSex((String) map.get("sex"));
         userInformation.setUserId((String) map.get("userId"));
         java.sql.Date date = DateUtil.getSqlStamp((String) map.get("birthday"),"yyyy-MM-dd");
         userInformation.setBirthday(date);
-        userMapper.updateInformation(userInformation);
+        userMapper.updateInformation(map);
     }
 }

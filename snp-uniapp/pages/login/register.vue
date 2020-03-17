@@ -89,6 +89,10 @@
 								uni.navigateBack({
 								    delta: 1
 								});
+								uni.showToast({
+									icon: 'none',
+									title: "注册成功"
+								});
 							}else{
 								console.log(res.data.info.message);
 								uni.showToast({

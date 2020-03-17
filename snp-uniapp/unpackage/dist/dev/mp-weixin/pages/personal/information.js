@@ -295,7 +295,10 @@ var _graceChecker = _interopRequireDefault(__webpack_require__(/*! @/common/grac
 //
 //
 //
-var _default = { data: function data() {return { modalName: null, userName: '', fieldStr: '', mail: '', birthday: '1990-01-01', telephone: '', synopsis: '', sex: ['女', '男'], sexIndex: -1, captcha: '', captchaName: "修改邮箱", field: '', fieldbox: '', checkbox: [{ value: 0, name: '娱乐', alias: 'funny', checked: 0 }, { value: 1, name: '动漫', alias: 'anime', checked: 0 }, { value: 2, name: '新闻', alias: 'news', checked: 0 }, { value: 3, name: '时尚', alias: 'fashion', checked: 0 }, { value: 4, name: '运动', alias: 'motion', checked: 0 }, { value: 5, name: '科技', alias: 'science', checked: 0 }] };}, onShow: function onShow(e) {console.log("加载信息界面");var _this = this;_this.userName = uni.getStorageSync('userName');_this.mail = uni.getStorageSync('mail');_this.birthday = uni.getStorageSync('birthday');_this.telephone = uni.getStorageSync('telephone');_this.synopsis = uni.getStorageSync('synopsis');_this.field = uni.getStorageSync('field');_this.sexIndex = uni.getStorageSync('sex');if (_this.field.funny == 1) {_this.checkbox[0].checked = 1;_this.fieldStr = "娱乐";}if (_this.field.anime == 1) {_this.checkbox[1].checked = 1;if (_this.fieldStr == '') {_this.fieldStr = "动漫";} else {_this.fieldStr += ",动漫";}}if (_this.field.news == 1) {_this.checkbox[2].checked = 1;if (_this.fieldStr == '') {_this.fieldStr = "新闻";} else {_this.fieldStr += ",新闻";}}if (_this.field.fashion == 1) {
+var _default = { data: function data() {return { userId: '', modalName: null, userName: '', fieldStr: '', mail: '', birthday: '1990-01-01', telephone: '', synopsis: '', sex: ['女', '男'], sexIndex: -1, captcha: '', captchaName: "修改邮箱", field: '', fieldbox: '', checkbox: [{ value: 0, name: '娱乐', alias: 'funny', checked: 0 }, { value: 1, name: '动漫', alias: 'anime', checked: 0 }, { value: 2, name: '新闻', alias: 'news', checked: 0 }, { value: 3, name: '时尚', alias: 'fashion', checked: 0 }, { value: 4, name: '运动', alias: 'motion', checked: 0 }, { value: 5, name: '科技', alias: 'science', checked: 0 }] };}, onShow: function onShow(e) {console.log("加载信息界面");var _this = this;_this.userId = uni.getStorageSync('userId');console.log(_this.userId);_this.userName = uni.getStorageSync('userName');_this.mail = uni.getStorageSync('mail');_this.birthday = uni.getStorageSync('birthday');_this.telephone = uni.getStorageSync('telephone');_this.synopsis = uni.getStorageSync('synopsis');_this.field = uni.getStorageSync('field');_this.sexIndex = uni.getStorageSync('sex');if (_this.field.funny == 1) {_this.checkbox[0].checked = 1;_this.fieldStr = "娱乐";}if (_this.field.anime == 1) {_this.checkbox[1].checked = 1;if (_this.fieldStr == '') {_this.fieldStr = "动漫";} else {_this.fieldStr += ",动漫";}}if (_this.field.news == 1) {_this.checkbox[2].checked = 1;if (_this.fieldStr == '') {_this.fieldStr = "新闻";} else {_this.fieldStr += ",新闻";
+      }
+    }
+    if (_this.field.fashion == 1) {
       _this.checkbox[3].checked = 1;
       if (_this.fieldStr == '') {
         _this.fieldStr = "时尚";
@@ -416,7 +419,7 @@ var _default = { data: function data() {return { modalName: null, userName: '', 
       uni.request({
         url: this.Server_IP + 'changeInformation', //仅为示例，并非真实接口地址。
         data: {
-          userId: uni.getStorageSync('userId'),
+          userId: this.userId,
           funny: this.checkbox[0].checked,
           anime: this.checkbox[1].checked,
           news: this.checkbox[2].checked,

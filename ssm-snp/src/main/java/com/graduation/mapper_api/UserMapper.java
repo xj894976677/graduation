@@ -15,5 +15,5 @@ public interface UserMapper {
     String userIdfromMail(Map<String,Object> map);
     String mailfromUserId(Map<String,Object> map);
     void updatePassword(Map<String,Object> map);
-    void updateInformation(UserInformation userInformation);
+    void updateInformation(Map<String,Object> map);
 }

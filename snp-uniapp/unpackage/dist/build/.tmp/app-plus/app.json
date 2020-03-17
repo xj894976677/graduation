@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/message",
+    "pages/index/mine",
+    "pages/index/write",
+    "pages/login/login",
+    "pages/login/register",
+    "pages/personal/information",
+    "pages/personal/changemail",
+    "pages/personal/newmail",
+    "pages/login/forget_password",
+    "pages/login/mail_login",
+    "pages/login/verification_mail",
+    "pages/login/reset_password"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#0081ff",
+    "navigationBarTitleText": "ColorUi for UniApp",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7a7a7a",
+    "selectedColor": "#0081ff",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-fill.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/write",
+        "iconPath": "static/tabbar/brush.png",
+        "selectedIconPath": "static/tabbar/brush_fill.png",
+        "text": "发表"
+      },
+      {
+        "pagePath": "pages/index/message",
+        "iconPath": "static/tabbar/mail.png",
+        "selectedIconPath": "static/tabbar/mail_fill.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/index/mine",
+        "iconPath": "static/tabbar/account.png",
+        "selectedIconPath": "static/tabbar/account-fill.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "snp-uniapp",
+  "compilerVersion": "2.5.1",
+  "usingComponents": {
+    "basics": "/pages/basics/home",
+    "components": "/pages/component/home",
+    "plugin": "/pages/plugin/home",
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}
