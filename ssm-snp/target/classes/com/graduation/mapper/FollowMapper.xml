@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.graduation.mapper_api.FollowMapper">
+
+    <!--查询是否关注过此人-->
+    <select id="isfollowing" parameterType="map" resultType="Integer">
+        select count(1) from follow where userId = #{userId} and fansId = #{fansId}
+    </select>
+    <!--查询有多少粉丝-->
+    <select id="queryfansNum" parameterType="map" resultType="Integer">
+        select count(1) from follow where userId = #{userId}
+    </select>
+    <!--查询关注了多少人-->
+    <select id="queryfollowNum" parameterType="map" resultType="Integer">
+        select count(1) from follow where fansId = #{userId}
+    </select>
+    <!--查询所有粉丝Id-->
+    <select id="queryfans" parameterType="map" resultType="String">
+        select fansId from follow where userId = #{userId}
+    </select>
+    <!--查询所有关注Id-->
+    <select id="queryfollow" parameterType="map" resultType="String">
+        select userId from follow where fansId = #{userId}
+    </select>
+    <!--新增关注-->
+    <insert id="addfollow" parameterType="map">
+        insert into follow(
+        userId,
+        fansId) values (
+        #{userId},
+        #{fansId})
+    </insert>
+    <!--取消关注-->
+    <delete id="delfollow" parameterType="map">
+        delete from follow where  userId = #{userId} and fansId = #{fansId}
+    </delete>
+</mapper>

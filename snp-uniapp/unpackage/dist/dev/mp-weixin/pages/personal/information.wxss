@@ -32,4 +32,8 @@ page{
 .cu-form-group .title {
 		min-width: calc(4em + 15px);
 }
+.window-bottom{
+		position: fixed;  
+		bottom: 0px;
+}
 

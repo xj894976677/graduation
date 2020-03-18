@@ -27,11 +27,10 @@
 		},
 		methods: {
 			suserid(){
-				try {
-				    uni.clearStorageSync();
-				} catch (e) {
-				    // error
-				}
+				
+				uni.navigateTo({
+					url: '/pages/subscriber/homepage?userId=333333'
+				});	
 			}
 		}
 	}

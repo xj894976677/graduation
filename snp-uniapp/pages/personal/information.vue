@@ -7,60 +7,45 @@
 		<form>
 			<view class="cu-form-group margin-top">
 				<view class="title">昵称</view>
-				<input placeholder="请输入用户名" name="input" v-model="userName"></input>
+				<view>
+					{{userName}}
+				</view>
+				
 			</view>
 			<view class="cu-form-group">
 				<view class="title">简介</view>
-				<input placeholder="请输入您的介绍" name="input" v-model="synopsis"></input>
+				<view>
+					{{synopsis}}
+				</view>
+				
 			</view>
 			
 			<view class="cu-form-group">
 				<view class="title">性别</view>
-				<picker @change="sexChange" :value="sexIndex" :range="sex">
-					<view class="picker">
-						{{sexIndex>-1?sex[sexIndex]:'选择性别'}}
-					</view>
-				</picker>
+				<view>
+					{{sexIndex!=""?sex[sexIndex]:'未设置'}}
+				</view>
 			</view>
 			<view class="cu-form-group">
 				<view class="title">生日</view>
-				<picker mode="date" :value="date" start="1900-01-01" end="2020-01-01" @change="DateChange">
-					<view class="picker">
-						{{birthday}}
-					</view>
-				</picker>
+				<view>
+					{{birthday}}
+				</view>
+
 			</view>
 			<view class="cu-form-group">
 				<view class="title">手机</view>
-				<input placeholder="请输入手机号" maxlength="11" v-model="telephone"></input>
-				<view class="cu-capsule radius">
-					<view class='cu-tag bg-blue '>
-						+86
-					</view>
-					<view class="cu-tag line-blue">
-						中国大陆
-					</view>
+				<view>
+					{{telephone}}
 				</view>
 			</view>
 			<view class="cu-form-group">
 				<view class="title">爱好</view>
-				<input placeholder="请选择您的爱好类型" name="input" v-model="fieldStr" disabled="true"></input>
-				<button class='cu-btn bg-blue' @tap="showModal" data-target="RadioModal">修改爱好</button>
-			</view>
-			<view class="cu-modal" :class="modalName=='RadioModal'?'show':''" @tap="hideModal">
-				<view class="cu-dialog" @tap.stop="">
-					<view class="cu-bar" style="display: flex; justify-content: center;">
-						<view style="font-size: 40upx; color: #666666;">点击灰色位置返回</view>
-					</view>
-					<view class="grid col-3 padding-sm">
-						<view v-for="(item,sexIndex) in checkbox" class="padding-xs" :key="sexIndex">
-							<button class="cu-btn orange lg block" :class="item.checked==1?'bg-orange':'line-orange'" @tap="ChooseCheckbox"
-							 :data-value="item.value"> {{item.name}}
-							</button>
-						</view>
-					</view>
+				<view>
+					{{fieldStr}}
 				</view>
 			</view>
+
 			
 			<view class="cu-form-group">
 				<view class="title">邮箱</view>
@@ -71,7 +56,10 @@
 			
 			
 			<view class="padding flex flex-direction margin-top">
-				<button class="cu-btn bg-blue lg" data-target="Modal" @tap="change">确认修改</button>
+				<button class="cu-btn bg-blue lg" data-target="Modal" @tap="change">修改信息</button>
+			</view>
+			<view class="padding flex flex-direction margin-top window-bottom">
+				<button class="cu-btn bg-blue lg" data-target="Modal" @tap="Cancellation">注销</button>
 			</view>
 		</form>
 		
@@ -143,6 +131,11 @@
 			_this.synopsis = uni.getStorageSync('synopsis')
 			_this.field = uni.getStorageSync('field')
 			_this.sexIndex = uni.getStorageSync('sex')
+			console.log(_this.sexIndex=="")
+			console.log("sexIndex"+_this.sexIndex)
+			if(_this.mail == ""){
+				_this.captchaName = "设置邮箱"
+			}
 			if(_this.field.funny == 1){
 				_this.checkbox[0].checked = 1
 				_this.fieldStr = "娱乐"
@@ -198,6 +191,7 @@
 			if(_this.mail == ''){
 				_this.captchaName = "绑定邮箱"
 			}
+
 		},
 		methods: {
 			ChooseCheckbox(e) {
@@ -244,95 +238,35 @@
 			},
 			// 跳转到修改邮箱页面
 			changemail() {
-				uni.navigateTo({
-				    url: './changemail?mail='+this.mail
-				});
+				if(this.mail == ""){
+					uni.navigateTo({
+					    url: './bandmail'
+					});
+				}else{
+					uni.navigateTo({
+					    url: './changemail?mail='+this.mail
+					});
+				}
 			},
 			change() {
-				let _this = this;
-				// 注册信息校验
-				var informationRule = [
-					{
-						name: 'userName',
-						checkType: 'string',
-						checkRule: '0,16',
-						errorMsg: '昵称过长'
-					},
-					{
-						name: 'synopsis',
-						checkType: 'string',
-						checkRule: '0,254',
-						errorMsg: '简介过长'
-					},
-					{
-						name: 'telephone',
-						checkType: 'phoneno',
-						checkRule: '',
-						errorMsg: '手机号格式不正确'
-					}
-				];
-				//进行表单检查
-				var checkRes = graceChecker.check(_this, informationRule);
-				if (!checkRes) {
-					uni.showToast({
-						title: graceChecker.error,
-						icon: "none"
+				uni.navigateTo({
+					url: '/pages/personal/change_information'
+				});		
+			},
+			Cancellation(){
+				try {
+				    uni.clearStorageSync();
+					uni.setStorageSync('isLogin', false);
+					uni.switchTab({
+					    url: '/pages/index/index'
 					});
-					return;
+					uni.showToast({
+						icon: 'none',
+						title: "已注销"
+					});
+				} catch (e) {
+				    // error
 				}
-				console.log(this.birthday)
-				uni.request({
-				    url: this.Server_IP + 'changeInformation', //仅为示例，并非真实接口地址。
-				    data: {
-				        userId: this.userId,
-						funny: this.checkbox[0].checked,
-						anime: this.checkbox[1].checked,
-						news: this.checkbox[2].checked,
-						fashion: this.checkbox[3].checked,
-						motion: this.checkbox[4].checked,
-						science: this.checkbox[5].checked,
-						userName: this.userName,
-						telephone: this.telephone,
-						birthday: this.birthday,
-						synopsis: this.synopsis,
-						sex: this.sexIndex,
-				    },
-				    header: {
-				        'custom-header': 'changeInformation' //自定义请求头信息
-				    },
-					method:"POST",
-					dataType:"json",
-				    success: (res) => {
-				        console.log(res.data);
-						if(res.data.info.code == '0'){
-							uni.setStorageSync('userId', res.data.data.userId);
-							console.log("成功")
-							let temp = this.field
-							let items = this.checkbox
-							for (let i = 0, lenI = items.length; i < lenI; ++i) {
-								temp[items[i].alias] = items[i].checked
-							}
-							
-							uni.setStorageSync('field', temp);
-							uni.setStorageSync('userName', this.userName);
-							uni.setStorageSync('telephone', this.telephone);
-							uni.setStorageSync('sex', this.sex);
-							uni.setStorageSync('birthday', this.birthday);
-							uni.setStorageSync('synopsis', this.synopsis);
-							uni.showToast({
-								icon: 'none',
-								title: "信息修改成功"
-							});
-						}else{
-							console.log(res.data.info.message);
-							uni.showToast({
-								icon: 'none',
-								title: res.data.info.message
-							});
-						}
-				    },
-				});
-
 			}
 		}
 	}
@@ -359,5 +293,9 @@ page{
 	}
 .cu-form-group .title {
 		min-width: calc(4em + 15px);
+	}
+.window-bottom{
+		position: fixed;  
+		bottom: var(--window-bottom);
 	}
 </style>

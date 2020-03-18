@@ -202,18 +202,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 var _util = _interopRequireDefault(__webpack_require__(/*! @/common/util.js */ 47));
 var _graceChecker = _interopRequireDefault(__webpack_require__(/*! @/common/graceChecker.js */ 48));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
@@ -283,19 +271,24 @@ var _graceChecker = _interopRequireDefault(__webpack_require__(/*! @/common/grac
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default = { data: function data() {return { userId: '', modalName: null, userName: '', fieldStr: '', mail: '', birthday: '1990-01-01', telephone: '', synopsis: '', sex: ['女', '男'], sexIndex: -1, captcha: '', captchaName: "修改邮箱", field: '', fieldbox: '', checkbox: [{ value: 0, name: '娱乐', alias: 'funny', checked: 0 }, { value: 1, name: '动漫', alias: 'anime', checked: 0 }, { value: 2, name: '新闻', alias: 'news', checked: 0 }, { value: 3, name: '时尚', alias: 'fashion', checked: 0 }, { value: 4, name: '运动', alias: 'motion', checked: 0 }, { value: 5, name: '科技', alias: 'science', checked: 0 }] };}, onShow: function onShow(e) {console.log("加载信息界面");var _this = this;_this.userId = uni.getStorageSync('userId');console.log(_this.userId);_this.userName = uni.getStorageSync('userName');_this.mail = uni.getStorageSync('mail');_this.birthday = uni.getStorageSync('birthday');_this.telephone = uni.getStorageSync('telephone');_this.synopsis = uni.getStorageSync('synopsis');_this.field = uni.getStorageSync('field');_this.sexIndex = uni.getStorageSync('sex');if (_this.field.funny == 1) {_this.checkbox[0].checked = 1;_this.fieldStr = "娱乐";}if (_this.field.anime == 1) {_this.checkbox[1].checked = 1;if (_this.fieldStr == '') {_this.fieldStr = "动漫";} else {_this.fieldStr += ",动漫";}}if (_this.field.news == 1) {_this.checkbox[2].checked = 1;if (_this.fieldStr == '') {_this.fieldStr = "新闻";} else {_this.fieldStr += ",新闻";
+var _default = { data: function data() {return { userId: '', modalName: null, userName: '', fieldStr: '', mail: '', birthday: '1990-01-01', telephone: '', synopsis: '', sex: ['女', '男'], sexIndex: -1, captcha: '', captchaName: "修改邮箱", field: '', fieldbox: '', checkbox: [{ value: 0, name: '娱乐', alias: 'funny', checked: 0 }, { value: 1, name: '动漫', alias: 'anime', checked: 0 }, { value: 2, name: '新闻', alias: 'news', checked: 0 }, { value: 3, name: '时尚', alias: 'fashion', checked: 0 }, { value: 4, name: '运动', alias: 'motion', checked: 0 }, { value: 5, name: '科技', alias: 'science', checked: 0 }] };}, onShow: function onShow(e) {console.log("加载信息界面");var _this = this;_this.userId = uni.getStorageSync('userId');console.log(_this.userId);_this.userName = uni.getStorageSync('userName');_this.mail = uni.getStorageSync('mail');_this.birthday = uni.getStorageSync('birthday');_this.telephone = uni.getStorageSync('telephone');_this.synopsis = uni.getStorageSync('synopsis');_this.field = uni.getStorageSync('field');_this.sexIndex = uni.getStorageSync('sex');console.log(_this.sexIndex == "");console.log("sexIndex" + _this.sexIndex);if (_this.mail == "") {_this.captchaName = "设置邮箱";}if (_this.field.funny == 1) {
+      _this.checkbox[0].checked = 1;
+      _this.fieldStr = "娱乐";
+    }
+    if (_this.field.anime == 1) {
+      _this.checkbox[1].checked = 1;
+      if (_this.fieldStr == '') {
+        _this.fieldStr = "动漫";
+      } else {
+        _this.fieldStr += ",动漫";
+      }
+    }
+    if (_this.field.news == 1) {
+      _this.checkbox[2].checked = 1;
+      if (_this.fieldStr == '') {
+        _this.fieldStr = "新闻";
+      } else {
+        _this.fieldStr += ",新闻";
       }
     }
     if (_this.field.fashion == 1) {
@@ -333,6 +326,7 @@ var _default = { data: function data() {return { userId: '', modalName: null, us
     if (_this.mail == '') {
       _this.captchaName = "绑定邮箱";
     }
+
   },
   methods: {
     ChooseCheckbox: function ChooseCheckbox(e) {
@@ -379,95 +373,35 @@ var _default = { data: function data() {return { userId: '', modalName: null, us
     },
     // 跳转到修改邮箱页面
     changemail: function changemail() {
+      if (this.mail == "") {
+        uni.navigateTo({
+          url: './bandmail' });
+
+      } else {
+        uni.navigateTo({
+          url: './changemail?mail=' + this.mail });
+
+      }
+    },
+    change: function change() {
       uni.navigateTo({
-        url: './changemail?mail=' + this.mail });
+        url: '/pages/personal/change_information' });
 
     },
-    change: function change() {var _this2 = this;
-      var _this = this;
-      // 注册信息校验
-      var informationRule = [
-      {
-        name: 'userName',
-        checkType: 'string',
-        checkRule: '0,16',
-        errorMsg: '昵称过长' },
+    Cancellation: function Cancellation() {
+      try {
+        uni.clearStorageSync();
+        uni.setStorageSync('isLogin', false);
+        uni.switchTab({
+          url: '/pages/index/index' });
 
-      {
-        name: 'synopsis',
-        checkType: 'string',
-        checkRule: '0,254',
-        errorMsg: '简介过长' },
-
-      {
-        name: 'telephone',
-        checkType: 'phoneno',
-        checkRule: '',
-        errorMsg: '手机号格式不正确' }];
-
-
-      //进行表单检查
-      var checkRes = _graceChecker.default.check(_this, informationRule);
-      if (!checkRes) {
         uni.showToast({
-          title: _graceChecker.default.error,
-          icon: "none" });
+          icon: 'none',
+          title: "已注销" });
 
-        return;
+      } catch (e) {
+        // error
       }
-      console.log(this.birthday);
-      uni.request({
-        url: this.Server_IP + 'changeInformation', //仅为示例，并非真实接口地址。
-        data: {
-          userId: this.userId,
-          funny: this.checkbox[0].checked,
-          anime: this.checkbox[1].checked,
-          news: this.checkbox[2].checked,
-          fashion: this.checkbox[3].checked,
-          motion: this.checkbox[4].checked,
-          science: this.checkbox[5].checked,
-          userName: this.userName,
-          telephone: this.telephone,
-          birthday: this.birthday,
-          synopsis: this.synopsis,
-          sex: this.sexIndex },
-
-        header: {
-          'custom-header': 'changeInformation' //自定义请求头信息
-        },
-        method: "POST",
-        dataType: "json",
-        success: function success(res) {
-          console.log(res.data);
-          if (res.data.info.code == '0') {
-            uni.setStorageSync('userId', res.data.data.userId);
-            console.log("成功");
-            var temp = _this2.field;
-            var items = _this2.checkbox;
-            for (var i = 0, lenI = items.length; i < lenI; ++i) {
-              temp[items[i].alias] = items[i].checked;
-            }
-
-            uni.setStorageSync('field', temp);
-            uni.setStorageSync('userName', _this2.userName);
-            uni.setStorageSync('telephone', _this2.telephone);
-            uni.setStorageSync('sex', _this2.sex);
-            uni.setStorageSync('birthday', _this2.birthday);
-            uni.setStorageSync('synopsis', _this2.synopsis);
-            uni.showToast({
-              icon: 'none',
-              title: "信息修改成功" });
-
-          } else {
-            console.log(res.data.info.message);
-            uni.showToast({
-              icon: 'none',
-              title: res.data.info.message });
-
-          }
-        } });
-
-
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

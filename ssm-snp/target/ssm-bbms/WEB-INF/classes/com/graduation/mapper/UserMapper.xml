@@ -65,4 +65,12 @@
         synopsis = #{synopsis}
         where userId = #{userId}
     </update>
+
+    <!--更新用户个人邮箱-->
+    <update id="bandmail" parameterType="map">
+        update userinformation
+        set
+        mail = #{mail}
+        where userId = #{userId}
+    </update>
 </mapper>

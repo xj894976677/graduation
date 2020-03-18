@@ -169,11 +169,10 @@ var _default =
   },
   methods: {
     suserid: function suserid() {
-      try {
-        uni.clearStorageSync();
-      } catch (e) {
-        // error
-      }
+
+      uni.navigateTo({
+        url: '/pages/subscriber/homepage?userId=333333' });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

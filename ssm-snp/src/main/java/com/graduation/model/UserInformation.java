@@ -17,4 +17,5 @@ public class UserInformation {
     private String sex;
     private Date birthday;
     private String synopsis;
+    private String headUrl;
 }

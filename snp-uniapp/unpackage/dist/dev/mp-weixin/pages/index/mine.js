@@ -196,32 +196,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
@@ -229,11 +203,12 @@ var _default =
       userInfo: {
         clientNo: null,
         userName: '未登录',
-        avaterUrl: '/static/icon/smile-fill.png' },
+        avaterUrl: 'http://a3q.dns06.net.cn/15844990493147.jpeg' },
 
       vipInfo: {},
 
 
+      synopsis: "",
       levelpercent: "",
       loading: false,
       acctDetail: {},
@@ -246,43 +221,75 @@ var _default =
       messageList: [{
         cuIcon: 'redpacket',
         color: 'alive',
-        number: '--',
+        number: '0',
         badge: 0,
         url: "/pages/bank_card/index/index",
-        name: '银行卡' },
+        name: '微博' },
       {
         cuIcon: 'refund',
         color: 'alive',
-        number: '--',
+        number: '0',
         badge: 0,
-        name: '卡券' },
+        name: '关注' },
       {
         cuIcon: 'present',
         color: 'alive',
-        number: '--',
+        number: '0',
         badge: 0,
-        name: '积分' }],
+        name: '粉丝' }],
 
-      gridCol: 3,
-      isVip: false };
+      gridCol: 3 };
 
   },
-  onShow: function onShow(e) {
+  onShow: function onShow() {
+    console.log(this.isLogin);
+    console.log(1);
     var _this = this;
-
     // 获取用户信息
-    _this.isLogin = uni.getStorageSync('isLogin');
-    uni.getStorage({
-      key: 'vipInfo',
+    if (uni.getStorageSync('isLogin') != "") {
+      _this.isLogin = uni.getStorageSync('isLogin');
+    }
+    if (uni.getStorageSync('userName') != "") {
+      _this.userInfo.userName = uni.getStorageSync('userName');
+    } else {
+      _this.userInfo.userName = "未登录";
+    }
+    if (uni.getStorageSync('synopsis') != "") {
+      _this.synopsis = uni.getStorageSync('synopsis');
+      if (_this.synopsis.length > 15) {
+        _this.synopsis = _this.synopsis.substr(0, 15) + "...";
+      }
+    } else {
+      _this.synopsis = "";
+    }
+    console.log(_this.isLogin);
+    console.log("获取关注信息");
+    uni.request({
+      url: this.Server_IP + 'followIm', //仅为示例，并非真实接口地址。
+      data: {
+        fansId: "",
+        userId: uni.getStorageSync('userId') },
+
+      header: {
+        'custom-header': 'followIm' //自定义请求头信息
+      },
+      method: "POST",
+      dataType: "json",
       success: function success(res) {
-        _this.vipInfo = res.data;
-        if (_this.vipInfo.length > 0) {
-          _this.isVip = true;
+        console.log(res.data);
+        if (res.data.info.code == '0') {
+          _this.messageList[1].number = +res.data.data.follow;
+          _this.messageList[2].number = +res.data.data.fans;
+          console.log("获取关注粉丝成功");
+        } else {
+          console.log("获取关注粉丝失败");
         }
+      },
+      fail: function fail() {
+        console.log("获取关注粉丝失败");
       } });
 
-
-
+    console.log("获取完成");
   },
   methods: {
     change: function change() {
@@ -299,17 +306,66 @@ var _default =
       }
 
     },
-    nextStep: function nextStep(url) {
-      var _this = this;
-      console.log("进来了");
-      console.log(url);
-      uni.navigateTo({
-        url: url });
+    toList: function toList(name) {
+      if (name == "微博") {
 
+      }
+      if (name == "关注") {
+        uni.request({
+          url: this.Server_IP + 'queryfollow', //仅为示例，并非真实接口地址。
+          data: {
+            userId: uni.getStorageSync('userId') },
+
+          header: {
+            'custom-header': 'queryfollow' //自定义请求头信息
+          },
+          method: "POST",
+          dataType: "json",
+          success: function success(res) {
+            console.log(res.data);
+            if (res.data.info.code == '0') {
+              uni.navigateTo({
+                url: '/pages/subscriber/user_list?title=我的关注&userList=' + res.data.data.follow });
+
+            } else {
+              console.log("获取关注粉丝失败");
+            }
+          },
+          fail: function fail() {
+            console.log("获取关注粉丝失败");
+          } });
+
+      }
+      if (name == "粉丝") {
+        uni.request({
+          url: this.Server_IP + 'queryfans', //仅为示例，并非真实接口地址。
+          data: {
+            userId: uni.getStorageSync('userId') },
+
+          header: {
+            'custom-header': 'queryfans' //自定义请求头信息
+          },
+          method: "POST",
+          dataType: "json",
+          success: function success(res) {
+            console.log(res.data);
+            if (res.data.info.code == '0') {
+              uni.navigateTo({
+                url: '/pages/subscriber/user_list?title=我的粉丝&userList=' + res.data.data.fans });
+
+            } else {
+              console.log("获取关注粉丝失败");
+            }
+          },
+          fail: function fail() {
+            console.log("获取关注粉丝失败");
+          } });
+
+      }
     },
-    toVip: function toVip() {
+    changeImage: function changeImage() {
       uni.navigateTo({
-        url: "/pages/user/vip/vip" });
+        url: "/pages/personal/change_headpic" });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

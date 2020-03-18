@@ -53,6 +53,38 @@
             "path" : "pages/login/reset_password",
             "style" : {}
         }
+        ,{
+            "path" : "pages/personal/bandmail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/personal/userpage",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/personal/change_information",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/test/pic/pic",
+            "style" : {}
+        }
+        ,{
+            "path" : "components/choose-image/choose-image",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/personal/change_headpic",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/subscriber/homepage",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/subscriber/user_list",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

@@ -1,8 +1,11 @@
 package com.graduation.controller;
 
 import com.graduation.common.AssembleResponseMsg;
+import com.graduation.common.DateUtil;
 import com.graduation.http_model.ResponseBody;
+import com.graduation.model.MailCode;
 import com.graduation.model.UserInformation;
+import com.graduation.service_api.IMailService;
 import com.graduation.service_api.IUserFieldService;
 import com.graduation.service_api.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,8 @@ import java.util.Map;
 
 @RestController
 public class UserController {
+    @Autowired
+    private IMailService mailService;
     @Autowired
     private IUserService userService;
     @Autowired
@@ -129,5 +134,28 @@ public class UserController {
             return new AssembleResponseMsg().failure(200, "error", "更新失败");
         }
         return new AssembleResponseMsg().success(all);
+    }
+
+    //    更改用户信息接口
+    @RequestMapping(value = "/bandmail",produces = "application/json;charset=utf-8")
+    public ResponseBody bandmail(@RequestBody Map<String,Object> map) {
+        Map<String,String> all = new HashMap<>();
+        MailCode mailCode = mailService.selectMailCode(map);
+        String code = (String) map.get("code");
+        if (code == null){
+            return new AssembleResponseMsg().failure(200,"error","验证码为空");
+        }
+        if (code.equals(mailCode.getCode()) && DateUtil.compareWithCurrent(mailCode.getExpirationDate())){
+            try{
+                userService.bandmail(map);
+            }catch (Exception e){
+                return new AssembleResponseMsg().failure(200,"error","绑定失败");
+            }
+            return new AssembleResponseMsg().success(all);
+        }else if (!code.equals(mailCode.getCode())){
+            return new AssembleResponseMsg().failure(200,"error","验证码不一致");
+        }else{
+            return new AssembleResponseMsg().failure(200,"error","验证码已过期");
+        }
     }
 }

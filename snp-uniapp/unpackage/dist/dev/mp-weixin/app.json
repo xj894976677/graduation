@@ -12,7 +12,15 @@
     "pages/login/forget_password",
     "pages/login/mail_login",
     "pages/login/verification_mail",
-    "pages/login/reset_password"
+    "pages/login/reset_password",
+    "pages/personal/bandmail",
+    "pages/personal/userpage",
+    "pages/personal/change_information",
+    "pages/test/pic/pic",
+    "components/choose-image/choose-image",
+    "pages/personal/change_headpic",
+    "pages/subscriber/homepage",
+    "pages/subscriber/user_list"
   ],
   "subPackages": [],
   "window": {
