@@ -131,11 +131,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 147));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var sunUiUpimg = function sunUiUpimg() {return __webpack_require__.e(/*! import() | components/sunui-upimg/sunui-upimg */ "components/sunui-upimg/sunui-upimg").then(__webpack_require__.bind(null, /*! @/components/sunui-upimg/sunui-upimg.vue */ 200));};var _default =
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var sunUiUpimg = function sunUiUpimg() {return Promise.all(/*! import() | components/sunui-upimg/sunui-upimg */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/sunui-upimg/sunui-upimg")]).then(__webpack_require__.bind(null, /*! @/components/sunui-upimg/sunui-upimg.vue */ 200));};var _default =
 
 
 
@@ -147,17 +143,7 @@ __webpack_require__.r(__webpack_exports__);
 {
   data: function data() {
     return {
-      serviceArr2: [],
-      serviceArr3: [{
-        path: 'https://dss0.bdstatic.com/6Ox1bjeh1BF3odCf/it/u=1537304011,3995405403&fm=74&app=80&f=JPEG&size=f121,140?sec=1880279984&t=97b7ba208086526f1a92f5294f1a68a3' }],
-
-      serviceArr4: [{
-        path: 'https://dss0.bdstatic.com/6Ox1bjeh1BF3odCf/it/u=1537304011,3995405403&fm=74&app=80&f=JPEG&size=f121,140?sec=1880279984&t=97b7ba208086526f1a92f5294f1a68a3' },
-
-      {
-        path: 'https://dss0.baidu.com/73t1bjeh1BF3odCf/it/u=63785387,1979900985&fm=85&s=8015CD304A92909C8F80B180030030EB' }] };
-
-
+      picUrl: [] };
 
   },
   components: {
@@ -174,32 +160,11 @@ __webpack_require__.r(__webpack_exports__);
     // this.getInfo();
   },
   methods: {
-    getInfo: function () {var _getInfo = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _this = this;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
-                  uni.request({
-                    url: 'http://www.pbdpw.com/info.php',
-                    method: 'GET',
-                    data: {},
-                    success: function success(res) {
-                      if (res.data.status == 'ok') {
-                        _this.serviceArr2 = res.data.data;
-                        console.log('服务器返回值：', JSON.stringify(res.data.data));
-                      }
-                    } }));case 2:case "end":return _context.stop();}}}, _callee, this);}));function getInfo() {return _getInfo.apply(this, arguments);}return getInfo;}(),
-
-
     getImageInfo1: function getImageInfo1(e) {
       console.log('图片返回1：', e);
-    },
-    getImageInfo2: function getImageInfo2(e) {
-      console.log('图片返回2：', e);
-    },
-    getImageInfo3: function getImageInfo3(e) {
-      console.log('图片返回3：', e);
-    },
-    getImageInfo4: function getImageInfo4(e) {
-      console.log('图片返回4：', e);
+      this.picUrl = e;
+      console.log(this.picUrl);
     } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 

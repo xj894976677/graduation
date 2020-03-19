@@ -7,60 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec2e3a64-d865-4b32-8c68-f660c7938b7c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/FollowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/FollowMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/FollowMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IFollowService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/FollowService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/index/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/index/mine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/index/mine.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/personal/information.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/personal/information.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/runtime.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/mine.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/mine.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/personal/information.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/personal/information.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/colorui/components/cu-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/colorui/components/cu-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/mine.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/mine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/mine.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/mine.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/mine.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/mine.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/register.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/login/register.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/information.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/information.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/information.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/information.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/information.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/information.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/model/UserInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/model/UserInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper_api/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/mapper_api/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/model/UserInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/model/UserInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_api/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/service_api/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/service_impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper_api/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper_api/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/model/UserInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/model/UserInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_api/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_api/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSayMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserSayMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/model/UserSay.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,48 +25,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-837">
-              <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3617#3618#0" expanded="true" />
-                <element signature="e#3657#3658#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
-              <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMappertest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="243">
+              <caret line="11" column="27" lean-forward="true" selection-end-line="75" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -171,18 +82,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="157" column="75" selection-start-line="157" selection-start-column="12" selection-end-line="157" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/FollowController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -190,6 +89,43 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSayMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/UserSay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserSayMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMappertest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
             </state>
           </provider>
         </entry>
@@ -208,6 +144,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -227,10 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/controller/Usertest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/xueden/aspect/SysAccessLogAspect.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/xueden/aspect/SysAccessLogAspect.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/aspect/SysAccessLogAspect.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/model/User1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUser.java" />
@@ -278,6 +211,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IFollowService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/FollowService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/FollowController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSay.xml.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSay.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSayMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/model/UserSay.java" />
       </list>
     </option>
   </component>
@@ -316,8 +253,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="318" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="910" />
+    <option name="y" value="96" />
     <option name="width" value="1302" />
     <option name="height" value="1552" />
   </component>
@@ -418,6 +356,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="graduation" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssm-snp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssm-snp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation" type="462c0819:PsiDirectoryNode" />
               <item name="service_api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -462,7 +410,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584540273069" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584608123136" />
     <property name="last_opened_file_path" value="E:/project/01Vue+ElementUI+SSM图书借阅管理系统（20191230版）/源码/后台源码" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -731,12 +679,12 @@
       <workItem from="1583986561978" duration="13211000" />
       <workItem from="1584090512359" duration="40424000" />
       <workItem from="1584442440162" duration="4003000" />
-      <workItem from="1584446634252" duration="13629000" />
+      <workItem from="1584446634252" duration="14336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173896000" />
+    <option name="totallyTimeSpent" value="174603000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -748,10 +696,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1293" height="783" extended-state="6" />
+    <frame x="455" y="48" width="651" height="776" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26477733" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.69814503" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -762,7 +710,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822084" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.47239265" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3006135" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.30387598" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924962" />
@@ -919,9 +867,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/User1.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/User.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService1.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/Usertest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/TestOne.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/BookController.java" />
@@ -1190,13 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMappertest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1214,13 +1152,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1302,6 +1233,42 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMappertest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="11" column="27" lean-forward="true" selection-end-line="75" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserSayMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSayMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/UserSay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
         </state>
       </provider>
     </entry>

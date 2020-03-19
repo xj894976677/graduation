@@ -7,7 +7,7 @@
 		</view>
 		<view class="cu-card case">
 			<view class="cu-item shadow ">
-				<view class="margin-top flex-sub cu-item self-center margin-left-bg flex">
+				<view class="margin-top flex cu-item margin-left-bg flex" style="align-items: center;">
 					<view class="cu-avatar round lg" :style="{backgroundImage:'url(' + userInfo.avaterUrl + ')'}" @tap="changeImage"></view>
 					<view @tap="change()">
 						<view class="text-grey margin-left" style="display: inline; font-size: 40upx;">{{userInfo.userName}}</view>
@@ -20,6 +20,7 @@
 							</view>
 						</view>
 					</view>
+					<button class='cu-btn bg-blue round shadow lg' @tap="write" style="margin: auto;" v-show="isLogin">写微博</button>
 				</view>
 				
 				<view class="cu-list grid margin-top-sm" :class="['col-' + gridCol, gridBorder?'':'no-border']">
@@ -121,8 +122,8 @@
 			}
 			if(uni.getStorageSync('synopsis') != ""){
 				_this.synopsis = uni.getStorageSync('synopsis')
-				if(_this.synopsis.length > 15){
-					_this.synopsis = _this.synopsis.substr(0,15) + "..."
+				if(_this.synopsis.length > 8){
+					_this.synopsis = _this.synopsis.substr(0,8) + "..."
 				}
 			}else{
 				_this.synopsis = ""
@@ -231,6 +232,11 @@
 			changeImage () {
 				uni.navigateTo({
 					url: "/pages/personal/change_headpic"
+				})
+			},
+			write(){
+				uni.navigateTo({
+					url: "/pages/write/write"
 				})
 			}
 		},

@@ -85,6 +85,10 @@
             "path" : "pages/subscriber/user_list",
             "style" : {}
         }
+        ,{
+            "path" : "pages/write/write",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
@@ -111,17 +115,13 @@
 	    "color": "#7a7a7a",
 	    "selectedColor": "#0081ff",
 	    "backgroundColor": "#ffffff",
+		"borderStyle":"white",
 	    "list": [{
 	        "pagePath": "pages/index/index",
 	        "iconPath": "static/tabbar/home.png",
 	        "selectedIconPath": "static/tabbar/home-fill.png",
 	        "text": "首页"
-	    }, {
-	        "pagePath": "pages/index/write",
-	        "iconPath": "static/tabbar/brush.png",
-	        "selectedIconPath": "static/tabbar/brush_fill.png",
-	        "text": "发表"
-	    }, {
+	    },  {
 	        "pagePath": "pages/index/message",
 	        "iconPath": "static/tabbar/mail.png",
 	        "selectedIconPath": "static/tabbar/mail_fill.png",

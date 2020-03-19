@@ -47,6 +47,27 @@
 					"id": -1,
 					"name": "pages/subscriber/user_list",
 					"pathName": "pages/subscriber/user_list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/write",
+					"pathName": "pages/index/write",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/test/pic/pic",
+					"pathName": "pages/test/pic/pic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/mine",
+					"pathName": "pages/index/mine",
 					"scene": null
 				}
 			]

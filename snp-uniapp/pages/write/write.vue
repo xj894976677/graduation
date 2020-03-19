@@ -1,7 +1,8 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-blue">
-			<block slot="content">发表</block>
+		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+			<block slot="backText">返回</block>
+			<block slot="content">写微博</block>
 		</cu-custom>
 		<view class="cu-form-group" style="background-color: #F9FAFB;">
 			<textarea class="textbg" maxlength="254" :disabled="modalName!=null" v-model="text" placeholder="分享新鲜事..." style="height: 350upx; font-size: 31upx;"></textarea>
@@ -176,8 +177,12 @@
 					uni.request({
 					    url: this.Server_IP + 'usersay', //仅为示例，并非真实接口地址。
 					    data: {
-							userId: "",
-							
+							userId: uni.getStorageSync('userId'),
+							text: _this.text,
+							address: _this.address,
+							field: _this.field,
+							picUrl: JSON.stringify(_this.picUrl),
+							userName: uni.getStorageSync('userName')
 					    },
 					    header: {
 					        'custom-header': 'usersay' //自定义请求头信息

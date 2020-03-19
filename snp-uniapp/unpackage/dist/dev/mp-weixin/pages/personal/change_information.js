@@ -400,7 +400,7 @@ var _default = { data: function data() {return { userId: '', modalName: null, us
       {
         name: 'userName',
         checkType: 'string',
-        checkRule: '0,16',
+        checkRule: '0,8',
         errorMsg: '昵称过长' },
 
       {

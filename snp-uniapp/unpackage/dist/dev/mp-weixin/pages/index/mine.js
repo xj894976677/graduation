@@ -196,6 +196,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
@@ -256,8 +257,8 @@ var _default =
     }
     if (uni.getStorageSync('synopsis') != "") {
       _this.synopsis = uni.getStorageSync('synopsis');
-      if (_this.synopsis.length > 15) {
-        _this.synopsis = _this.synopsis.substr(0, 15) + "...";
+      if (_this.synopsis.length > 8) {
+        _this.synopsis = _this.synopsis.substr(0, 8) + "...";
       }
     } else {
       _this.synopsis = "";
@@ -366,6 +367,11 @@ var _default =
     changeImage: function changeImage() {
       uni.navigateTo({
         url: "/pages/personal/change_headpic" });
+
+    },
+    write: function write() {
+      uni.navigateTo({
+        url: "/pages/write/write" });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

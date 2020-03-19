@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.graduation.mapper_api.UserSayMapper">
+
+    <!--根据条件查询用户是否存在-->
+    <select id="login" parameterType="map" resultType="String">
+        select userId from userlogin where userId = #{userId} and password = #{password}
+    </select>
+    <!--根据id查询登录表中是否存在用户-->
+    <select id="queryUser" parameterType="map" resultType="Integer">
+        select count(1) from userlogin where userId = #{userId}
+    </select>
+    <!--新增登录用户-->
+    <insert id="addUser" parameterType="map">
+        insert into userlogin(
+        userId,
+        password) values (
+        #{userId},
+        #{password})
+    </insert>
+    <!--插入新的用户信息，只有id-->
+    <insert id="addInformation" parameterType="map">
+        insert into userinformation(userId) values (#{userId})
+    </insert>
+    <!--根据id查询用户信息-->
+    <select id="userInformation" parameterType="map" resultType="com.graduation.model.UserInformation">
+        select * from userinformation where userId = #{userId}
+    </select>
+    <!--增加用户邮箱信息-->
+    <update id="updateMail" parameterType="map">
+        update userinformation
+        set
+        mail = #{mail}
+        where userId = #{userId}
+    </update>
+    <!--查询邮箱是否使用-->
+    <select id="queryMail" parameterType="map" resultType="Integer">
+        select count(1) from userinformation where mail = #{mail}
+    </select>
+    <!--根据邮箱查询用户id-->
+    <select id="userIdfromMail" parameterType="map" resultType="String">
+        select userId from userinformation where mail = #{mail}
+    </select>
+    <!--根据id查询用户邮箱-->
+    <select id="mailfromUserId" parameterType="map" resultType="String">
+        select mail from userinformation where userId = #{userId}
+    </select>
+    <!--更新用户密码信息-->
+    <update id="updatePassword" parameterType="map">
+        update userlogin
+        set
+        password = #{password}
+        where userId = #{userId}
+    </update>
+    <!--更新用户个人信息-->
+    <update id="updateInformation" parameterType="map">
+        update userinformation
+        set
+        userName = #{userName},
+        telephone = #{telephone},
+        sex = #{sex},
+        birthday = #{birthday},
+        synopsis = #{synopsis}
+        where userId = #{userId}
+    </update>
+
+    <!--更新用户个人邮箱-->
+    <update id="bandmail" parameterType="map">
+        update userinformation
+        set
+        mail = #{mail}
+        where userId = #{userId}
+    </update>
+</mapper>

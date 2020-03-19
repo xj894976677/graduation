@@ -37,5 +37,7 @@
 </script>
 
 <style>
-
+page {
+		background-color: #f9fafb;
+	}
 </style>
