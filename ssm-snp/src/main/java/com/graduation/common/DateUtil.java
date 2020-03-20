@@ -1,5 +1,6 @@
 package com.graduation.common;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,7 +16,7 @@ public class DateUtil {
     /**
      * 返回字符串形式的当前日期
      * @Author xj
-     * @Param [pattern]  模板参数  如："yyyy-MM-dd"
+     * @Param [pattern]  模板参数
      * @return java.lang.String
      **/
     public static String getCurrentDateStr(String pattern){
@@ -26,7 +27,7 @@ public class DateUtil {
     /**
      * 返回long形式的当前时间戳
      * @Author xj
-     * @Param [pattern]  模板参数  如："yyyy-MM-dd"
+     * @Param [pattern]
      * @return
      **/
     public static long getTimeStamp(int deviation){
@@ -92,5 +93,17 @@ public class DateUtil {
     public static java.sql.Date getSqlStamp(String date, String format){
         long timeStamp = getTimeStamp(date, format);
         return new java.sql.Date(timeStamp);
+    }
+
+    /**
+     * 返回sql.timestamp 当前时间
+     * @Author xj
+     * @Param [pattern]  模板参数  日期字符串，字符串格式，如"yyyy-MM-dd"
+     * @return
+     **/
+    public static java.sql.Timestamp getSqlStamp(){
+        Date date = new Date();
+        Timestamp nousedate = new Timestamp(date.getTime());
+        return nousedate;
     }
 }

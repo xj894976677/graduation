@@ -175,7 +175,7 @@
 					});
 				}else{
 					uni.request({
-					    url: this.Server_IP + 'usersay', //仅为示例，并非真实接口地址。
+					    url: this.Server_IP + 'addSay', //仅为示例，并非真实接口地址。
 					    data: {
 							userId: uni.getStorageSync('userId'),
 							text: _this.text,
@@ -185,20 +185,18 @@
 							userName: uni.getStorageSync('userName')
 					    },
 					    header: {
-					        'custom-header': 'usersay' //自定义请求头信息
+					        'custom-header': 'addSay' //自定义请求头信息
 					    },
 						method:"POST",
 						dataType:"json",
 					    success: (res) => {
 					        console.log(res.data);
 							if(res.data.info.code == '0'){
-								uni.setStorageSync('userId', res.data.data.userId);
-								console.log("成功")
-								uni.reLaunch({
-								    url: './login'
-								});
+								uni.navigateBack({
+									delta:1
+								})
 								uni.showToast({
-									title: "密码重置成功",
+									title: "发表成功",
 									icon: "none"
 								});
 							}else{

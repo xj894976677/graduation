@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.graduation.mapper_api.ThumbMapper">
+
+    <!--点赞-->
+    <insert id="addThumb" parameterType="com.graduation.model.UserSay">
+        insert into thumb(
+        textId,userId
+        )
+        values (
+        #{textId},#{userId}
+        )
+    </insert>
+
+    <!--取消点赞-->
+    <delete id="delThumb" parameterType="map">
+        delete from thumb where textId = #{textId} and userId = #{userId}
+    </delete>
+
+    <!--查看是否点赞-->
+    <select id="isThumb" parameterType="map" resultType="Integer">
+        select count(1) from thumb where textId = #{textId} and userId = #{userId}
+    </select>
+
+    <!--根据ID查询点赞微博-->
+    <select id="thumbFromId" parameterType="map" resultType="String">
+        select textId from thumb where userId = #{userId}
+    </select>
+</mapper>

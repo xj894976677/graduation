@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="container">
 		<view>
 			<cu-custom bgColor="bg-gradual-blue" :isBack="true">
 				<block slot="backText">返回</block>
@@ -66,21 +66,22 @@
 				</view>
 			</view>
 			<view class="cu-form-group">
+				<view class="title">邮箱</view>
+				<view>
+					{{mail}}
+				</view>
+			</view>
+			<view class="cu-form-group">
 				<view class="title">爱好</view>
 				
 				<view>
 					{{fieldStr}}
 				</view>
 			</view>
-		
-			
-			<view class="cu-form-group">
-				<view class="title">邮箱</view>
-				<view>
-					{{mail}}
-				</view>
-			</view>
-		
+			<view class="cu-form-group flex" style="align-items: center; justify-content: space-between;">
+				<view class="title" style="width: 140upx;">简介</view>
+				<view>{{tempsyn}}</view>
+			</view>	
 		</form>
 		
 	</view>
@@ -98,6 +99,7 @@
 				telephone: '',
 				birthday: '',
 				synopsis: "",
+				tempsyn: "",
 				field: '',
 				fieldStr: '',
 				sex: ['女', '男'],
@@ -117,7 +119,7 @@
 					color: 'alive',
 					number: 0,
 					badge: 0,
-					url: "/pages/bank_card/index/index",
+					url: "/pages/subscriber/user_say",
 					name: '微博'
 				}, {
 					cuIcon: 'refund',
@@ -159,6 +161,12 @@
 						_this.sexIndex = res.data.data.sex;
 						_this.birthday = res.data.data.birthday;
 						_this.synopsis = res.data.data.synopsis;
+						if(_this.synopsis.length > 9){
+							var result = _this.synopsis.substr(0,8)
+							result += "  ..."
+							_this.tempsyn = _this.synopsis
+							_this.synopsis = result
+						}
 						console.log("获取用户信息成功")
 					}else{
 						console.log("获取用户信息失败")
@@ -263,6 +271,29 @@
 					console.log("获取关注粉丝失败")
 				}
 			});
+			uni.request({
+				url: this.Server_IP + 'sayNum', //仅为示例，并非真实接口地址。
+				data: {
+					userId: _this.userId
+				},
+				header: {
+					'custom-header': 'sayNum' //自定义请求头信息
+				},
+				method:"POST",
+				dataType:"json",
+				success: (res) => {
+					console.log(res.data);
+					if(res.data.info.code == '0'){
+						_this.messageList[0].number = +res.data.data.num;
+						console.log("获取微博数量成功")
+					}else{
+						console.log("获取微博数量失败")
+					}
+				},
+				fail() {
+					console.log("获取微博数量失败")
+				}
+			});
 		},
 		methods: {
 			follow(){
@@ -322,6 +353,11 @@
 						}
 					});
 				}
+			},
+			nextStep(url){
+				uni.navigateTo({
+					url: url + '?title=他的微博'
+				});	
 			}
 		},
 	}

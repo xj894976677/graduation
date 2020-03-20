@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/index/message",
     "pages/index/mine",
-    "pages/index/write",
     "pages/login/login",
     "pages/login/register",
     "pages/personal/information",
@@ -21,7 +20,8 @@
     "pages/personal/change_headpic",
     "pages/subscriber/homepage",
     "pages/subscriber/user_list",
-    "pages/write/write"
+    "pages/write/write",
+    "pages/subscriber/user_say"
   ],
   "subPackages": [],
   "window": {

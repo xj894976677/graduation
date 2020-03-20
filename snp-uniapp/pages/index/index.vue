@@ -26,11 +26,19 @@
 			
 		},
 		methods: {
+			getLocalTime(nS) { 
+			       return  
+			},
 			suserid(){
-				
-				uni.navigateTo({
-					url: '/pages/subscriber/homepage?userId=333333'
-				});	
+				var time = ""
+				var data = new Date(parseInt(1584685373492))
+				time += data.getFullYear() + "年"
+				time += data.getMonth()+1 + "月"
+				time += data.getDate() + "日 "
+				time += data.getHours()+ ":"
+				time += data.getMinutes() + ":"
+				time += data.getSeconds()
+				console.log(time)
 			}
 		}
 	}

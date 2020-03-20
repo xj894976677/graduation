@@ -14,10 +14,6 @@
 		    "style" : {}
 		}
 		,{
-		    "path" : "pages/index/write",
-		    "style" : {}
-		},
-        {
             "path" : "pages/login/login",
             "style" : {}
         }
@@ -87,6 +83,10 @@
         }
         ,{
             "path" : "pages/write/write",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/subscriber/user_say",
             "style" : {}
         }
     ],

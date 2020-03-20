@@ -108,11 +108,12 @@
 			}
 		},
 		onShow() {
+			console.log(uni.getStorageSync('userId'))
 			console.log(this.isLogin)
 			console.log(1)
 			let _this = this;
 			// 获取用户信息
-			if(uni.getStorageSync('isLogin') != ""){
+			if(uni.getStorageSync('isLogin') != "" || uni.getStorageSync('isLogin')!= null){
 				_this.isLogin = uni.getStorageSync('isLogin');
 			}
 			if(uni.getStorageSync('userName') != ""){
@@ -155,6 +156,29 @@
 					console.log("获取关注粉丝失败")
 				}
 			});
+			uni.request({
+				url: this.Server_IP + 'sayNum', //仅为示例，并非真实接口地址。
+				data: {
+					userId: uni.getStorageSync('userId')
+				},
+				header: {
+					'custom-header': 'sayNum' //自定义请求头信息
+				},
+				method:"POST",
+				dataType:"json",
+				success: (res) => {
+					console.log(res.data);
+					if(res.data.info.code == '0'){
+						_this.messageList[0].number = +res.data.data.num;
+						console.log("获取微博数量成功")
+					}else{
+						console.log("获取微博数量失败")
+					}
+				},
+				fail() {
+					console.log("获取微博数量失败")
+				}
+			});
 			console.log("获取完成")
 		},
 		methods: {
@@ -174,6 +198,32 @@
 			},
 			toList(name){
 				if(name == "微博"){
+					uni.request({
+						url: this.Server_IP + 'allsay', //仅为示例，并非真实接口地址。
+						data: {
+							userId: uni.getStorageSync('userId')
+						},
+						header: {
+							'custom-header': 'allsay' //自定义请求头信息
+						},
+						method:"POST",
+						dataType:"json",
+						success: (res) => {
+							console.log(res.data);
+							if(res.data.info.code == '0'){
+								console.log(res.data)
+								uni.navigateTo({
+									url: '/pages/subscriber/user_say?title=我的微博&sayList='+res.data.data.sayList
+								});	
+							}else{
+								console.log("获取微博失败")
+							}
+						},
+						fail() {
+							console.log("获取微博失败")
+						}
+					});
+					
 					
 				}
 				if(name == "关注"){

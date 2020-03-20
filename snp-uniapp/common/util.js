@@ -114,7 +114,19 @@ var dateUtils = {
 	}
 };
 
+function getTimeFormat(timeStamp) {
+	var time = ""
+	var date = new Date(parseInt(timeStamp))
+	time += date.getFullYear() + "年"
+	time += date.getMonth()+1 + "月"
+	time += date.getDate() + "日 "
+	time += date.getHours()+ ":"
+	time += date.getMinutes() + ":"
+	time += date.getSeconds()
+	return time
+}
 module.exports = {
+	getTimeFormat: getTimeFormat,
 	formatTime: formatTime,
 	formatLocation: formatLocation,
 	formatMoney: formatMoney,

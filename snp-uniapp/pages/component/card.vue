@@ -60,7 +60,7 @@
 					折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！
 				</view>
 				<view class="grid flex-sub padding-lr" :class="isCard?'col-3 grid-square':'col-1'">
-					<view class="bg-img" :class="isCard?'':'only-img'" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"
+					<view class="bg-img grid-square" :class="isCard?'':'only-img'" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"
 					 v-for="(item,index) in isCard?9:1" :key="index">
 					</view>
 				</view>
