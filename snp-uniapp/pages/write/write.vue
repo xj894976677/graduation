@@ -136,6 +136,7 @@
 					if (items[i].value == values) {
 						if(items[i].checked == 1){
 							this.fieldStr = "选择类型"
+							this.field = ""
 							items[i].checked = 0
 						}else{
 							items[i].checked = 1

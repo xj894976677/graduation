@@ -24,7 +24,7 @@
 					</view>
 					<view class="grid flex-sub padding-lr margin-top-sm" :class="isCard?'col-3 grid-square':'col-1'">
 						<view class="bg-img" :class="isCard?'':'only-img'" :style="[{'background-image':'url('+ pic +')' }]"
-						 v-for="(pic,index) in item.picUrl" :key="index">
+						 v-for="(pic,idx) in item.picUrl" :key="idx" @tap="previewImage(idx, item.picUrl)">
 						</view>
 					</view>
 					<view class="text-gray text-sm text-right padding">
@@ -62,6 +62,16 @@
 			}
 		},
 		methods: {
+			// 预览图片函数
+			previewImage(idx, picUrl) {
+				console.log(idx)
+				console.log(picUrl)
+				let preview = picUrl;
+				uni.previewImage({
+					current: idx,
+					urls: preview
+				});
+			},
 			getTimeFormat(timeStamp){
 				var time = ""
 				var date = new Date(parseInt(timeStamp))
@@ -108,6 +118,7 @@
 			},
 			addThumb(index){
 				console.log("点赞")
+				
 				uni.request({
 				    url: this.Server_IP + 'addThumb', //仅为示例，并非真实接口地址。
 				    data: {
@@ -126,6 +137,7 @@
 								icon: 'none',
 								title: "点赞成功"
 							});
+							this.sayList[index].thumb = +this.sayList[index].thumb + 1
 							this.sayList[index].isThumb = "1"
 						}else{
 							uni.showToast({
@@ -157,6 +169,7 @@
 								icon: 'none',
 								title: "取消成功"
 							});
+							this.sayList[index].thumb = +this.sayList[index].thumb - 1
 							this.sayList[index].isThumb = "0"
 						}else{
 							uni.showToast({

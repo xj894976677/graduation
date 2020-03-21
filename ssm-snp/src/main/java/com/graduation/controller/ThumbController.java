@@ -3,6 +3,7 @@ package com.graduation.controller;
 import com.graduation.common.AssembleResponseMsg;
 import com.graduation.http_model.ResponseBody;
 import com.graduation.service_api.IThumbService;
+import com.graduation.service_api.IUserSayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +16,16 @@ import java.util.Map;
 public class ThumbController {
     @Autowired
     private IThumbService iThumbService;
+    @Autowired
+    private IUserSayService userSayService;
 
     @RequestMapping(value = "/addThumb",produces = "application/json;charset=utf-8")
     public ResponseBody addThumb(@RequestBody Map<String,Object> map){
         Map<String,String> all = new HashMap<>();
         try{
+            Integer num = userSayService.thumbNum(map);
+            map.put("thumb", num+1);
+            userSayService.updateThumb(map);
             iThumbService.addThumb(map);
             return new AssembleResponseMsg().success(all);
         }catch (Exception e){
@@ -31,6 +37,9 @@ public class ThumbController {
     public ResponseBody delThumb(@RequestBody Map<String,Object> map){
         Map<String,String> all = new HashMap<>();
         try{
+            Integer num = userSayService.thumbNum(map);
+            map.put("thumb", num-1);
+            userSayService.updateThumb(map);
             iThumbService.delThumb(map);
             return new AssembleResponseMsg().success(all);
         }catch (Exception e){

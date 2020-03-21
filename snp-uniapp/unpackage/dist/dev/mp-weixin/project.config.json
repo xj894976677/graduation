@@ -45,8 +45,8 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/component/card",
-					"pathName": "pages/component/card",
+					"name": "pages/test/pic/pic",
+					"pathName": "pages/test/pic/pic",
 					"scene": null
 				}
 			]

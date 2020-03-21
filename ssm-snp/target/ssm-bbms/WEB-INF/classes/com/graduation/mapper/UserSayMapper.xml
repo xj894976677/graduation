@@ -15,6 +15,33 @@
         )
     </insert>
 
+    <!--查询爱好表当前用户微博数量-->
+    <select id="userSayNum" parameterType="map" resultType="com.graduation.model.UserSayNum">
+        select * from usersaynum where userId = #{userId}
+    </select>
+
+    <!--更新爱好表微博数量-->
+    <update id="updateSayNum" parameterType="com.graduation.model.UserSayNum">
+        update usersaynum
+        set
+        total = #{total},
+        funny = #{funny},
+        anime = #{anime},
+        news = #{news},
+        fashion = #{fashion},
+        motion = #{motion},
+        science = #{science}
+        where userId = #{userId}
+    </update>
+    <!--新增爱好表微博-->
+    <insert id="addSayNum" parameterType="map">
+        insert into usersaynum(
+        userId,total,funny,anime,news,fashion,motion,science
+        )
+        values (
+        #{userId},0,0,0,0,0,0,0
+        )
+    </insert>
     <!--根据id查询所有微博-->
     <select id="allsay" parameterType="map" resultType="com.graduation.model.UserSay">
         select * from usersay where userId = #{userId}
@@ -29,4 +56,16 @@
     <delete id="delsay" parameterType="map">
         delete from usersay where  textId = #{textId}
     </delete>
+
+    <!--根据Textid查询微博点赞-->
+    <select id="thumbNum" parameterType="map" resultType="Integer">
+        select thumb from usersay where textId = #{textId}
+    </select>
+
+    <update id="updateThumb" parameterType="com.graduation.model.UserSayNum">
+        update usersay
+        set
+        thumb = #{thumb}
+        where textId = #{textId}
+    </update>
 </mapper>

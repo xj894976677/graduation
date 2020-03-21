@@ -355,9 +355,32 @@
 				}
 			},
 			nextStep(url){
-				uni.navigateTo({
-					url: url + '?title=他的微博'
-				});	
+				uni.request({
+					url: this.Server_IP + 'allsay', //仅为示例，并非真实接口地址。
+					data: {
+						userId: this.userId,
+						loginUser: uni.getStorageSync('userId')
+					},
+					header: {
+						'custom-header': 'allsay' //自定义请求头信息
+					},
+					method:"POST",
+					dataType:"json",
+					success: (res) => {
+						console.log(res.data);
+						if(res.data.info.code == '0'){
+							console.log(res.data)
+							uni.navigateTo({
+								url: '/pages/subscriber/user_say?title=他的微博&sayList='+res.data.data.sayList
+							});	
+						}else{
+							console.log("获取微博失败")
+						}
+					},
+					fail() {
+						console.log("获取微博失败")
+					}
+				});
 			}
 		},
 	}
