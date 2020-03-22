@@ -7,14 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec2e3a64-d865-4b32-8c68-f660c7938b7c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/model/UserSayNum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/ThumbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/ThumbController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSayMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSayMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserSayMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserSayMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserSayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserSayService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserSayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserSayService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/index/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/test/pic/pic.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/test/pic/pic.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/test/pic/pic.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/colorui/components/cu-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/colorui/components/cu-custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/components/choose-image/choose-image.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/components/choose-image/choose-image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/components/sunui-upimg/sunui-upimg.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/components/sunui-upimg/sunui-upimg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/components/sunui-upimg/sunui-upimg.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/components/sunui-upimg/sunui-upimg.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/change_headpic.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/personal/change_headpic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/subscriber/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/subscriber/homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/subscriber/user_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/subscriber/user_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/subscriber/user_say.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/subscriber/user_say.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/test/pic/pic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/test/pic/pic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/test/pic/pic.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/write/write.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/write/write.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/project.config.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -80,7 +100,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="94">
               <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -120,21 +140,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/UserSayNum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/FollowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
+            <state relative-caret-position="121">
               <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -144,10 +152,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/model/UserSay.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="9" selection-start-line="9" selection-end-line="11" selection-end-column="18" />
+            <state relative-caret-position="-688">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserFieldController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -207,7 +227,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/model/UserInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/FollowMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/FollowMapper.java" />
@@ -231,6 +250,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/ThumbController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSayMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -426,7 +446,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584785597305" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584874221213" />
     <property name="last_opened_file_path" value="E:/project/01Vue+ElementUI+SSM图书借阅管理系统（20191230版）/源码/后台源码" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -696,12 +716,12 @@
       <workItem from="1584090512359" duration="40424000" />
       <workItem from="1584442440162" duration="4003000" />
       <workItem from="1584446634252" duration="28643000" />
-      <workItem from="1584775752066" duration="6323000" />
+      <workItem from="1584775752066" duration="7198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195233000" />
+    <option name="totallyTimeSpent" value="196108000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -716,7 +736,7 @@
     <frame x="-6" y="-6" width="1293" height="783" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25991902" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25991902" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -727,7 +747,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32822084" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.47239265" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.36349693" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.36349693" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924962" />
@@ -998,16 +1018,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserFieldController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserFieldServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1230,16 +1240,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -1409,8 +1409,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/FollowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
+        <state relative-caret-position="121">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-688">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserFieldController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1419,7 +1439,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="94">
           <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />

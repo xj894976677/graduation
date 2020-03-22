@@ -1,52 +1,57 @@
 <template>
-	<view>
-		<cu-custom bgColor="bg-gradual-pink" :isBack="true">
-			<block slot="backText">返回</block>
-			<block slot="content">通过id查询用户名</block>
+    <view>
+		<cu-custom bgColor="bg-gradual-blue">
+			<block slot="content">我</block>
 		</cu-custom>
-		<view class="title">{{Username}}</view>
-		<view class="cu-form-group">
-			<view class="title">验证码</view>
-			<input placeholder="输入框带个按钮" name="input" @input="onKeyInput"></input>
-			<button class='cu-btn bg-green shadow' @click="tijiao">验证码</button>
-		</view>
-	</view>
+        <scroll-view style="height: 300px;" scroll-y="true" refresher-enabled="true" :refresher-triggered="triggered"
+            :refresher-threshold="100" refresher-background="lightgreen" @refresherpulling="onPulling"
+            @refresherrefresh="onRefresh" @refresherrestore="onRestore" @refresherabort="onAbort">
+			<view  v-for="(pic,idx) in 100" :key="idx">
+				<view>{{pic}}</view>
+			</view>
+		</scroll-view>
+    </view>
 </template>
-
 <script>
-	export default {
-		data() {
-			return {
-				Username: "空",
-				Userid: "123"
-			}
-		},
-		methods: {
-			tijiao(){
-				console.log(this.Userid);
-				uni.request({
-				    url: 'http://localhost:8181/queryUser1', //仅为示例，并非真实接口地址。
-				    data: {
-				        userId: "123"
-				    },
-				    header: {
-				        'custom-header': 'hello' //自定义请求头信息
-				    },
-					method:"POST",
-					dataType:"json",
-				    success: (res) => {
-				        console.log(res.data);
-						this.Username = res.data.data.status;
-				    }
-				});
-			},
-			onKeyInput(event){
-				this.Userid = event.target.value
-			}
-		}
-	}
+    export default {
+        data() {
+            return {
+                triggered: false
+            }
+        },
+        onLoad() {
+			console.log("1")
+            this._freshing = false;
+            setTimeout(() => {
+                this.triggered = true;
+            }, 1000)
+        },
+		onPullDownRefresh(){
+					console.log('刷新中');
+					setTimeout(function(){
+						uni.stopPullDownRefresh();
+						console.log("OK了")
+					},2000)
+				},
+        methods: {
+            onPulling(e) {
+                console.log("onpulling", e);
+            },
+            onRefresh() {
+                if (this._freshing) return;
+                this._freshing = true;
+                setTimeout(() => {
+                    this.triggered = false;
+                    this._freshing = false;
+                }, 3000)
+            },
+            onRestore() {
+                this.triggered = 'restore'; // 需要重置
+                console.log("onRestore");
+            },
+            onAbort() {
+                console.log("onAbort");
+            }
+        }
+    }
 </script>
-
-<style>
-
-</style>

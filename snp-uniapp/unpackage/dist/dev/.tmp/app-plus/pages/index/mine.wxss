@@ -18,4 +18,8 @@ page {
 .margin-right {
 	margin-right: 4rpx;
 }
+.window-bottom{
+	position: fixed;  
+	bottom: var(--window-bottom);
+}
 

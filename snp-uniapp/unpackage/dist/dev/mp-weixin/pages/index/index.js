@@ -151,12 +151,61 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
+      sayList: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      StatusBar: this.StatusBar,
+      CustomBar: this.CustomBar,
       PageCur: 'basics',
-      userIds: '' };
+      userIds: '',
+      height: '',
+      current: 0 };
+
+  },
+  computed: {
+    style: function style() {
+      var StatusBar = this.StatusBar;
+      var CustomBar = this.CustomBar;
+      var style = "height:".concat(CustomBar, "px;padding-top:").concat(StatusBar, "px;");
+      return style;
+    } },
+
+  onLoad: function onLoad() {
+    var _this = this;
+    uni.getSystemInfo({
+      success: function success(res) {
+        _this.height = res.windowHeight;
+      } });
+
+    console.log(this.height);
+  },
+  onPullDownRefresh: function onPullDownRefresh() {
+    console.log('refresh');
 
   },
   onShow: function onShow() {
@@ -170,19 +219,20 @@ var _default =
 
   },
   methods: {
-    getLocalTime: function getLocalTime(nS) {
-      return;
+    change: function change(e) {
+      this.current = e.detail.current;
     },
-    suserid: function suserid() {
-      var time = "";
-      var data = new Date(parseInt(1584685373492));
-      time += data.getFullYear() + "年";
-      time += data.getMonth() + 1 + "月";
-      time += data.getDate() + "日 ";
-      time += data.getHours() + ":";
-      time += data.getMinutes() + ":";
-      time += data.getSeconds();
-      console.log(time);
+    recommend: function recommend() {
+      this.current = 0;
+      console.log(this.scroll_left);
+    },
+    follow: function follow() {
+      this.current = 1;
+      console.log(this.scroll_left);
+    },
+    add: function add() {
+      var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+      this.sayList = this.sayList.concat(num);
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

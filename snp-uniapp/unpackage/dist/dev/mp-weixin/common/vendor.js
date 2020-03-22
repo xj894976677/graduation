@@ -1655,19 +1655,19 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 151:
+/***/ 145:
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 152);
+module.exports = __webpack_require__(/*! regenerator-runtime */ 146);
 
 
 /***/ }),
 
-/***/ 152:
+/***/ 146:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -1698,7 +1698,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 153);
+module.exports = __webpack_require__(/*! ./runtime */ 147);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -1715,7 +1715,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 153:
+/***/ 147:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -10669,7 +10669,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/message": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/mine": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/login": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/register": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/information": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/changemail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/newmail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/forget_password": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/mail_login": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/verification_mail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/reset_password": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/bandmail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/userpage": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/change_information": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/test/pic/pic": { "usingComponents": { "sunui-upimg": "/components/sunui-upimg/sunui-upimg" }, "usingAutoImportComponents": {} }, "components/choose-image/choose-image": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/change_headpic": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/subscriber/homepage": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/subscriber/user_list": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/write/write": { "usingComponents": { "sunui-upimg": "/components/sunui-upimg/sunui-upimg" }, "usingAutoImportComponents": {} }, "pages/subscriber/user_say": { "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarBackgroundColor": "#0081ff", "navigationBarTitleText": "ColorUi for UniApp", "navigationStyle": "custom", "navigationBarTextStyle": "white" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "uni-app", "enablePullDownRefresh": true, "backgroundTextStyle": "light", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/message": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/mine": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/login": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/register": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/information": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/changemail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/newmail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/forget_password": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/mail_login": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/verification_mail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/reset_password": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/bandmail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/userpage": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/change_information": { "usingComponents": {}, "usingAutoImportComponents": {} }, "components/choose-image/choose-image": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/change_headpic": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/subscriber/homepage": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/subscriber/user_list": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/write/write": { "usingComponents": { "sunui-upimg": "/components/sunui-upimg/sunui-upimg" }, "usingAutoImportComponents": {} }, "pages/subscriber/user_say": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/test/test/test": { "navigationBarTitleText": "uni-app", "enablePullDownRefresh": true, "backgroundTextStyle": "dark", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarBackgroundColor": "#0081ff", "navigationBarTitleText": "ColorUi for UniApp", "navigationStyle": "custom", "navigationBarTextStyle": "white" } };exports.default = _default;
 
 /***/ }),
 

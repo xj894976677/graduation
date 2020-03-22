@@ -3,7 +3,11 @@
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/index/index",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "uni-app",
+				"enablePullDownRefresh": true,  //设置为true表示当前页面开启下拉刷新
+				"backgroundTextStyle": "light"  //下拉 loading 的样式，仅支持 dark/light
+			   }
 		},
 		{
 		    "path" : "pages/index/message",
@@ -62,10 +66,6 @@
             "style" : {}
         }
         ,{
-            "path" : "pages/test/pic/pic",
-            "style" : {}
-        }
-        ,{
             "path" : "components/choose-image/choose-image",
             "style" : {}
         }
@@ -88,7 +88,15 @@
         ,{
             "path" : "pages/subscriber/user_say",
             "style" : {}
-        }
+        },
+		{
+		    "path" : "pages/test/test/test",
+		    "style": {
+		    	"navigationBarTitleText": "uni-app",
+		    	"enablePullDownRefresh": true,  //设置为true表示当前页面开启下拉刷新
+		    	"backgroundTextStyle": "dark"  //下拉 loading 的样式，仅支持 dark/light
+		       }
+		}
     ],
 	"globalStyle": {
 		"mp-alipay": {
@@ -133,5 +141,6 @@
 	        "text": "我的"
 	    }]
 	}
+	
 
 }

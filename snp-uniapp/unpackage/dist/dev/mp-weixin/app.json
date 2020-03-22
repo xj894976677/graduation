@@ -15,13 +15,13 @@
     "pages/personal/bandmail",
     "pages/personal/userpage",
     "pages/personal/change_information",
-    "pages/test/pic/pic",
     "components/choose-image/choose-image",
     "pages/personal/change_headpic",
     "pages/subscriber/homepage",
     "pages/subscriber/user_list",
     "pages/write/write",
-    "pages/subscriber/user_say"
+    "pages/subscriber/user_say",
+    "pages/test/test/test"
   ],
   "subPackages": [],
   "window": {

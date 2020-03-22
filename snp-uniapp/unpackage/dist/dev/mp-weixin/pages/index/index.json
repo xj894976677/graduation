@@ -1,3 +1,6 @@
 {
+  "navigationBarTitleText": "uni-app",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light",
   "usingComponents": {}
 }

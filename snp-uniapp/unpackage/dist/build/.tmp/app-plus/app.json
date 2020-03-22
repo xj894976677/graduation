@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/index/message",
     "pages/index/mine",
-    "pages/index/write",
     "pages/login/login",
     "pages/login/register",
     "pages/personal/information",
@@ -12,7 +11,17 @@
     "pages/login/forget_password",
     "pages/login/mail_login",
     "pages/login/verification_mail",
-    "pages/login/reset_password"
+    "pages/login/reset_password",
+    "pages/personal/bandmail",
+    "pages/personal/userpage",
+    "pages/personal/change_information",
+    "components/choose-image/choose-image",
+    "pages/personal/change_headpic",
+    "pages/subscriber/homepage",
+    "pages/subscriber/user_list",
+    "pages/write/write",
+    "pages/subscriber/user_say",
+    "pages/test/test/test"
   ],
   "window": {
     "navigationBarBackgroundColor": "#0081ff",
@@ -24,18 +33,13 @@
     "color": "#7a7a7a",
     "selectedColor": "#0081ff",
     "backgroundColor": "#ffffff",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
         "iconPath": "static/tabbar/home.png",
         "selectedIconPath": "static/tabbar/home-fill.png",
         "text": "首页"
-      },
-      {
-        "pagePath": "pages/index/write",
-        "iconPath": "static/tabbar/brush.png",
-        "selectedIconPath": "static/tabbar/brush_fill.png",
-        "text": "发表"
       },
       {
         "pagePath": "pages/index/message",

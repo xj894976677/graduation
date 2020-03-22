@@ -1,1 +1,0 @@
-<view class="index-page"><view></view><sunui-upimg class="vue-ref" vue-id="1" upload_auto="{{true}}" upload_count="{{6}}" data-ref="upimg1" data-event-opts="{{[['^change',[['getImageInfo1']]]]}}" bind:change="__e" bind:__l="__l"></sunui-upimg></view>

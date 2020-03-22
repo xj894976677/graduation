@@ -1,1 +1,2 @@
+setCssToHead(["body { background-color: #f9fafb; }\n",],undefined,{path:"./pages/index/message.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/index/message.wxml') } }));

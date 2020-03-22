@@ -1,0 +1,2 @@
+setCssToHead(["body { background-color: #f9fafb; }\n.",[1],"switch-sex::after { content: \x22\\E650\x22; }\n.",[1],"switch-sex::before { content: \x22\\E651\x22; }\n.",[1],"textbg{ background-color: #F9FAFB; }\n",],undefined,{path:"./pages/write/write.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/write/write.wxml') } }));

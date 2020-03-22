@@ -100,18 +100,13 @@
       "color": "#7a7a7a",
       "selectedColor": "#0081ff",
       "backgroundColor": "#ffffff",
+      "borderStyle": "rgba(255,255,255,0.4)",
       "list": [
         {
           "pagePath": "pages/index/index",
           "iconPath": "static/tabbar/home.png",
           "selectedIconPath": "static/tabbar/home-fill.png",
           "text": "首页"
-        },
-        {
-          "pagePath": "pages/index/write",
-          "iconPath": "static/tabbar/brush.png",
-          "selectedIconPath": "static/tabbar/brush_fill.png",
-          "text": "发表"
         },
         {
           "pagePath": "pages/index/message",
@@ -126,7 +121,6 @@
           "text": "我的"
         }
       ],
-      "borderStyle": "rgba(0,0,0,0.4)",
       "height": "50px",
       "child": [
         "lauchwebview"
