@@ -16,4 +16,5 @@ public interface UserSayMapper {
     void addSayNum(Map<String,Object> map);
     Integer thumbNum(Map<String,Object> map);
     void updateThumb(Map<String,Object> map);
+    List<UserSay> sayFromList(Map<String,Object> map);
 }

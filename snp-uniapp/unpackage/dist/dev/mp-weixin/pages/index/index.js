@@ -111,6 +111,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var l0 = _vm.__map(_vm.sayList, function(item, index) {
+    var m0 = _vm.getTimeFormat(item.moment)
+    return {
+      $orig: _vm.__get_orig(item),
+      m0: m0
+    }
+  })
+
+  var l1 = _vm.__map(_vm.sayList, function(item, index) {
+    var m1 = _vm.getTimeFormat(item.moment)
+    return {
+      $orig: _vm.__get_orig(item),
+      m1: m1
+    }
+  })
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        l0: l0,
+        l1: l1
+      }
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -174,17 +199,82 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
-      sayList: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      isLogin: false,
+      loadname: "加载更多",
+      isCard: true,
+      sayList: null,
+      isthumbColor: "#ff5500",
       StatusBar: this.StatusBar,
       CustomBar: this.CustomBar,
       PageCur: 'basics',
       userIds: '',
       height: '',
-      current: 0 };
+      current: 0,
+      Rstart: 3,
+      pagesize: 3 };
 
   },
   computed: {
@@ -204,11 +294,68 @@ var _default =
 
     console.log(this.height);
   },
-  onPullDownRefresh: function onPullDownRefresh() {
+  onPullDownRefresh: function onPullDownRefresh() {var _this2 = this;
     console.log('refresh');
+    uni.request({
+      url: this.Server_IP + 'recommend', //仅为示例，并非真实接口地址。
+      data: {
+        userId: uni.getStorageSync('userId'),
+        start: 0,
+        pagesize: 3 },
+
+      header: {
+        'custom-header': 'recommend' //自定义请求头信息
+      },
+      method: "POST",
+      dataType: "json",
+      success: function success(res) {
+        console.log("获取关注用户微博第一页成功");
+        if (res.data.info.code == '0') {
+          if (res.data.data.sayList == "") {
+            var sayList = [];
+            uni.showToast({
+              title: "您还未关注任何用户",
+              icon: "none" });
+
+            _this2.loadname = "没有更多了,请尝试刷新吧";
+          } else {
+            var sayList = JSON.parse(res.data.data.sayList);
+            for (var index = 0; index < sayList.length; index++) {
+              var url = sayList[index].picUrl;
+              sayList[index].picUrl = JSON.parse(url);
+            }
+            _this2.loadname = "加载更多";
+          }
+          uni.setStorageSync('sayList', sayList);
+          _this2.sayList = sayList;
+          _this2.Rstart = 3;
+          console.log("sayList" + _this2.sayList);
+          console.log("Rstart" + _this2.Rstart);
+          uni.setStorageSync('Rstart', 3);
+
+          setTimeout(function () {
+            uni.stopPullDownRefresh();
+          }, 1000);
+        } else {
+        }
+      } });
 
   },
   onShow: function onShow() {
+    if (uni.getStorageInfoSync('isLogin') != null) {
+      this.loadname = "请登录再查看关注用户微博";
+    }
+    if (this.sayList == null) {
+      this.sayList = uni.getStorageSync('sayList');
+    }
+    if (uni.getStorageSync('isLogin') != true) {
+      this.sayList = null;
+      this.Rstart = 3;
+    } else {
+      console.log("Rstart" + uni.getStorageSync('Rstart'));
+      this.Rstart = uni.getStorageSync('Rstart');
+    }
+    console.log("sayList" + this.sayList);
     console.log("1");
     try {
       this.userIds = uni.getStorageSync('userId');
@@ -216,9 +363,27 @@ var _default =
       // error
     }
     console.log(this.userIds);
-
+    console.log(this.sayList.length < this.pagesize);
+    if (this.sayList.length < this.pagesize) {
+      console.log(this.sayList.length);
+      console.log(this.pagesize);
+      this.loadname = "没有更多了,请尝试刷新吧";
+    } else {
+      this.loadname = "加载更多";
+    }
   },
   methods: {
+    getTimeFormat: function getTimeFormat(timeStamp) {
+      var time = "";
+      var date = new Date(parseInt(timeStamp));
+      time += date.getFullYear() + "年";
+      time += date.getMonth() + 1 + "月";
+      time += date.getDate() + "日 ";
+      time += date.getHours() + ":";
+      time += date.getMinutes() + ":";
+      time += date.getSeconds();
+      return time;
+    },
     change: function change(e) {
       this.current = e.detail.current;
     },
@@ -230,9 +395,119 @@ var _default =
       this.current = 1;
       console.log(this.scroll_left);
     },
-    add: function add() {
-      var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-      this.sayList = this.sayList.concat(num);
+    add: function add() {var _this3 = this;
+      var tempSayList = null;
+      if (this.loadname == "没有更多了,请尝试刷新吧") {
+        return;
+      }
+      uni.request({
+        url: this.Server_IP + 'recommend', //仅为示例，并非真实接口地址。
+        data: {
+          userId: uni.getStorageSync('userId'),
+          start: this.Rstart,
+          pagesize: this.pagesize },
+
+        header: {
+          'custom-header': 'recommend' //自定义请求头信息
+        },
+        method: "POST",
+        dataType: "json",
+        success: function success(res) {
+          console.log(res.data);
+          if (res.data.info.code == '0') {
+            _this3.Rstart += _this3.pagesize;
+            uni.setStorageSync('Rstart', _this3.Rstart);
+            tempSayList = JSON.parse(res.data.data.sayList);
+            for (var index = 0; index < tempSayList.length; index++) {
+              var url = tempSayList[index].picUrl;
+              tempSayList[index].picUrl = JSON.parse(url);
+            }
+            if (tempSayList.length < _this3.pagesize) {
+              _this3.loadname = "没有更多了,请尝试刷新吧";
+            }
+            console.log(tempSayList);
+            _this3.sayList = _this3.sayList.concat(tempSayList);
+            console.log(_this3.sayList);
+          } else {
+          }
+        } });
+
+    },
+    Thumb: function Thumb(index) {
+      if (this.sayList[index].isThumb == "0") {
+        this.addThumb(index);
+      } else {
+        this.delThumb(index);
+      }
+    },
+    addThumb: function addThumb(index) {var _this4 = this;
+      console.log("点赞");
+
+      uni.request({
+        url: this.Server_IP + 'addThumb', //仅为示例，并非真实接口地址。
+        data: {
+          userId: uni.getStorageSync('userId'),
+          textId: this.sayList[index].textId },
+
+        header: {
+          'custom-header': 'addThumb' //自定义请求头信息
+        },
+        method: "POST",
+        dataType: "json",
+        success: function success(res) {
+          console.log(res.data);
+          if (res.data.info.code == '0') {
+            uni.showToast({
+              icon: 'none',
+              title: "点赞成功" });
+
+            _this4.sayList[index].thumb = +_this4.sayList[index].thumb + 1;
+            _this4.sayList[index].isThumb = "1";
+          } else {
+            uni.showToast({
+              icon: 'none',
+              title: "点赞失败" });
+
+          }
+        } });
+
+    },
+    delThumb: function delThumb(index) {var _this5 = this;
+      console.log("取消点赞");
+
+      uni.request({
+        url: this.Server_IP + 'delThumb', //仅为示例，并非真实接口地址。
+        data: {
+          userId: uni.getStorageSync('userId'),
+          textId: this.sayList[index].textId },
+
+        header: {
+          'custom-header': 'delThumb' //自定义请求头信息
+        },
+        method: "POST",
+        dataType: "json",
+        success: function success(res) {
+          console.log(res.data);
+          if (res.data.info.code == '0') {
+            uni.showToast({
+              icon: 'none',
+              title: "取消成功" });
+
+            _this5.sayList[index].thumb = +_this5.sayList[index].thumb - 1;
+            _this5.sayList[index].isThumb = "0";
+          } else {
+            uni.showToast({
+              icon: 'none',
+              title: "取消失败" });
+
+          }
+        } });
+
+    },
+    tohomepage: function tohomepage(userId) {
+      uni.navigateTo({
+        url: '/pages/subscriber/homepage?userId=' + userId });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

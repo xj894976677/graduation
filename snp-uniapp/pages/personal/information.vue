@@ -55,11 +55,12 @@
 
 			
 			
-			<view class="padding flex flex-direction margin-top">
+			<view class="padding flex margin-top" style="justify-content: space-between;">
+				<button class="cu-btn bg-blue lg" data-target="Modal" @tap="Cancellation">注销</button>
 				<button class="cu-btn bg-blue lg" data-target="Modal" @tap="change">修改信息</button>
 			</view>
 			<view class="padding flex flex-direction margin-top window-bottom">
-				<button class="cu-btn bg-blue lg" data-target="Modal" @tap="Cancellation">注销</button>
+				
 			</view>
 		</form>
 		

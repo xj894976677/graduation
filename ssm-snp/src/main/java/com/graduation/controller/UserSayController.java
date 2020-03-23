@@ -8,6 +8,7 @@ import com.graduation.mapper_api.ThumbMapper;
 import com.graduation.model.UserInformation;
 import com.graduation.model.UserSay;
 import com.graduation.model.UserSayNum;
+import com.graduation.service_api.IFollowService;
 import com.graduation.service_api.IThumbService;
 import com.graduation.service_api.IUserSayService;
 import com.graduation.service_api.IUserService;
@@ -26,6 +27,10 @@ public class UserSayController {
     private IUserSayService userSayService;
     @Autowired
     private IThumbService thumbService;
+    @Autowired
+    private IFollowService followService;
+    @Autowired
+    private IUserService userService;
 
     @RequestMapping(value = "/addSay",produces = "application/json;charset=utf-8")
     public ResponseBody addSay(@RequestBody Map<String,Object> map){
@@ -90,20 +95,41 @@ public class UserSayController {
                 map.put("userId", map.get("loginUser"));
             }
             List<String> ThumbtextId = thumbService.thumbFromId(map);
+            userSays = userSayService.addThumb(userSays, ThumbtextId);
             for (int i = 0; i < userSays.size(); ++i){
-                for (String textId: ThumbtextId){
-                    if (userSays.get(i).getTextId().toString().equals(textId)){
-                        userSays.get(i).setIsThumb("1");
-                        break;
-                    }else {
-                        userSays.get(i).setIsThumb("0");
-                    }
-                }
-                if (ThumbtextId.size() == 0){
-                    userSays.get(i).setIsThumb("0");
-                }
+                HashMap map1 = new HashMap();
+                map1.put("userId", userSays.get(i).getUserId());
+                UserInformation userInformation = userService.userInformation(map1);
+                userSays.get(i).setUserName(userInformation.getUserName());
+                userSays.get(i).setUserUrl(userInformation.getHeadUrl());
             }
             System.out.println(userSays);
+            all.put("sayList", JSON.toJSONString(userSays));
+            return new AssembleResponseMsg().success(all);
+        }catch (Exception e){
+            return new AssembleResponseMsg().failure(200,"error","获取微博数量失败");
+        }
+    }
+
+    @RequestMapping(value = "/recommend",produces = "application/json;charset=utf-8")
+    public ResponseBody recommend(@RequestBody Map<String,Object> map){
+        Map<String,String> all = new HashMap<>();
+        try{
+            List<String> follow = followService.queryfollow(map);
+            List<String> ThumbtextId = thumbService.thumbFromId(map);
+            map.put("list", follow);
+            if (follow.size() == 0){
+                return new AssembleResponseMsg().success(all);
+            }
+            List<UserSay> userSays = userSayService.sayFromList(map);
+            userSays = userSayService.addThumb(userSays, ThumbtextId);
+            for (int i = 0; i < userSays.size(); ++i){
+                HashMap map1 = new HashMap();
+                map1.put("userId", userSays.get(i).getUserId());
+                UserInformation userInformation = userService.userInformation(map1);
+                userSays.get(i).setUserUrl(userInformation.getHeadUrl());
+                userSays.get(i).setUserName(userInformation.getUserName());
+            }
             all.put("sayList", JSON.toJSONString(userSays));
             return new AssembleResponseMsg().success(all);
         }catch (Exception e){

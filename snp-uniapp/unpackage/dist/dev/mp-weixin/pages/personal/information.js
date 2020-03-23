@@ -202,6 +202,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _util = _interopRequireDefault(__webpack_require__(/*! @/common/util.js */ 45));
 var _graceChecker = _interopRequireDefault(__webpack_require__(/*! @/common/graceChecker.js */ 46));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
@@ -271,8 +272,8 @@ var _graceChecker = _interopRequireDefault(__webpack_require__(/*! @/common/grac
 //
 //
 //
-var _default = { data: function data() {return { userId: '', modalName: null, userName: '', fieldStr: '', mail: '', birthday: '1990-01-01', telephone: '', synopsis: '', sex: ['女', '男'], sexIndex: -1, captcha: '', captchaName: "修改邮箱", field: '', fieldbox: '', checkbox: [{ value: 0, name: '娱乐', alias: 'funny', checked: 0 }, { value: 1, name: '动漫', alias: 'anime', checked: 0 }, { value: 2, name: '新闻', alias: 'news', checked: 0 }, { value: 3, name: '时尚', alias: 'fashion', checked: 0 }, { value: 4, name: '运动', alias: 'motion', checked: 0 }, { value: 5, name: '科技', alias: 'science', checked: 0 }] };}, onShow: function onShow(e) {console.log("加载信息界面");var _this = this;_this.userId = uni.getStorageSync('userId');console.log(_this.userId);_this.userName = uni.getStorageSync('userName');_this.mail = uni.getStorageSync('mail');_this.birthday = uni.getStorageSync('birthday');_this.telephone = uni.getStorageSync('telephone');_this.synopsis = uni.getStorageSync('synopsis');_this.field = uni.getStorageSync('field');_this.sexIndex = uni.getStorageSync('sex');console.log(_this.sexIndex == "");console.log("sexIndex" + _this.sexIndex);if (_this.mail == "") {_this.captchaName = "设置邮箱";}if (_this.field.funny == 1) {
-      _this.checkbox[0].checked = 1;
+//
+var _default = { data: function data() {return { userId: '', modalName: null, userName: '', fieldStr: '', mail: '', birthday: '1990-01-01', telephone: '', synopsis: '', sex: ['女', '男'], sexIndex: -1, captcha: '', captchaName: "修改邮箱", field: '', fieldbox: '', checkbox: [{ value: 0, name: '娱乐', alias: 'funny', checked: 0 }, { value: 1, name: '动漫', alias: 'anime', checked: 0 }, { value: 2, name: '新闻', alias: 'news', checked: 0 }, { value: 3, name: '时尚', alias: 'fashion', checked: 0 }, { value: 4, name: '运动', alias: 'motion', checked: 0 }, { value: 5, name: '科技', alias: 'science', checked: 0 }] };}, onShow: function onShow(e) {console.log("加载信息界面");var _this = this;_this.userId = uni.getStorageSync('userId');console.log(_this.userId);_this.userName = uni.getStorageSync('userName');_this.mail = uni.getStorageSync('mail');_this.birthday = uni.getStorageSync('birthday');_this.telephone = uni.getStorageSync('telephone');_this.synopsis = uni.getStorageSync('synopsis');_this.field = uni.getStorageSync('field');_this.sexIndex = uni.getStorageSync('sex');console.log(_this.sexIndex == "");console.log("sexIndex" + _this.sexIndex);if (_this.mail == "") {_this.captchaName = "设置邮箱";}if (_this.field.funny == 1) {_this.checkbox[0].checked = 1;
       _this.fieldStr = "娱乐";
     }
     if (_this.field.anime == 1) {

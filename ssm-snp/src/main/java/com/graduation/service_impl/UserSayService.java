@@ -69,4 +69,26 @@ public class UserSayService implements IUserSayService {
     public void updateThumb(Map<String, Object> map) {
         userSayMapper.updateThumb(map);
     }
+
+    @Override
+    public List<UserSay> sayFromList(Map<String,Object> map) {
+        return userSayMapper.sayFromList(map);
+    }
+    @Override
+    public List<UserSay> addThumb(List<UserSay> userSays, List<String> ThumbtextId){
+        for (int i = 0; i < userSays.size(); ++i){
+            for (String textId: ThumbtextId){
+                if (userSays.get(i).getTextId().toString().equals(textId)){
+                    userSays.get(i).setIsThumb("1");
+                    break;
+                }else {
+                    userSays.get(i).setIsThumb("0");
+                }
+            }
+            if (ThumbtextId.size() == 0){
+                userSays.get(i).setIsThumb("0");
+            }
+        }
+        return userSays;
+    }
 }

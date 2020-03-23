@@ -16,15 +16,74 @@
 					<view class="scroll-items evaluate-box">
 						<view class="evaluate-box-header"></view>
 						<view class="evaluate-box-body"></view>
-						<view  v-for="(pic,idx) in sayList" :key="idx">
-							<view>{{pic}}</view>
+						<view class="cu-card dynamic margin-top" :class="isCard?'no-card':''" v-for="(item,index) in sayList" :key="index">
+							<view class="cu-item shadow">
+								<view class="cu-list menu-avatar">
+									<view class="cu-item">
+										<view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+										<view class="content flex-sub">
+											<view>{{item.userName}}</view>
+											<view class="text-gray text-sm flex justify-between">
+												{{getTimeFormat(item.moment)}}
+											</view>
+										</view>
+									</view>
+								</view>
+								<view class="text-content margin-top-sm" style="font-size: 35upx;">
+									{{item.text}}
+								</view>
+								<view class="grid flex-sub padding-lr margin-top-sm" :class="isCard?'col-3 grid-square':'col-1'">
+									<view class="bg-img" :class="isCard?'':'only-img'" :style="[{'background-image':'url('+ pic +')' }]"
+									 v-for="(pic,idx) in item.picUrl" :key="idx" @tap="previewImage(idx, item.picUrl)">
+									</view>
+								</view>
+								<view class="text-gray text-sm text-right padding">
+									<text class="cuIcon-locationfill margin-lr-xs" style="color: #0081FF;"></text> {{item.address}}
+									<text class="cuIcon-messagefill margin-lr-xs" style="color: #1bb8b8;"></text> {{item.discuss}}
+									<text @tap="Thumb(index)" class="cuIcon-appreciatefill margin-lr-xs" :style="{'color': item.isThumb=='1'?isthumbColor:ThumbColor}"></text> {{item.thumb}}
+								</view>
+							</view>
 						</view>
-						<view class="flex" style="justify-content: center;" @tap="add">加载更多</view>
+						<view class="flex margin-top margin-bottom" style="justify-content: center; color: #0081FF;" @tap="add">{{loadname}}</view>
 					</view>
 				</scroll-view>
 			</swiper-item>
 			<swiper-item>
-				<view class="swiper-item bg-green">关注</view>
+				<scroll-view scroll-y style="height: 100%;width: 100%;background-color: #f9fafb;">
+					<view class="scroll-items evaluate-box">
+						<view class="evaluate-box-header"></view>
+						<view class="evaluate-box-body"></view>
+						<view class="cu-card dynamic margin-top" :class="isCard?'no-card':''" v-for="(item,index) in sayList" :key="index">
+							<view class="cu-item shadow">
+								<view class="cu-list menu-avatar" @tap="tohomepage(item.userId)">
+									<view class="cu-item">
+										<view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+										<view class="content flex-sub">
+											<view>{{item.userName}}</view>
+											<view class="text-gray text-sm flex justify-between">
+												{{getTimeFormat(item.moment)}}
+											</view>
+										</view>
+									</view>
+								</view>
+								<view class="text-content margin-top-sm" style="font-size: 35upx;">
+									{{item.text}}
+								</view>
+								<view class="grid flex-sub padding-lr margin-top-sm" :class="isCard?'col-3 grid-square':'col-1'">
+									<view class="bg-img" :class="isCard?'':'only-img'" :style="[{'background-image':'url('+ pic +')' }]"
+									 v-for="(pic,idx) in item.picUrl" :key="idx" @tap="previewImage(idx, item.picUrl)">
+									</view>
+								</view>
+								<view class="text-gray text-sm text-right padding">
+									<text class="cuIcon-locationfill margin-lr-xs" style="color: #0081FF;"></text> {{item.address}}
+									<text class="cuIcon-messagefill margin-lr-xs" style="color: #1bb8b8;"></text> {{item.discuss}}
+									<text @tap="Thumb(index)" class="cuIcon-appreciatefill margin-lr-xs" :style="{'color': item.isThumb=='1'?isthumbColor:ThumbColor}"></text> {{item.thumb}}
+								</view>
+							</view>
+						</view>
+						<view class="flex margin-top margin-bottom" style="justify-content: center; color: #0081FF;" @tap="add">{{loadname}}</view>
+					</view>
+				</scroll-view>
 			</swiper-item>
 		</swiper>
 	</view>
@@ -34,13 +93,19 @@
 	export default {
 		data() {
 		return {
-				sayList: [1,2,3,4,5,6,7,8,9],
+				isLogin: false,
+				loadname: "加载更多",
+				isCard: true,
+				sayList: null,
+				isthumbColor: "#ff5500",
 				StatusBar: this.StatusBar,
 				CustomBar: this.CustomBar,
 				PageCur: 'basics',
 				userIds: '',
 				height: '',
-				current: 0
+				current: 0,
+				Rstart: 3,
+				pagesize: 3
 			}
 		},
 		computed: {
@@ -61,10 +126,67 @@
 			console.log(this.height)
 		},
 		onPullDownRefresh() {
-		        console.log('refresh');
-
+			console.log('refresh');
+			uni.request({
+			    url: this.Server_IP + 'recommend', //仅为示例，并非真实接口地址。
+			    data: {
+					userId: uni.getStorageSync('userId'),
+					start: 0,
+					pagesize: 3
+			    },
+			    header: {
+			        'custom-header': 'recommend' //自定义请求头信息
+			    },
+				method:"POST",
+				dataType:"json",
+			    success: (res) => {
+			        console.log("获取关注用户微博第一页成功");
+					if(res.data.info.code == '0'){
+						if(res.data.data.sayList == ""){
+							var sayList = []
+							uni.showToast({
+								title: "您还未关注任何用户",
+								icon: "none"
+							});
+							this.loadname = "没有更多了,请尝试刷新吧"
+						}else{
+							var sayList = JSON.parse(res.data.data.sayList)
+							for(var index = 0; index < sayList.length; index++){
+								var url = sayList[index].picUrl
+								sayList[index].picUrl = JSON.parse(url)
+							}
+							this.loadname = "加载更多"
+						}
+						uni.setStorageSync('sayList', sayList);
+						this.sayList = sayList
+						this.Rstart = 3;
+						console.log("sayList" + this.sayList)
+						console.log("Rstart" + this.Rstart)
+						uni.setStorageSync('Rstart', 3);
+						
+						setTimeout(function () {
+						    uni.stopPullDownRefresh();
+						}, 1000);
+					}else{
+					}
+			    },
+			});
 		},
 		onShow() {
+			if(uni.getStorageInfoSync('isLogin') != null){
+				this.loadname = "请登录再查看关注用户微博"
+			}
+			if(this.sayList == null){
+				this.sayList = uni.getStorageSync('sayList');
+			}
+			if(uni.getStorageSync('isLogin') != true){
+				this.sayList = null
+				this.Rstart = 3
+			}else{
+				console.log("Rstart"+uni.getStorageSync('Rstart'))
+				this.Rstart = uni.getStorageSync('Rstart')
+			}
+			console.log("sayList" + this.sayList)
 			console.log("1")
 			try {
 			    this.userIds = uni.getStorageSync('userId');
@@ -72,9 +194,27 @@
 			    // error
 			}
 			console.log(this.userIds)
-			
+			console.log(this.sayList.length < this.pagesize)
+			if(this.sayList.length < this.pagesize){
+				console.log(this.sayList.length)
+				console.log(this.pagesize)
+				this.loadname = "没有更多了,请尝试刷新吧"
+			}else{
+				this.loadname = "加载更多"
+			}
 		},
 		methods: {
+			getTimeFormat(timeStamp){
+				var time = ""
+				var date = new Date(parseInt(timeStamp))
+				time += date.getFullYear() + "年"
+				time += date.getMonth()+1 + "月"
+				time += date.getDate() + "日 "
+				time += date.getHours()+ ":"
+				time += date.getMinutes() + ":"
+				time += date.getSeconds()
+				return time
+			},
 			change(e){
 				this.current = e.detail.current
 			},
@@ -87,8 +227,118 @@
 				console.log(this.scroll_left)
 			},
 			add(){
-				var num = [1,2,3,4,5,6,7,8,9,0]
-				this.sayList = this.sayList.concat(num)
+				var tempSayList = null
+				if(this.loadname == "没有更多了,请尝试刷新吧"){
+					return;
+				}
+				uni.request({
+				    url: this.Server_IP + 'recommend', //仅为示例，并非真实接口地址。
+				    data: {
+						userId: uni.getStorageSync('userId'),
+						start: this.Rstart,
+						pagesize: this.pagesize
+				    },
+				    header: {
+				        'custom-header': 'recommend' //自定义请求头信息
+				    },
+					method:"POST",
+					dataType:"json",
+				    success: (res) => {
+				        console.log(res.data);
+						if(res.data.info.code == '0'){
+							this.Rstart += this.pagesize
+							uni.setStorageSync('Rstart', this.Rstart);
+							tempSayList = JSON.parse(res.data.data.sayList)
+							for(var index = 0; index < tempSayList.length; index++){
+								var url = tempSayList[index].picUrl
+								tempSayList[index].picUrl = JSON.parse(url)
+							}
+							if(tempSayList.length < this.pagesize){
+								this.loadname = "没有更多了,请尝试刷新吧"
+							}
+							console.log(tempSayList)
+							this.sayList = this.sayList.concat(tempSayList)
+							console.log(this.sayList)
+						}else{
+						}
+				    },
+				});
+			},
+			Thumb(index){
+				if(this.sayList[index].isThumb == "0"){
+					this.addThumb(index)
+				}else{
+					this.delThumb(index)
+				}
+			},
+			addThumb(index){
+				console.log("点赞")
+				
+				uni.request({
+				    url: this.Server_IP + 'addThumb', //仅为示例，并非真实接口地址。
+				    data: {
+						userId: uni.getStorageSync('userId'),
+						textId: this.sayList[index].textId
+				    },
+				    header: {
+				        'custom-header': 'addThumb' //自定义请求头信息
+				    },
+					method:"POST",
+					dataType:"json",
+				    success: (res) => {
+				        console.log(res.data);
+						if(res.data.info.code == '0'){
+							uni.showToast({
+								icon: 'none',
+								title: "点赞成功"
+							});
+							this.sayList[index].thumb = +this.sayList[index].thumb + 1
+							this.sayList[index].isThumb = "1"
+						}else{
+							uni.showToast({
+								icon: 'none',
+								title: "点赞失败"
+							});
+						}
+				    },
+				});
+			},
+			delThumb(index){
+				console.log("取消点赞")
+				
+				uni.request({
+				    url: this.Server_IP + 'delThumb', //仅为示例，并非真实接口地址。
+				    data: {
+						userId: uni.getStorageSync('userId'),
+						textId: this.sayList[index].textId
+				    },
+				    header: {
+				        'custom-header': 'delThumb' //自定义请求头信息
+				    },
+					method:"POST",
+					dataType:"json",
+				    success: (res) => {
+				        console.log(res.data);
+						if(res.data.info.code == '0'){
+							uni.showToast({
+								icon: 'none',
+								title: "取消成功"
+							});
+							this.sayList[index].thumb = +this.sayList[index].thumb - 1
+							this.sayList[index].isThumb = "0"
+						}else{
+							uni.showToast({
+								icon: 'none',
+								title: "取消失败"
+							});
+						}
+				    },
+				});
+			},
+			tohomepage(userId){
+				uni.navigateTo({
+					url: '/pages/subscriber/homepage?userId='+userId
+				});	
 			}
 		}
 	}

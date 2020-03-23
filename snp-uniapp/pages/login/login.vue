@@ -149,6 +149,39 @@
 											// console.log(field.userId);
 											// console.log(field)
 											console.log("获取用户喜好成功")
+											uni.request({
+											    url: this.Server_IP + 'recommend', //仅为示例，并非真实接口地址。
+											    data: {
+													userId: this.userId,
+													start: 0,
+													pagesize: 3
+											    },
+											    header: {
+											        'custom-header': 'recommend' //自定义请求头信息
+											    },
+												method:"POST",
+												dataType:"json",
+											    success: (res) => {
+											        console.log("获取关注用户微博第一页成功");
+													if(res.data.info.code == '0'){
+														if(res.data.data.sayList == ""){
+															var sayList = []
+														}else{
+															var sayList = JSON.parse(res.data.data.sayList)
+															for(var index = 0; index < sayList.length; index++){
+																var url = sayList[index].picUrl
+																sayList[index].picUrl = JSON.parse(url)
+															}								
+														}
+														uni.setStorageSync('sayList', sayList);
+														uni.setStorageSync('Rstart', 3);
+														uni.switchTab({
+															url: '/pages/index/index'
+														});
+													}else{
+													}
+											    },
+											});
 										}else{
 											console.log("获取用户喜好失败")
 										}
@@ -156,9 +189,6 @@
 									fail() {
 										console.log("登录信息请求失败")
 									}
-								});
-								uni.switchTab({
-									url: '/pages/index/index'
 								});
 							}else{
 								uni.showToast({

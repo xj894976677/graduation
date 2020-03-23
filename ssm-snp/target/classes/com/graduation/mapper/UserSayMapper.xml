@@ -62,10 +62,20 @@
         select thumb from usersay where textId = #{textId}
     </select>
 
+    <!--更新微博点赞数量-->
     <update id="updateThumb" parameterType="com.graduation.model.UserSayNum">
         update usersay
         set
         thumb = #{thumb}
         where textId = #{textId}
     </update>
+
+    <!--根据userId List查询微博-->
+    <select id="sayFromList" parameterType="map" resultType="com.graduation.model.UserSay">
+        select * from usersay where userId in
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+          #{item, jdbcType=VARCHAR}
+        </foreach>
+        order by moment desc limit #{start}, #{pagesize}
+    </select>
 </mapper>
