@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.graduation.mapper_api.DiscussMapper">
+
+    <!--根据textId查询评论并按照时间排序-->
+    <select id="queryDiscuss" parameterType="map" resultType="com.graduation.model.Discuss">
+        select * from discuss where textId = #{textId} order by moment desc
+    </select>
+    <!--新增评论-->
+    <insert id="addDiscuss" parameterType="map">
+        insert into discuss(
+        userId,textId,sayUserId,discuss,moment,isread) values (
+        #{userId},#{textId},#{sayUserId},#{discuss},#{moment},0)
+    </insert>
+
+</mapper>

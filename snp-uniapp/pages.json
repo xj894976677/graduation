@@ -88,15 +88,15 @@
         ,{
             "path" : "pages/subscriber/user_say",
             "style" : {}
-        },
-		{
-		    "path" : "pages/test/test/test",
-		    "style": {
-		    	"navigationBarTitleText": "uni-app",
-		    	"enablePullDownRefresh": true,  //设置为true表示当前页面开启下拉刷新
-		    	"backgroundTextStyle": "dark"  //下拉 loading 的样式，仅支持 dark/light
-		       }
-		}
+        }
+        ,{
+            "path" : "pages/write/discuss",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/write/notLoginDiscuss",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

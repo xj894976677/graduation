@@ -21,7 +21,8 @@
     "pages/subscriber/user_list",
     "pages/write/write",
     "pages/subscriber/user_say",
-    "pages/test/test/test"
+    "pages/write/discuss",
+    "pages/write/notLoginDiscuss"
   ],
   "subPackages": [],
   "window": {

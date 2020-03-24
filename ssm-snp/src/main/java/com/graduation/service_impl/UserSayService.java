@@ -91,4 +91,19 @@ public class UserSayService implements IUserSayService {
         }
         return userSays;
     }
+
+    @Override
+    public Integer discussNum(Map<String, Object> map) {
+        return userSayMapper.discussNum(map);
+    }
+
+    @Override
+    public void updateDiscuss(Map<String, Object> map) {
+        userSayMapper.updateDiscuss(map);
+    }
+
+    @Override
+    public List<UserSay> recommend(Map<String, Object> map) {
+        return userSayMapper.recommend(map);
+    }
 }

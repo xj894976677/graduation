@@ -17,5 +17,8 @@ public interface IUserSayService {
     Integer thumbNum(Map<String,Object> map);
     void updateThumb(Map<String,Object> map);
     List<UserSay> sayFromList(Map<String,Object> map);
-    public List<UserSay> addThumb(List<UserSay> userSays, List<String> ThumbtextId);
+    List<UserSay> addThumb(List<UserSay> userSays, List<String> ThumbtextId);
+    Integer discussNum(Map<String,Object> map);
+    void updateDiscuss(Map<String,Object> map);
+    List<UserSay> recommend(Map<String,Object> map);
 }

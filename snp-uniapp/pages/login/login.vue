@@ -150,14 +150,14 @@
 											// console.log(field)
 											console.log("获取用户喜好成功")
 											uni.request({
-											    url: this.Server_IP + 'recommend', //仅为示例，并非真实接口地址。
+											    url: this.Server_IP + 'followsay', //仅为示例，并非真实接口地址。
 											    data: {
 													userId: this.userId,
 													start: 0,
 													pagesize: 3
 											    },
 											    header: {
-											        'custom-header': 'recommend' //自定义请求头信息
+											        'custom-header': 'followsay' //自定义请求头信息
 											    },
 												method:"POST",
 												dataType:"json",
@@ -174,7 +174,7 @@
 															}								
 														}
 														uni.setStorageSync('sayList', sayList);
-														uni.setStorageSync('Rstart', 3);
+														uni.setStorageSync('Fstart', 3);
 														uni.switchTab({
 															url: '/pages/index/index'
 														});

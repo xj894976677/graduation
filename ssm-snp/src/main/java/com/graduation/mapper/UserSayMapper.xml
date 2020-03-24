@@ -69,6 +69,17 @@
         thumb = #{thumb}
         where textId = #{textId}
     </update>
+    <!--根据Textid查询微博点赞-->
+    <select id="discussNum" parameterType="map" resultType="Integer">
+        select discuss from usersay where textId = #{textId}
+    </select>
+    <!--更新微博评论数量-->
+    <update id="updateDiscuss" parameterType="map">
+        update usersay
+        set
+        discuss = #{discuss}
+        where textId = #{textId}
+    </update>
 
     <!--根据userId List查询微博-->
     <select id="sayFromList" parameterType="map" resultType="com.graduation.model.UserSay">
@@ -77,5 +88,10 @@
           #{item, jdbcType=VARCHAR}
         </foreach>
         order by moment desc limit #{start}, #{pagesize}
+    </select>
+
+    <!--未登录推荐微博，按照点赞以及时间排序-->
+    <select id="recommend" parameterType="map" resultType="com.graduation.model.UserSay">
+        select * from usersay order by moment desc, thumb desc limit #{start}, #{pagesize}
     </select>
 </mapper>

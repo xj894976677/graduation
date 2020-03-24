@@ -111,8 +111,8 @@ public class UserSayController {
         }
     }
 
-    @RequestMapping(value = "/recommend",produces = "application/json;charset=utf-8")
-    public ResponseBody recommend(@RequestBody Map<String,Object> map){
+    @RequestMapping(value = "/followsay",produces = "application/json;charset=utf-8")
+    public ResponseBody followsay(@RequestBody Map<String,Object> map){
         Map<String,String> all = new HashMap<>();
         try{
             List<String> follow = followService.queryfollow(map);
@@ -131,6 +131,32 @@ public class UserSayController {
                 userSays.get(i).setUserName(userInformation.getUserName());
             }
             all.put("sayList", JSON.toJSONString(userSays));
+            return new AssembleResponseMsg().success(all);
+        }catch (Exception e){
+            return new AssembleResponseMsg().failure(200,"error","获取微博数量失败");
+        }
+    }
+
+    @RequestMapping(value = "/recommend",produces = "application/json;charset=utf-8")
+    public ResponseBody recommend(@RequestBody Map<String,Object> map){
+        Map<String,String> all = new HashMap<>();
+        try{
+//            List<String> follow = followService.queryfollow(map);
+            List<String> ThumbtextId = thumbService.thumbFromId(map);
+//            map.put("list", follow);
+//            if (follow.size() == 0){
+//                return new AssembleResponseMsg().success(all);
+//            }
+            HashMap map1 = new HashMap();
+            List<UserSay> userSays = userSayService.recommend(map);
+            userSays = userSayService.addThumb(userSays, ThumbtextId);
+            for (int i = 0; i < userSays.size(); ++i){
+                map1.put("userId", userSays.get(i).getUserId());
+                UserInformation userInformation = userService.userInformation(map1);
+                userSays.get(i).setUserName(userInformation.getUserName());
+                userSays.get(i).setUserUrl(userInformation.getHeadUrl());
+            }
+            all.put("recommend", JSON.toJSONString(userSays));
             return new AssembleResponseMsg().success(all);
         }catch (Exception e){
             return new AssembleResponseMsg().failure(200,"error","获取微博数量失败");
