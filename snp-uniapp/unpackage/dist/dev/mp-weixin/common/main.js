@@ -9,21 +9,29 @@
 "use strict";
 /* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ 4);__webpack_require__(/*! @dcloudio/uni-stat */ 5);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 9));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var basics = function basics() {return __webpack_require__.e(/*! import() | pages/basics/home */ "pages/basics/home").then(__webpack_require__.bind(null, /*! ./pages/basics/home.vue */ 192));};
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 9));
+var _tim = _interopRequireDefault(__webpack_require__(/*! ./commen/tim/tim.js */ 15));
+var _commen = _interopRequireDefault(__webpack_require__(/*! ./commen/commen.js */ 17));
+var _timJsSdk = _interopRequireDefault(__webpack_require__(/*! tim-js-sdk */ 16));
+var _index = _interopRequireDefault(__webpack_require__(/*! ./store/index.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var basics = function basics() {return __webpack_require__.e(/*! import() | pages/basics/home */ "pages/basics/home").then(__webpack_require__.bind(null, /*! ./pages/basics/home.vue */ 216));};
 
 
-_vue.default.component('basics', basics);var components = function components() {return __webpack_require__.e(/*! import() | pages/component/home */ "pages/component/home").then(__webpack_require__.bind(null, /*! ./pages/component/home.vue */ 199));};
+_vue.default.component('basics', basics);var components = function components() {return __webpack_require__.e(/*! import() | pages/component/home */ "pages/component/home").then(__webpack_require__.bind(null, /*! ./pages/component/home.vue */ 223));};
 
 
-_vue.default.component('components', components);var plugin = function plugin() {return __webpack_require__.e(/*! import() | pages/plugin/home */ "pages/plugin/home").then(__webpack_require__.bind(null, /*! ./pages/plugin/home.vue */ 206));};
+_vue.default.component('components', components);var plugin = function plugin() {return __webpack_require__.e(/*! import() | pages/plugin/home */ "pages/plugin/home").then(__webpack_require__.bind(null, /*! ./pages/plugin/home.vue */ 230));};
 
 
-_vue.default.component('plugin', plugin);var cuCustom = function cuCustom() {return __webpack_require__.e(/*! import() | colorui/components/cu-custom */ "colorui/components/cu-custom").then(__webpack_require__.bind(null, /*! ./colorui/components/cu-custom.vue */ 213));};
+_vue.default.component('plugin', plugin);var cuCustom = function cuCustom() {return __webpack_require__.e(/*! import() | colorui/components/cu-custom */ "colorui/components/cu-custom").then(__webpack_require__.bind(null, /*! ./colorui/components/cu-custom.vue */ 237));};
 
 
 _vue.default.component('cu-custom', cuCustom);
 
 _vue.default.config.productionTip = false;
+_vue.default.prototype.tim = _tim.default.tim; //tim sdk 引入后生成的tim服务
+_vue.default.prototype.$TIM = _timJsSdk.default; //tim 的状态/事件 常量
+_vue.default.prototype.$store = _index.default;
+_vue.default.prototype.$commen = _commen.default;
 
 _App.default.mpType = 'app';
 
@@ -111,6 +119,35 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
+  mounted: function mounted() {var _this = this;
+    /**官网有很多关于关于sdk 其他的监听方法（比如：有新的消息，用户资料更新等等）
+                                                  * 详情可对照： https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html
+                                                  * 监听的含义：服务端发生了数据变更---前端全局可以接收到变更通知--前端就可以自动触发某个事件来更新相应数据
+                                                  * */
+    // 登录成功后会触发 SDK_READY 事件，该事件触发后，可正常使用 SDK 接口
+    this.tim.on(this.$TIM.EVENT.SDK_READY, this.onReadyStateUpdate, this);
+    // 收到新消息
+    this.tim.on(this.$TIM.EVENT.MESSAGE_RECEIVED, this.onReceiveMessage);
+    // 会话列表更新
+    this.tim.on(this.$TIM.EVENT.CONVERSATION_LIST_UPDATED, function (event) {
+      _this.$store.commit("updateConversationList", event.data);
+    });
+  },
+  methods: {
+    onReadyStateUpdate: function onReadyStateUpdate(_ref) {var name = _ref.name;
+      var isSDKReady = name === this.$TIM.EVENT.SDK_READY ? true : false;
+      //自动监听并更新 sdk 的ready 状态 （未登录是 notReady  登录后是ready）
+      this.$store.commit("toggleIsSDKReady", isSDKReady);
+      //sdk ready 后  肯定完成了登录操作    这里可以获取用户存储在im的基础信息/离线消息/黑名单列表
+    },
+
+    onReceiveMessage: function onReceiveMessage(_ref2) {var messageList = _ref2.data;
+      // this.handleAt(messageList);
+      this.$store.commit("pushCurrentMessageList", messageList);
+    } },
+
+
+
   onLaunch: function onLaunch() {
     uni.getSystemInfo({
       success: function success(e) {

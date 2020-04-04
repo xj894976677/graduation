@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.graduation.mapper_api.AlreadyReadMapper">
+
+    <!--根据userId查询已读textId-->
+    <select id="queryAlready" parameterType="map" resultType="Integer">
+        select textId from alreadyread where userId = #{userId}
+    </select>
+    <!--新增已读-->
+    <insert id="addAlready" parameterType="map">
+        insert into alreadyread(
+        userId,textId) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{userId},#{item.textId})
+        </foreach>
+    </insert>
+
+</mapper>

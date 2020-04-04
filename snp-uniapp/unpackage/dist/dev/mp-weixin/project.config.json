@@ -11,8 +11,6 @@
 	"libVersion": "2.9.2",
 	"appid": "touristappid",
 	"projectname": "snp-uniapp",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -22,7 +20,15 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
+			"current": -1,
+			"list": []
+		},
+		"gamePlugin": {
 			"current": -1,
 			"list": []
 		},
@@ -30,10 +36,16 @@
 			"current": 0,
 			"list": [
 				{
-					"name": "表单",
-					"query": "",
 					"id": 0,
-					"pathName": "pages/component/form"
+					"name": "表单",
+					"pathName": "pages/component/form",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/index/message",
+					"pathName": "pages/index/message",
+					"scene": null
 				}
 			]
 		}

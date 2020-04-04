@@ -2,6 +2,7 @@ package com.graduation.controller;
 
 import com.graduation.common.AssembleResponseMsg;
 import com.graduation.common.DateUtil;
+import com.graduation.common.TLSSigAPIv2;
 import com.graduation.http_model.ResponseBody;
 import com.graduation.model.MailCode;
 import com.graduation.model.UserInformation;
@@ -73,6 +74,8 @@ public class UserController {
             all.put("sex", userInformation.getSex());
             all.put("birthday", userInformation.getBirthday().toString());
             all.put("synopsis", userInformation.getSynopsis());
+            TLSSigAPIv2 tlsSigAPIv2 = new TLSSigAPIv2(1400341324, "cb4f000d17f071fe098354f0f38b8e1f1505677f87715037df4fa0876cbb6c0b");
+            all.put("userSig", tlsSigAPIv2.genSig(userInformation.getUserId(), 604800));
             return new AssembleResponseMsg().success(all);
         }else {
             return new AssembleResponseMsg().failure(200,"error","没有此用户");

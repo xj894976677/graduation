@@ -258,12 +258,18 @@
 				try {
 				    uni.clearStorageSync();
 					uni.setStorageSync('isLogin', false);
-					uni.switchTab({
-					    url: '/pages/index/index'
-					});
-					uni.showToast({
-						icon: 'none',
-						title: "已注销"
+					let promise = this.tim.logout();
+					promise.then(res=> {
+						this.$store.commit('reset')
+						uni.switchTab({
+							url: '/pages/index/index'
+						});
+						uni.showToast({
+							icon: 'none',
+							title: "已注销"
+						});
+					}).catch(err=> {
+					   console.log('退出失败')
 					});
 				} catch (e) {
 				    // error

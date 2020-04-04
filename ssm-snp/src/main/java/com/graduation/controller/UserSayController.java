@@ -5,21 +5,18 @@ import com.alibaba.fastjson.JSONArray;
 import com.graduation.common.AssembleResponseMsg;
 import com.graduation.http_model.ResponseBody;
 import com.graduation.mapper_api.ThumbMapper;
+import com.graduation.model.UserField;
 import com.graduation.model.UserInformation;
 import com.graduation.model.UserSay;
 import com.graduation.model.UserSayNum;
-import com.graduation.service_api.IFollowService;
-import com.graduation.service_api.IThumbService;
-import com.graduation.service_api.IUserSayService;
-import com.graduation.service_api.IUserService;
+import com.graduation.service_api.*;
+import com.sun.org.apache.bcel.internal.generic.IALOAD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 public class UserSayController {
@@ -31,6 +28,10 @@ public class UserSayController {
     private IFollowService followService;
     @Autowired
     private IUserService userService;
+    @Autowired
+    private IUserFieldService userFieldService;
+    @Autowired
+    private IAlreadyReadService alreadyReadService;
 
     @RequestMapping(value = "/addSay",produces = "application/json;charset=utf-8")
     public ResponseBody addSay(@RequestBody Map<String,Object> map){
@@ -119,6 +120,7 @@ public class UserSayController {
             List<String> ThumbtextId = thumbService.thumbFromId(map);
             map.put("list", follow);
             if (follow.size() == 0){
+                all.put("sayList", "");
                 return new AssembleResponseMsg().success(all);
             }
             List<UserSay> userSays = userSayService.sayFromList(map);
@@ -142,19 +144,100 @@ public class UserSayController {
         Map<String,String> all = new HashMap<>();
         try{
 //            List<String> follow = followService.queryfollow(map);
-            List<String> ThumbtextId = thumbService.thumbFromId(map);
+
 //            map.put("list", follow);
 //            if (follow.size() == 0){
 //                return new AssembleResponseMsg().success(all);
 //            }
             HashMap map1 = new HashMap();
             List<UserSay> userSays = userSayService.recommend(map);
-            userSays = userSayService.addThumb(userSays, ThumbtextId);
             for (int i = 0; i < userSays.size(); ++i){
                 map1.put("userId", userSays.get(i).getUserId());
                 UserInformation userInformation = userService.userInformation(map1);
-                userSays.get(i).setUserName(userInformation.getUserName());
                 userSays.get(i).setUserUrl(userInformation.getHeadUrl());
+                userSays.get(i).setUserName(userInformation.getUserName());
+            }
+            all.put("recommend", JSON.toJSONString(userSays));
+            return new AssembleResponseMsg().success(all);
+        }catch (Exception e){
+            return new AssembleResponseMsg().failure(200,"error","获取微博数量失败");
+        }
+    }
+
+    @RequestMapping(value = "/recommendS",produces = "application/json;charset=utf-8")
+    public ResponseBody recommendS(@RequestBody Map<String,Object> map){
+        Map<String,String> all = new HashMap<>();
+        try{
+//            创建推荐说说列表
+            List<UserSay> userSays = new ArrayList<>();
+//            查找用户喜欢的类型
+            List<String> Field = new ArrayList<String>();
+            UserField userField = userFieldService.queryField(map);
+            if (userField.getAnime() == 1){
+                Field.add("anime");
+            }
+            if (userField.getFashion() == 1){
+                Field.add("fashion");
+            }
+            if (userField.getFunny() == 1){
+                Field.add("funny");
+            }
+            if (userField.getMotion() == 1){
+                Field.add("motion");
+            }
+            if (userField.getScience() == 1){
+                Field.add("science");
+            }
+            if (userField.getNews() == 1){
+                Field.add("news");
+            }
+//            如果用户没有喜欢类型，则默认类型未为所有内容。
+            if (Field.size() == 0){
+                Field.add("anime");
+                Field.add("fashion");
+                Field.add("funny");
+                Field.add("motion");
+                Field.add("science");
+                Field.add("news");
+            }
+//            查找此用户已度过的内容
+            List<Integer> alreadyRead = alreadyReadService.queryAlready(map);
+//            遍历喜欢的类型，查询说说表中类型是此类型的并且不再已读内容中，按照近五日点赞高到低排序，并取出前50%
+            if (alreadyRead.size() == 0){
+                alreadyRead = null;
+            }
+            for (String field: Field){
+                Map<String,Object> temp = new HashMap<>();
+                temp.put("sayType", field);
+                temp.put("list", alreadyRead);
+                List<UserSay> userSaytemp = userSayService.recommendS(temp);
+//            将取出的放到推荐说说列表中
+                if (userSaytemp != null){
+                    userSays.addAll(userSaytemp);
+                }
+            }
+//
+//            遍历结束之后打乱推荐说说列表
+            Collections.shuffle(userSays);
+//          取出10条数据，将这些返回，并且存放到已读表中
+            List<UserSay> Recommend = null;
+            if (userSays.size() >= 10){
+                Recommend = userSays.subList(0,10);
+            }else {
+                Recommend = userSays;
+            }
+            if (Recommend.size() != 0){
+                map.put("list", Recommend);
+                alreadyReadService.addAlready(map);
+                List<String> ThumbtextId = thumbService.thumbFromId(map);
+                userSays = userSayService.addThumb(Recommend, ThumbtextId);
+                HashMap map1 = new HashMap();
+                for (int i = 0; i < userSays.size(); ++i){
+                    map1.put("userId", userSays.get(i).getUserId());
+                    UserInformation userInformation = userService.userInformation(map1);
+                    userSays.get(i).setUserName(userInformation.getUserName());
+                    userSays.get(i).setUserUrl(userInformation.getHeadUrl());
+                }
             }
             all.put("recommend", JSON.toJSONString(userSays));
             return new AssembleResponseMsg().success(all);

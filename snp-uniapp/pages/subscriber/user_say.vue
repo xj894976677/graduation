@@ -29,7 +29,7 @@
 					</view>
 					<view class="text-gray text-sm text-right padding">
 						<text class="cuIcon-locationfill margin-lr-xs" style="color: #0081FF;"></text> {{item.address}}
-						<text class="cuIcon-messagefill margin-lr-xs" style="color: #1bb8b8;"></text> {{item.discuss}}
+						<text class="cuIcon-messagefill margin-lr-xs" style="color: #1bb8b8;" @tap="todiscuss(index)"></text> {{item.discuss}}
 						<text @tap="Thumb(index)" class="cuIcon-appreciatefill margin-lr-xs" :style="{'color': item.isThumb=='1'?isthumbColor:ThumbColor}"></text> {{item.thumb}}
 					</view>
 				</view>
@@ -60,6 +60,10 @@
 				var url = this.sayList[index].picUrl
 				this.sayList[index].picUrl = JSON.parse(url)
 			}
+			uni.setStorageSync("UserSayList", this.sayList)
+		},
+		onShow() {
+			this.sayList = uni.getStorageSync("UserSayList")
 		},
 		methods: {
 			// 预览图片函数
@@ -139,6 +143,7 @@
 							});
 							this.sayList[index].thumb = +this.sayList[index].thumb + 1
 							this.sayList[index].isThumb = "1"
+							uni.setStorageSync("UserSayList", this.sayList)
 						}else{
 							uni.showToast({
 								icon: 'none',
@@ -171,6 +176,7 @@
 							});
 							this.sayList[index].thumb = +this.sayList[index].thumb - 1
 							this.sayList[index].isThumb = "0"
+							uni.setStorageSync("UserSayList", this.sayList)
 						}else{
 							uni.showToast({
 								icon: 'none',
@@ -179,7 +185,13 @@
 						}
 				    },
 				});
-			}
+			},
+			todiscuss(index){
+				console.log(this.sayList[index])
+				uni.navigateTo({
+					url: '/pages/write/user_say_discuss?index='+ index
+				});	
+			},
 		}
 	}
 </script>

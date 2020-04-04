@@ -21,4 +21,5 @@ public interface IUserSayService {
     Integer discussNum(Map<String,Object> map);
     void updateDiscuss(Map<String,Object> map);
     List<UserSay> recommend(Map<String,Object> map);
+    List<UserSay> recommendS(Map<String,Object> map);
 }

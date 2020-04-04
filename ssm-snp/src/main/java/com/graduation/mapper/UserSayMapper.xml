@@ -94,4 +94,27 @@
     <select id="recommend" parameterType="map" resultType="com.graduation.model.UserSay">
         select * from usersay order by moment desc, thumb desc limit #{start}, #{pagesize}
     </select>
+
+    <!--登录推荐微博，查询说说表中类型是此类型的并且不再已读内容中，按照近五日点赞高到低排序，并取出前50%-->
+    <select id="recommendS" parameterType="map" resultType="com.graduation.model.UserSay">
+        select base.textId, base.userId, base.text, base.picUrl, base.moment, base.address, base.thumb, base.discuss, base.userName, base.userUrl, base.sayType from (
+        select
+        a.*,
+        @row_num:=@row_num+1 as row_num
+        from
+        usersay a , (select @row_num:=0) b
+        where
+        sayType = #{sayType}
+        <if test="null != list">
+            and
+            textId not in
+            <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+                #{item, jdbcType=VARCHAR}
+            </foreach>
+        </if>
+        order by date_format(moment,'%Y-%m-%d') desc, thumb DESC
+        ) base
+        where
+        base.row_num &lt;= (@row_num*0.5)
+    </select>
 </mapper>

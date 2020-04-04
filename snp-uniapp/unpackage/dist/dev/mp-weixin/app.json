@@ -22,7 +22,9 @@
     "pages/write/write",
     "pages/subscriber/user_say",
     "pages/write/discuss",
-    "pages/write/notLoginDiscuss"
+    "pages/write/notLoginDiscuss",
+    "pages/write/login_discuss",
+    "pages/write/user_say_discuss"
   ],
   "subPackages": [],
   "window": {

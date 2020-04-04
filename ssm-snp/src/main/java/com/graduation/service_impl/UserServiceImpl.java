@@ -72,6 +72,9 @@ public class UserServiceImpl implements IUserService {
         if (userInformation.getMail() == null){
             userInformation.setMail("");
         }
+        if (userInformation.getHeadUrl() == null){
+            userInformation.setHeadUrl("http://a3q.dns06.net.cn/15859785123626.jpeg");
+        }
 
         return userInformation;
     }

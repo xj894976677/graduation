@@ -4,12 +4,15 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.graduation.common.AssembleResponseMsg;
 import com.graduation.http_model.ResponseBody;
+import com.graduation.model.UserInformation;
 import com.graduation.service_api.IFollowService;
+import com.graduation.service_api.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +21,8 @@ import java.util.Map;
 public class FollowController {
     @Autowired
     private IFollowService followService;
+    @Autowired
+    private IUserService userService;
 
     @RequestMapping(value = "/followIm",produces = "application/json;charset=utf-8")
     public ResponseBody followIm(@RequestBody Map<String,Object> map){
@@ -117,5 +122,25 @@ public class FollowController {
             return new AssembleResponseMsg().failure(200,"error","取关失败");
         }
         return new AssembleResponseMsg().success(all);
+    }
+
+    @RequestMapping(value = "/queryFollowMessage",produces = "application/json;charset=utf-8")
+    public ResponseBody queryFollowMessage(@RequestBody Map<String,Object> map){
+        Map<String,String> all = new HashMap<>();
+        try{
+            List<String> follow = followService.queryfollow(map);
+            List<UserInformation> followInformation = new ArrayList<>(10);
+            for (String userId: follow){
+                Map<String,Object> temp = new HashMap<>();
+                temp.put("userId", userId);
+                UserInformation userInformation =  userService.userInformation(temp);
+                followInformation.add(userInformation);
+            }
+            String fansStr = JSON.toJSONString(followInformation);
+            all.put("follow", fansStr);
+            return new AssembleResponseMsg().success(all);
+        }catch (Exception e){
+            return new AssembleResponseMsg().failure(200,"error","获取关注用户失败");
+        }
     }
 }

@@ -97,6 +97,14 @@
             "path" : "pages/write/notLoginDiscuss",
             "style" : {}
         }
+        ,{
+            "path" : "pages/write/login_discuss",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/write/user_say_discuss",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

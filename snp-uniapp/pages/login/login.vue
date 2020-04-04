@@ -43,6 +43,7 @@
 	import util from '@/common/util.js'
 	import graceChecker from '@/common/graceChecker.js'
 	import md5 from '@/common/md5.js'
+	import {mapState} from "vuex"
 	export default {
 		data() {
 			return {
@@ -50,6 +51,15 @@
 				userId: "",
 				password: ""
 			}
+		},
+		computed:{
+			...mapState({
+				isLogin:state=>state.isLogin,
+				isSDKReady:state=>state.isSDKReady
+			})
+		},
+		onShow() {
+			this.$store.commit('reset')
 		},
 		methods: {
 			showModal(e) {
@@ -111,7 +121,6 @@
 									method:"POST",
 									dataType:"json",
 									success: (res) => {
-
 										console.log(res.data);
 										if(res.data.info.code == '0'){
 											uni.setStorageSync('userName', res.data.data.userName);
@@ -120,6 +129,28 @@
 											uni.setStorageSync('sex', res.data.data.sex);
 											uni.setStorageSync('birthday', res.data.data.birthday);
 											uni.setStorageSync('synopsis', res.data.data.synopsis);
+											console.log(2222222222222222222222222222222222222)
+											console.warn(this.userId)
+											console.warn(res.data.data.userSig)
+											console.log(2222222222222222222222222222222222222)
+											let promise = this.tim.login({
+												userID: this.userId,
+												userSig: res.data.data.userSig
+											});
+											promise.then((rest) => {
+												//登录成功后 更新登录状态
+												this.$store.commit("toggleIsLogin", true);
+												//tim 返回的用户信息
+												uni.setStorageSync('userTIMInfo', JSON.stringify(rest.data))
+												console.log(11111111111111111111111111111111111111)
+												console.log(rest)
+												console.log(JSON.stringify(rest.data))
+												console.log(11111111111111111111111111111111111111)
+											}).catch((err) => {
+												console.warn(this.userId)
+												console.warn(res.data.data.userSig)
+												console.warn('login error:', err); // 登录失败的相关信息
+											});
 											console.log("获取用户信息成功")
 										}else{
 											console.log("获取用户信息失败")
@@ -167,11 +198,17 @@
 														if(res.data.data.sayList == ""){
 															var sayList = []
 														}else{
-															var sayList = JSON.parse(res.data.data.sayList)
-															for(var index = 0; index < sayList.length; index++){
-																var url = sayList[index].picUrl
-																sayList[index].picUrl = JSON.parse(url)
-															}								
+															console.log(res)
+															console.log(res.data.data.sayList)
+															if(res.data.data.sayList == ""){
+																sayList = ""
+															}else{
+																var sayList = JSON.parse(res.data.data.sayList)
+																for(var index = 0; index < sayList.length; index++){
+																	var url = sayList[index].picUrl
+																	sayList[index].picUrl = JSON.parse(url)
+																}																								
+															}
 														}
 														uni.setStorageSync('sayList', sayList);
 														uni.setStorageSync('Fstart', 3);

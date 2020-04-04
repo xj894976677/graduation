@@ -106,4 +106,9 @@ public class UserSayService implements IUserSayService {
     public List<UserSay> recommend(Map<String, Object> map) {
         return userSayMapper.recommend(map);
     }
+
+    @Override
+    public List<UserSay> recommendS(Map<String, Object> map) {
+        return userSayMapper.recommendS(map);
+    }
 }
