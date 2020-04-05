@@ -105,6 +105,12 @@
             "path" : "pages/write/user_say_discuss",
             "style" : {}
         }
+        ,{
+            "path" : "pages/chat/room",
+            "style": {
+            	"navigationBarTitleText": "聊天室"
+            }
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

@@ -24,7 +24,8 @@
     "pages/write/discuss",
     "pages/write/notLoginDiscuss",
     "pages/write/login_discuss",
-    "pages/write/user_say_discuss"
+    "pages/write/user_say_discuss",
+    "pages/chat/room"
   ],
   "subPackages": [],
   "window": {

@@ -5,10 +5,15 @@
 		</cu-custom>
 		
 		<view class="user-box">
-			<view class="nav-tab">
-				<view :class="isActive ==0 ?'tab-item-active tab-item': 'tab-item'" @click="changeTabBtn(0)">聊天记录</view>
-				<view :class="isActive ==1 ?'tab-item-active tab-item1': 'tab-item1'" @click="changeTabBtn(1)">关注列表</view>
-				<view class="clear-box"></view>
+			<view class="nav-tab flex" style="justify-content: space-between;">
+				<view>
+					<view :class="isActive ==0 ?'tab-item-active tab-item': 'tab-item'" @click="changeTabBtn(0)">聊天记录</view>
+					<view :class="isActive ==1 ?'tab-item-active tab-item1': 'tab-item1'" @click="changeTabBtn(1)">关注列表</view>					
+					<view class="clear-box"></view>
+				</view>
+				<view>
+					<view class="cu-btn line-cyan round shadow">相似好友</view>
+				</view>
 			</view>
 		</view>
 		<!-- 聊天记录 会话列表 -->
@@ -16,11 +21,11 @@
 			<view class="list-box" v-if="userAddConversationList.length>0">
 				<view class="item-box" v-for="(item,index) in userAddConversationList" :key="index" @click="toRoom(item)">
 					<view class="item-img">
-						<img :src="item.user.img" alt="">
+						<img :src="item.user.headUrl" alt="">
 					</view>
 					<view class="item-text">
 						<view class="item-user">
-							{{item.user.user}}
+							{{item.user.userName}}
 						</view>
 						<view class="item-text-info">
 							<rich-text :nodes="nodesFliter(item.conversation.lastMessage.messageForShow)"></rich-text>
@@ -84,6 +89,9 @@
 			},
 			conversationList(val){
 				this.getUserInfo(val)
+				console.log(11111111111111111111111111)
+				console.log(this.userAddConversationList)
+				console.log(11111111111111111111111111)
 			}
 
 		},
@@ -137,26 +145,73 @@
 				conversationList.forEach(item => {
 					let obj = {}
 					obj.conversation = item
-					userList.forEach(item1 => {
-						if (item.toAccount == item1.userId) {
-							obj.user = item1
+					uni.request({
+						url: this.Server_IP + 'userObj', //仅为示例，并非真实接口地址。
+						data: {
+							userId: item.toAccount
+						},
+						header: {
+							'custom-header': 'userObj' //自定义请求头信息
+						},
+						method:"POST",
+						dataType:"json",
+						success: (res) => {
+							console.log(res.data);
+							if(res.data.info.code == '0'){
+								console.log(res)
+								console.log(JSON.parse(res.data.data.userObj))
+								obj.user = JSON.parse(res.data.data.userObj)
+								this.userAddConversationList.push(JSON.parse(JSON.stringify(obj)))
+								console.log(this.userAddConversationList)
+							}else{
+								console.log("获取用户对象失败")
+							}
+						},
+						fail() {
+							console.log("获取用户对象失败")
 						}
-					})
-					this.userAddConversationList.push(JSON.parse(JSON.stringify(obj)))
+					});
+					
 				})
 			},
 			toRoom(item) {
 				this.$store.commit('updateConversationActive', item)
-				uni.navigateTo({
-					url: './room'
-				})
+				console.log(item)
+				uni.request({
+					url: this.Server_IP + 'userObj', //仅为示例，并非真实接口地址。
+					data: {
+						userId: item.user.userId
+					},
+					header: {
+						'custom-header': 'userObj' //自定义请求头信息
+					},
+					method:"POST",
+					dataType:"json",
+					success: (res) => {
+						console.log(res.data);
+						if(res.data.info.code == '0'){
+							console.log(res)
+							console.log(JSON.parse(res.data.data.userObj))
+							uni.setStorageSync("toUserInfo", JSON.parse(res.data.data.userObj))
+							uni.navigateTo({
+								url: '../chat/room'
+							})
+						}else{
+							console.log("获取用户对象失败")
+						}
+					},
+					fail() {
+						console.log("获取用户对象失败")
+					}
+				});
+				
 			},
 			//选择用户聊天
 			checkUserToRoom(toUserInfo) {
 				console.log(toUserInfo)
 				this.$store.commit('createConversationActive', toUserInfo.userId)
 				uni.navigateTo({
-					url: './room'
+					url: '../chat/room'
 				})
 			}
 

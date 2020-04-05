@@ -7,55 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec2e3a64-d865-4b32-8c68-f660c7938b7c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/common/Base64URL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/common/TLSSigAPIv2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/AlreadyReadMaooer.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/AlreadyReadMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IAlreadyReadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/AlreadyReadService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/index/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/pages/subscriber/user_say.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/pages/subscriber/user_say.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/index/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/subscriber/user_say.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/.sourcemap/mp-weixin/pages/subscriber/user_say.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/colorui/components/cu-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/colorui/components/cu-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/components/sunui-upimg/sunui-upimg.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/components/sunui-upimg/sunui-upimg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/components/sunui-upimg/sunui-upimg.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/components/sunui-upimg/sunui-upimg.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/basics/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/component/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/index/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/plugin/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/subscriber/user_say.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/subscriber/user_say.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/subscriber/user_say.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/subscriber/user_say.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/write/notLoginDiscuss.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/write/notLoginDiscuss.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/write/write.js" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/pages/write/write.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../snp-uniapp/unpackage/dist/dev/mp-weixin/project.config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/FollowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/FollowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSayMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper/UserSayMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserSayMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/mapper_api/UserSayMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserSayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserSayService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserSayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserSayService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/common/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/common/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/controller/UserSayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/controller/UserSayController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper/UserSayMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/mapper/UserSayMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/mapper_api/UserSayMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/mapper_api/UserSayMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_api/IUserSayService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/service_api/IUserSayService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/graduation/service_impl/UserSayService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/graduation/service_impl/UserSayService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/UserSayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/controller/UserSayController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper/UserSayMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper/UserSayMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper_api/UserSayMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/mapper_api/UserSayMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_api/IUserSayService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_api/IUserSayService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_impl/UserSayService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm-bbms/WEB-INF/classes/com/graduation/service_impl/UserSayService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -70,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="125" column="30" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
+            <state relative-caret-position="-8">
+              <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/FollowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="135" column="69" selection-start-line="135" selection-start-column="69" selection-end-line="135" selection-end-column="69" />
+            <state relative-caret-position="298">
+              <caret line="139" column="39" lean-forward="true" selection-start-line="139" selection-start-column="39" selection-end-line="139" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="243">
               <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
             </state>
           </provider>
@@ -106,12 +64,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
+            <state relative-caret-position="945">
               <caret line="54" selection-start-line="54" selection-end-line="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3617#3618#0" expanded="true" />
-                <element signature="e#3657#3658#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/FollowMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+            <state relative-caret-position="891">
+              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -135,14 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="166">
+              <caret line="74" column="53" lean-forward="true" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -150,12 +103,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/TLSSigAPIv2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-627">
+            <state relative-caret-position="1026">
               <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2931#2932#0" expanded="true" />
-                <element signature="e#2986#2987#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -176,7 +127,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
+            <state relative-caret-position="6480">
               <caret line="240" selection-start-line="240" selection-end-line="240" />
             </state>
           </provider>
@@ -203,7 +154,13 @@
       <find>queryfollow</find>
       <find>followsay</find>
       <find>query</find>
+      <find>userinformation</find>
+      <find>queryfollowmess</find>
+      <find>userInformation</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -258,10 +215,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/common/Base64URL.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/common/TLSSigAPIv2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/FollowController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -312,6 +269,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -450,8 +409,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -733,11 +690,12 @@
       <workItem from="1585629609023" duration="8066000" />
       <workItem from="1585716314349" duration="1982000" />
       <workItem from="1585968723649" duration="9334000" />
+      <workItem from="1586058603561" duration="2354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238311000" />
+    <option name="totallyTimeSpent" value="240665000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -750,9 +708,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="783" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26072875" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26477733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -763,7 +720,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32668713" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.09969325" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.34662578" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4815951" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924962" />
@@ -795,7 +752,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java</url>
-          <line>32</line>
+          <line>33</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
@@ -819,7 +776,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java</url>
-          <line>97</line>
+          <line>111</line>
           <properties />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
@@ -837,7 +794,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java</url>
-          <line>110</line>
+          <line>124</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
@@ -849,7 +806,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java</url>
-          <line>133</line>
+          <line>147</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
@@ -1452,17 +1409,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="240" selection-start-line="240" selection-end-line="240" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/com/github/tencentyun/tls-sig-api/1.2/tls-sig-api-1.2.jar!/com/tls/tls_sigature/tls_sigature.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="208" column="24" selection-start-line="208" selection-start-column="24" selection-end-line="208" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/FollowMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="9" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/TLSSigAPIv2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1476,78 +1477,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/TLSSigAPIv2.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-627">
-          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2931#2932#0" expanded="true" />
-            <element signature="e#2986#2987#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/common/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="9" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/mapper/FollowMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        <state relative-caret-position="6480">
+          <caret line="240" selection-start-line="240" selection-end-line="240" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/FollowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="135" column="69" selection-start-line="135" selection-start-column="69" selection-end-line="135" selection-end-column="69" />
+        <state relative-caret-position="298">
+          <caret line="139" column="39" lean-forward="true" selection-start-line="139" selection-start-column="39" selection-end-line="139" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_api/IUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/service_impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3617#3618#0" expanded="true" />
-            <element signature="e#3657#3658#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/graduation/controller/UserSayController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="125" column="30" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="166">
+          <caret line="74" column="53" lean-forward="true" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
         </state>
       </provider>
     </entry>

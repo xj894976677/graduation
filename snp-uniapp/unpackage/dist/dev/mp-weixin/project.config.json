@@ -11,6 +11,8 @@
 	"libVersion": "2.9.2",
 	"appid": "touristappid",
 	"projectname": "snp-uniapp",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -43,8 +45,8 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/index/message",
-					"pathName": "pages/index/message",
+					"name": "pages/chat/room",
+					"pathName": "pages/chat/room",
 					"scene": null
 				}
 			]

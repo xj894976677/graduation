@@ -264,7 +264,9 @@ var _vuex = __webpack_require__(/*! vuex */ 19);function _interopRequireDefault(
                     uni.setStorageSync('sex', res.data.data.sex);
                     uni.setStorageSync('birthday', res.data.data.birthday);
                     uni.setStorageSync('synopsis', res.data.data.synopsis);
+                    uni.setStorageSync('headUrl', res.data.data.headUrl);
                     console.log(2222222222222222222222222222222222222);
+                    console.log(uni.getStorageSync("headUrl"));
                     console.warn(_this2.userId);
                     console.warn(res.data.data.userSig);
                     console.log(2222222222222222222222222222222222222);

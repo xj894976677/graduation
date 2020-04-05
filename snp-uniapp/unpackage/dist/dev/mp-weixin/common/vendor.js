@@ -737,7 +737,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -9544,7 +9544,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -9565,14 +9565,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -9648,7 +9648,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -12275,7 +12275,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "uni-app", "enablePullDownRefresh": true, "backgroundTextStyle": "light" }, "pages/index/message": {}, "pages/index/mine": {}, "pages/login/login": {}, "pages/login/register": {}, "pages/personal/information": {}, "pages/personal/changemail": {}, "pages/personal/newmail": {}, "pages/login/forget_password": {}, "pages/login/mail_login": {}, "pages/login/verification_mail": {}, "pages/login/reset_password": {}, "pages/personal/bandmail": {}, "pages/personal/userpage": {}, "pages/personal/change_information": {}, "components/choose-image/choose-image": {}, "pages/personal/change_headpic": {}, "pages/subscriber/homepage": {}, "pages/subscriber/user_list": {}, "pages/write/write": {}, "pages/subscriber/user_say": {}, "pages/write/discuss": {}, "pages/write/notLoginDiscuss": {}, "pages/write/login_discuss": {}, "pages/write/user_say_discuss": {} }, "globalStyle": { "navigationBarBackgroundColor": "#0081ff", "navigationBarTitleText": "ColorUi for UniApp", "navigationStyle": "custom", "navigationBarTextStyle": "white" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "uni-app", "enablePullDownRefresh": true, "backgroundTextStyle": "light", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/message": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/mine": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/login": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/register": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/information": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/changemail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/newmail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/forget_password": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/mail_login": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/verification_mail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/login/reset_password": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/bandmail": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/userpage": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/change_information": { "usingComponents": {}, "usingAutoImportComponents": {} }, "components/choose-image/choose-image": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/personal/change_headpic": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/subscriber/homepage": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/subscriber/user_list": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/write/write": { "usingComponents": { "sunui-upimg": "/components/sunui-upimg/sunui-upimg" }, "usingAutoImportComponents": {} }, "pages/subscriber/user_say": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/write/discuss": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/write/notLoginDiscuss": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/write/login_discuss": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/write/user_say_discuss": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/chat/room": { "navigationBarTitleText": "聊天室", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarBackgroundColor": "#0081ff", "navigationBarTitleText": "ColorUi for UniApp", "navigationStyle": "custom", "navigationBarTextStyle": "white" } };exports.default = _default;
 
 /***/ }),
 

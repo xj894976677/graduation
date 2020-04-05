@@ -1,5 +1,6 @@
 package com.graduation.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.graduation.common.AssembleResponseMsg;
 import com.graduation.common.DateUtil;
 import com.graduation.common.TLSSigAPIv2;
@@ -72,10 +73,23 @@ public class UserController {
             all.put("mail", userInformation.getMail());
             all.put("telephone", userInformation.getTelephone());
             all.put("sex", userInformation.getSex());
+            all.put("headUrl", userInformation.getHeadUrl());
             all.put("birthday", userInformation.getBirthday().toString());
             all.put("synopsis", userInformation.getSynopsis());
             TLSSigAPIv2 tlsSigAPIv2 = new TLSSigAPIv2(1400341324, "cb4f000d17f071fe098354f0f38b8e1f1505677f87715037df4fa0876cbb6c0b");
             all.put("userSig", tlsSigAPIv2.genSig(userInformation.getUserId(), 604800));
+            return new AssembleResponseMsg().success(all);
+        }else {
+            return new AssembleResponseMsg().failure(200,"error","没有此用户");
+        }
+    }
+
+    @RequestMapping(value = "/userObj",produces = "application/json;charset=utf-8")
+    public ResponseBody userObj(@RequestBody Map<String,Object> map){
+        Map<String,String> all = new HashMap<>();
+        UserInformation userInformation = userService.userInformation(map);
+        if (userInformation != null){
+            all.put("userObj", JSON.toJSONString(userInformation));
             return new AssembleResponseMsg().success(all);
         }else {
             return new AssembleResponseMsg().failure(200,"error","没有此用户");

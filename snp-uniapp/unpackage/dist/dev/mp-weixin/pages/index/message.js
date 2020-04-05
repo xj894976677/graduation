@@ -204,6 +204,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
 var _user = _interopRequireDefault(__webpack_require__(/*! ../../commen/tim/user.js */ 34));
 var _vuex = __webpack_require__(/*! vuex */ 19);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 
@@ -235,6 +240,9 @@ var _vuex = __webpack_require__(/*! vuex */ 19);function _interopRequireDefault(
     },
     conversationList: function conversationList(val) {
       this.getUserInfo(val);
+      console.log(11111111111111111111111111);
+      console.log(this.userAddConversationList);
+      console.log(11111111111111111111111111);
     } },
 
 
@@ -288,18 +296,65 @@ var _vuex = __webpack_require__(/*! vuex */ 19);function _interopRequireDefault(
       conversationList.forEach(function (item) {
         var obj = {};
         obj.conversation = item;
-        _user.default.forEach(function (item1) {
-          if (item.toAccount == item1.userId) {
-            obj.user = item1;
-          }
-        });
-        _this3.userAddConversationList.push(JSON.parse(JSON.stringify(obj)));
+        uni.request({
+          url: _this3.Server_IP + 'userObj', //仅为示例，并非真实接口地址。
+          data: {
+            userId: item.toAccount },
+
+          header: {
+            'custom-header': 'userObj' //自定义请求头信息
+          },
+          method: "POST",
+          dataType: "json",
+          success: function success(res) {
+            console.log(res.data);
+            if (res.data.info.code == '0') {
+              console.log(res);
+              console.log(JSON.parse(res.data.data.userObj));
+              obj.user = JSON.parse(res.data.data.userObj);
+              _this3.userAddConversationList.push(JSON.parse(JSON.stringify(obj)));
+              console.log(_this3.userAddConversationList);
+            } else {
+              console.log("获取用户对象失败");
+            }
+          },
+          fail: function fail() {
+            console.log("获取用户对象失败");
+          } });
+
+
       });
     },
     toRoom: function toRoom(item) {
       this.$store.commit('updateConversationActive', item);
-      uni.navigateTo({
-        url: './room' });
+      console.log(item);
+      uni.request({
+        url: this.Server_IP + 'userObj', //仅为示例，并非真实接口地址。
+        data: {
+          userId: item.user.userId },
+
+        header: {
+          'custom-header': 'userObj' //自定义请求头信息
+        },
+        method: "POST",
+        dataType: "json",
+        success: function success(res) {
+          console.log(res.data);
+          if (res.data.info.code == '0') {
+            console.log(res);
+            console.log(JSON.parse(res.data.data.userObj));
+            uni.setStorageSync("toUserInfo", JSON.parse(res.data.data.userObj));
+            uni.navigateTo({
+              url: '../chat/room' });
+
+          } else {
+            console.log("获取用户对象失败");
+          }
+        },
+        fail: function fail() {
+          console.log("获取用户对象失败");
+        } });
+
 
     },
     //选择用户聊天
@@ -307,7 +362,7 @@ var _vuex = __webpack_require__(/*! vuex */ 19);function _interopRequireDefault(
       console.log(toUserInfo);
       this.$store.commit('createConversationActive', toUserInfo.userId);
       uni.navigateTo({
-        url: './room' });
+        url: '../chat/room' });
 
     } },
 

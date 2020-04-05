@@ -129,7 +129,9 @@
 											uni.setStorageSync('sex', res.data.data.sex);
 											uni.setStorageSync('birthday', res.data.data.birthday);
 											uni.setStorageSync('synopsis', res.data.data.synopsis);
+											uni.setStorageSync('headUrl', res.data.data.headUrl);
 											console.log(2222222222222222222222222222222222222)
+											console.log(uni.getStorageSync("headUrl"))
 											console.warn(this.userId)
 											console.warn(res.data.data.userSig)
 											console.log(2222222222222222222222222222222222222)
