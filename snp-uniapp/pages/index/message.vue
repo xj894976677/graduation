@@ -12,7 +12,7 @@
 					<view class="clear-box"></view>
 				</view>
 				<view>
-					<view class="cu-btn line-cyan round shadow">相似好友</view>
+					<view class="cu-btn line-cyan round shadow" @tap="toUserList()">相似好友</view>
 				</view>
 			</view>
 		</view>
@@ -205,6 +205,32 @@
 					}
 				});
 				
+			},
+			toUserList(){
+				uni.request({
+					url: this.Server_IP + 'RecommendedFriend', //仅为示例，并非真实接口地址。
+					data: {
+						userId: uni.getStorageSync("userId")
+					},
+					header: {
+						'custom-header': 'RecommendedFriend' //自定义请求头信息
+					},
+					method:"POST",
+					dataType:"json",
+					success: (res) => {
+						console.log(res.data);
+						if(res.data.info.code == '0'){
+							uni.navigateTo({
+								url: '../subscriber/user_list?title=好友推荐&userList='+res.data.data.userList
+							})
+						}else{
+							console.log("获取用户对象失败")
+						}
+					},
+					fail() {
+						console.log("获取用户对象失败")
+					}
+				});
 			},
 			//选择用户聊天
 			checkUserToRoom(toUserInfo) {

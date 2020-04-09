@@ -6,16 +6,21 @@ import com.graduation.common.DateUtil;
 import com.graduation.common.TLSSigAPIv2;
 import com.graduation.http_model.ResponseBody;
 import com.graduation.model.MailCode;
+import com.graduation.model.UserField;
 import com.graduation.model.UserInformation;
+import com.graduation.model.UserSayNum;
 import com.graduation.service_api.IMailService;
 import com.graduation.service_api.IUserFieldService;
+import com.graduation.service_api.IUserSayService;
 import com.graduation.service_api.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -26,6 +31,8 @@ public class UserController {
     private IUserService userService;
     @Autowired
     private IUserFieldService userFieldService;
+    @Autowired
+    private IUserSayService userSayService;
 
     @RequestMapping(value = "/login",produces = "application/json;charset=utf-8")
     public ResponseBody login(@RequestBody Map<String,Object> map){
@@ -174,5 +181,45 @@ public class UserController {
         }else{
             return new AssembleResponseMsg().failure(200,"error","验证码已过期");
         }
+    }
+
+    @RequestMapping(value = "/RecommendedFriend",produces = "application/json;charset=utf-8")
+    public ResponseBody RecommendedFriend(@RequestBody Map<String,Object> map) throws IllegalAccessException {
+        Map<String, String> all = new HashMap<>();
+        UserField userField = userFieldService.queryField(map);
+        String fieldStr = userField.getFunny().toString() + userField.getAnime().toString() + userField.getNews().toString() + userField.getFashion().toString() + userField.getMotion().toString() + userField.getScience().toString();
+        UserSayNum userSayNum = userSayService.userSayNum(map);
+        String field = "total";
+        Integer max = 0;
+        if (userSayNum == null){
+            userSayNum = new UserSayNum();
+            userSayNum.setScience(0);
+            userSayNum.setMotion(0);
+            userSayNum.setFashion(0);
+            userSayNum.setNews(0);
+            userSayNum.setAnime(0);
+            userSayNum.setFunny(0);
+        }
+        Class cls = userSayNum.getClass();
+        Field[] fields = cls.getDeclaredFields();
+        for (int i = 0; i < fields.length; ++i){
+            Field f = fields[i];
+            f.setAccessible(true);
+            if (f.getName() != "userId" && f.getName() != "total"){
+                if (Integer.parseInt(f.get(userSayNum).toString()) > max){
+                    max = Integer.parseInt(f.get(userSayNum).toString());
+                    field = f.getName();
+                }
+            }
+        }
+//        if (userSayNum.getFunny() > max){
+//            max = userSayNum.getFunny();
+//            field = "funny";
+//        }
+        map.put("field", field);
+        map.put("fieldStr", fieldStr);
+        List<String> s = userService.RecommendedFriend(map);
+        all.put("userList", JSON.toJSONString(s));
+        return new AssembleResponseMsg().success(all);
     }
 }

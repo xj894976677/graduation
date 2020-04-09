@@ -73,4 +73,14 @@
         mail = #{mail}
         where userId = #{userId}
     </update>
+
+
+    <!--根据id查询推荐好友-->
+    <select id="RecommendedFriend" parameterType="map" resultType="String">
+        SELECT userId FROM (
+            SELECT stringLike(#{fieldStr}, CONCAT(CAST(funny AS char),CAST(anime AS char), CAST(news AS char), CAST(fashion AS char), CAST(motion AS char), CAST(science AS char)))/2 + IFNULL((SELECT ${field}/total FROM usersaynum WHERE userId = userfield.userId)/2,0) P,
+            userId
+            FROM userfield WHERE userId NOT IN (SELECT userId FROM follow WHERE fansId = #{userId})ORDER BY P DESC
+        ) b LIMIT 5
+    </select>
 </mapper>

@@ -15,7 +15,7 @@
         )
     </insert>
 
-    <!--查询爱好表当前用户微博数量-->
+    <!--查询当前用户各微博数量-->
     <select id="userSayNum" parameterType="map" resultType="com.graduation.model.UserSayNum">
         select * from usersaynum where userId = #{userId}
     </select>

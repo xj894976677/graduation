@@ -2,4 +2,149 @@
 page {
 		background-color: #f9fafb;
 }
+.list-box {
+	width: 94%;
+	margin: 40rpx auto;
+}
+.item-box {
+	width: auto;
+	height: 130rpx;
+	padding: 20rpx;
+	overflow: hidden;
+	border-bottom: 1px solid #eee;
+}
+.item-img {
+	float: left;
+	margin-top: 20rpx;
+	width: 80rpx;
+	height: 80rpx;
+}
+.item-img ._img {
+	width: 80rpx;
+	height: 80rpx;
+}
+.item-text {
+	float: left;
+	margin-left: 30rpx;
+	width: 500rpx;
+	height: 100rpx;
+	color: #666;
+	font-size: 28rpx;
+}
+.item-user {
+	width: auto;
+	height: 60rpx;
+	line-height: 60rpx;
+	color: 333;
+	font-size: 32rpx;
+}
+.item-text-info {
+	width: auto;
+	height: 60rpx;
+	line-height: 60rpx;
+	color: #666;
+	font-szie: 24rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.user-box {
+	width: auto;
+	height: 100rpx;
+	padding: 0 20rpx;
+}
+.nav-tab {
+	padding-top: 20rpx;
+	height: 80rpx;
+}
+.tab-item {
+	float: left;
+	height: 70rpx;
+	padding: 0 20rpx;
+	line-height: 70rpx;
+	color: #666;
+	font-size: 28rpx;
+	border: 1px solid #00aaff;
+	border-top-left-radius: 25rpx;
+	border-bottom-left-radius: 25rpx;
+}
+.tab-item1 {
+	float: left;
+	height: 70rpx;
+	padding: 0 20rpx;
+	line-height: 70rpx;
+	color: #666;
+	font-size: 28rpx;
+	border: 1px solid #00aaff;
+	border-top-right-radius: 25rpx;
+	border-bottom-right-radius: 25rpx;
+}
+.tab-item-active {
+	color: #fff;
+	background: #00aaff;
+}
+.msg-box {
+	line-height: 30rpx;
+	font-size: 28rpx;
+	color: #666;
+}
+.user-item-box {
+	padding: 20rpx 0;
+	width: auto;
+	height: 200rpx;
+	line-height: 70rpx;
+	cursor: pointer;
+	border-bottom: 1px solid #eee;
+}
+.user-img {
+	float: left;
+	width: 70rpx;
+	height: 70rpx;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.user-img image {
+	width: 70rpx;
+	height: 70rpx;
+	border-radius: 50%;
+}
+.user-name {
+	float: left;
+	margin-left: 20rpx;
+	width: 250rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	color: #666;
+	font-weight: 500;
+}
+.item-msg{
+	float: left;
+	width: 40rpx;
+	height: 100rpx;
+}
+.item-msg-icon{
+	width: 40rpx;
+	height: 40rpx;
+	border-radius: 50%;
+	background: #f06c7a;
+	color: #fff;
+	line-height: 40rpx;
+	margin-top: 30rpx;
+	text-align: center;
+	font-size: 24rpx;
+}
+.clear-box {
+	clear: both;
+}
+.out-login{
+	float: right;
+	margin-right:20rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	padding: 0 40rpx;
+	border-radius: 25rpx;
+	color: #fff;
+	background: #F56C6C;
+	font-size: 26rpx;
+}
 

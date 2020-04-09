@@ -13,16 +13,16 @@ var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 9));
 var _tim = _interopRequireDefault(__webpack_require__(/*! ./commen/tim/tim.js */ 15));
 var _commen = _interopRequireDefault(__webpack_require__(/*! ./commen/commen.js */ 17));
 var _timJsSdk = _interopRequireDefault(__webpack_require__(/*! tim-js-sdk */ 16));
-var _index = _interopRequireDefault(__webpack_require__(/*! ./store/index.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var basics = function basics() {return __webpack_require__.e(/*! import() | pages/basics/home */ "pages/basics/home").then(__webpack_require__.bind(null, /*! ./pages/basics/home.vue */ 216));};
+var _index = _interopRequireDefault(__webpack_require__(/*! ./store/index.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var basics = function basics() {return __webpack_require__.e(/*! import() | pages/basics/home */ "pages/basics/home").then(__webpack_require__.bind(null, /*! ./pages/basics/home.vue */ 224));};
 
 
-_vue.default.component('basics', basics);var components = function components() {return __webpack_require__.e(/*! import() | pages/component/home */ "pages/component/home").then(__webpack_require__.bind(null, /*! ./pages/component/home.vue */ 223));};
+_vue.default.component('basics', basics);var components = function components() {return __webpack_require__.e(/*! import() | pages/component/home */ "pages/component/home").then(__webpack_require__.bind(null, /*! ./pages/component/home.vue */ 231));};
 
 
-_vue.default.component('components', components);var plugin = function plugin() {return __webpack_require__.e(/*! import() | pages/plugin/home */ "pages/plugin/home").then(__webpack_require__.bind(null, /*! ./pages/plugin/home.vue */ 230));};
+_vue.default.component('components', components);var plugin = function plugin() {return __webpack_require__.e(/*! import() | pages/plugin/home */ "pages/plugin/home").then(__webpack_require__.bind(null, /*! ./pages/plugin/home.vue */ 238));};
 
 
-_vue.default.component('plugin', plugin);var cuCustom = function cuCustom() {return __webpack_require__.e(/*! import() | colorui/components/cu-custom */ "colorui/components/cu-custom").then(__webpack_require__.bind(null, /*! ./colorui/components/cu-custom.vue */ 237));};
+_vue.default.component('plugin', plugin);var cuCustom = function cuCustom() {return __webpack_require__.e(/*! import() | colorui/components/cu-custom */ "colorui/components/cu-custom").then(__webpack_require__.bind(null, /*! ./colorui/components/cu-custom.vue */ 245));};
 
 
 _vue.default.component('cu-custom', cuCustom);

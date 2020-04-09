@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "uni-app",
-  "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark",
-  "usingComponents": {
-    "cu-custom": "/colorui/components/cu-custom"
-  }
-}

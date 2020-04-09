@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 @Service
 public class UserServiceImpl implements IUserService {
@@ -121,5 +122,10 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void bandmail(Map<String, Object> map) {
         userMapper.bandmail(map);
+    }
+
+    @Override
+    public List<String> RecommendedFriend(Map<String, Object> map) {
+        return userMapper.RecommendedFriend(map);
     }
 }

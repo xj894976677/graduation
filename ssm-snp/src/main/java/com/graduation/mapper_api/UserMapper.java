@@ -2,6 +2,7 @@ package com.graduation.mapper_api;
 
 import com.graduation.model.UserInformation;
 
+import java.util.List;
 import java.util.Map;
 
 public interface UserMapper {
@@ -17,4 +18,5 @@ public interface UserMapper {
     void updatePassword(Map<String,Object> map);
     void updateInformation(Map<String,Object> map);
     void bandmail(Map<String,Object> map);
+    List<String> RecommendedFriend(Map<String,Object> map);
 }

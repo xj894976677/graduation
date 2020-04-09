@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "聊天室",
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}
