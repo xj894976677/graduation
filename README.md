@@ -28,3 +28,7 @@ uniapp官方文档：[https://uniapp.dcloud.io/](https://uniapp.dcloud.io/)
 此工程正处于开发中，如有更好的想法功能:bulb:，或者一些问题:question:可以及时联系:postbox:，以完善此工程。  
 ## 已知缺陷:warning:
 微博下拉刷新只能下拉最上方蓝色导航条----------------正在修改  
+
+## 联系我 :love_letter:
+个人公众号：猫也想编程
+个人微信：xiangjun19980311(注明来意)
