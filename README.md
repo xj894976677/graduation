@@ -30,5 +30,5 @@ uniapp官方文档：[https://uniapp.dcloud.io/](https://uniapp.dcloud.io/)
 微博下拉刷新只能下拉最上方蓝色导航条----------------正在修改  
 
 ## 联系我 :love_letter:
-个人公众号：猫也想编程
+个人公众号：猫也想编程  
 个人微信：xiangjun19980311(注明来意)
