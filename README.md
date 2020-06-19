@@ -24,6 +24,7 @@ uniapp官方文档：[https://uniapp.dcloud.io/](https://uniapp.dcloud.io/)
 此处说明开发时可用的环境 IDEA 2018.3.6 x64，HbuilderX 2.5.1，Mysql5.7。  
 如项目无法启动，请尝试检查Project Structure中Artifacts。如WEB-INF下并无lib目录，请创建目录并添加Maven中说明到的jar包。  
 开发工具优先选择以上说明的，以避免一些问题。  
+前端项目中需要修改main.js中后台的地址  
 ## 其他说明:warning:
 此工程正处于开发中，如有更好的想法功能:bulb:，或者一些问题:question:可以及时联系:postbox:，以完善此工程。  
 ## 已知缺陷:warning:
@@ -31,4 +32,4 @@ uniapp官方文档：[https://uniapp.dcloud.io/](https://uniapp.dcloud.io/)
 
 ## 联系我 :love_letter:
 个人公众号：猫也想编程  
-个人微信：xiangjun19980311(注明来意)
+个人邮箱：894976677@qq.com
