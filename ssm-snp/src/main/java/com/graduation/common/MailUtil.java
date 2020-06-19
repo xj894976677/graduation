@@ -23,10 +23,10 @@ public class MailUtil {
 
     //邮件编辑信息(仅需写上自己的)
 //    private static final String MAIL_FROM ="894976677@qq.com";//邮件发送人
-    private static final String MAIL_FROM ="xj894976677@163.com";//邮件发送人
+    private static final String MAIL_FROM ="你发送邮件的邮箱";//邮件发送人
 
     //    private static final String MAIL_FROM_PASSWORD ="orbztxdzfklcbeeg";//qq邮件发送人授权码
-    private static final String MAIL_FROM_PASSWORD ="xj123456";//邮件发送人授权码
+    private static final String MAIL_FROM_PASSWORD ="你的授权码";//邮件发送人授权码
     private static final String MAIL_SUBJECT_REGISTER ="亚当【注册链接】";//邮件主题(注册链接)
     private static final String MAIL_SUBJECT_VERIFY_CODE ="亚当【邮箱验证码】";//邮件主题(邮箱验证码)
     private static final String MAIL_ORGANIZATION ="亚当";//邮件组织
